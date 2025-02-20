@@ -1,0 +1,29 @@
+header {
+    font-family: 'Bricolage Grotesque';
+    position: absolute;
+    max-width: 1440px;
+    width: 100%;
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 72px;
+        margin-right: 72px;
+        margin-top: 19px;
+        margin-bottom: 19px;
+
+        a {
+            text-decoration: none;
+            color: white;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        img:hover {
+            cursor: pointer;
+        }
+    }
+}
