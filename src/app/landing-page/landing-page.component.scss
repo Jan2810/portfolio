@@ -1,0 +1,111 @@
+main {
+    background-image: url('/assets/img/bg_black_paper_rip.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 865px;
+    height: 490px;
+    margin-top: 184px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-direction: column;
+    position: relative;
+}
+
+.upper-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    button {
+        font-family: 'Bricolage Grotesque';
+        font-size: 18;
+        font-weight: 500;
+        border: 1px solid #F8F9FA;
+        border-radius: 100px;
+        background-color: transparent;
+        color: #F8F9FA;
+        height: 40px;
+        width: 145px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        display: flex;
+        flex-direction: row;
+        font-family: 'Bricolage Grotesque';
+        font-size: 128px;
+        color: #F8F9FA;
+
+        .capital-letter {
+            &:hover {
+                text-transform: lowercase;
+                color: #f7c518;
+            }
+        }
+
+        .lowercase-letter {
+            &:hover {
+                text-transform: uppercase;
+                color: #f7c518;
+            }
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 20px;
+        right: 5px;
+        transform: rotate(8deg);
+        width: 204px;
+        height: 244px;
+    }
+}
+
+.lower-content {
+    h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        font-family: 'Bricolage Grotesque';
+        font-size: 128px;
+        color: #F8F9FA;
+
+        .capital-letter {
+            &:hover {
+                text-transform: lowercase;
+                color: #f7c518;
+            }
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        box-shadow: 2px 4px 0px 0px #F8F9FA;
+        background-color: transparent;
+        color: #F8F9FA;
+        height: 40px;
+        border: 1px solid #F8F9FA;
+        border-radius: 100px;
+        width: 154px;
+        height: 40;
+    }
+}
+
+.social-link-icons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 72px;
+    top: 654px;
+}
