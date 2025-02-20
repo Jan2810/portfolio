@@ -1,5 +1,5 @@
 main {
-    background-image: url('/assets/img/bg_black_paper_rip.png');
+    background-image: url('/assets/img/landing_page/bg_black_paper_rip.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
@@ -106,6 +106,7 @@ main {
     display: flex;
     flex-direction: column;
     position: absolute;
+    gap: 8px;
     left: 72px;
     top: 654px;
 }

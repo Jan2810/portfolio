@@ -1,0 +1,65 @@
+main {
+    font-family: 'Bricolage Grotesque';
+    height: 900px;
+    width: 100%;
+
+}
+
+.content {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 144px;
+    margin-bottom: 144px;
+
+    .content-left {
+        img {
+            height: 400px;
+            width: 560px;
+        }
+    }
+
+    .content-right {
+        display: flex;
+        flex-direction: column;
+        max-width: 560px;
+        position: relative;
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 20px;
+            color: #0E1013;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 64px;
+            margin-bottom: 48px;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            width: 100%;
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin-top: 48px;
+            width: 132px;
+            height: 40px;
+            border-radius: 100px;
+            border: 1px solid #0E1013;
+            box-shadow: 2px 4px 0px 0px #000000;
+            background-color: transparent;
+        }
+    }
+}
