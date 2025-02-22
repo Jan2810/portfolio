@@ -2,18 +2,15 @@ main {
     font-family: 'Bricolage Grotesque';
     height: 720px;
     width: 100%;
-
 }
 
 .content {
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-left: 120px;
     margin-right: 120px;
-    margin-top: 144px;
-    margin-bottom: 144px;
+    padding-top: 144px;
 
     .content-left {
         img {
@@ -50,6 +47,7 @@ main {
         }
 
         button {
+            font-family: 'Bricolage Grotesque';
             position: absolute;
             right: 0;
             bottom: 0;

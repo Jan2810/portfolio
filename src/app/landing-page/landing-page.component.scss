@@ -1,5 +1,5 @@
 main {
-    background-image: url('/assets/img/landing_page/bg_black_paper_rip.png');
+    background-image: url('./../../assets/img/landing_page/bg_black_paper_rip.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 900px;
@@ -88,6 +88,7 @@ main {
     }
 
     button {
+        font-family: 'Bricolage Grotesque';
         position: absolute;
         right: 0;
         bottom: 0;
@@ -99,6 +100,13 @@ main {
         border-radius: 100px;
         width: 154px;
         height: 40;
+        cursor: pointer;
+        &:hover {
+            background-color: #F87A55;
+            box-shadow: none;
+            transform: translateY(+4px) translateX(+6px);
+            transition: ease-in-out 125ms;
+        }
     }
 }
 
