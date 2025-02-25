@@ -114,7 +114,14 @@ main {
     display: flex;
     flex-direction: column;
     position: absolute;
+    max-width: 1440px;
+    width: 100%;
     gap: 8px;
-    left: 72px;
+    padding-left: 72px;
     top: 654px;
+
+    img {
+        width: 40px;
+        height: 40px;
+    }
 }
