@@ -1,0 +1,168 @@
+main {
+    font-family: 'Bricolage Grotesque';
+    color: #0E1013;
+    margin-top: 144px;
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 144px;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.upper-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    gap: 16px;
+    margin-bottom: 48px;
+
+    h3 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: 0%;
+    }
+
+    h2 {
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 64px;
+        letter-spacing: 0%;
+        margin-bottom: 48px;
+    }
+}
+
+
+
+.lower-content {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 403px;
+
+    .card-div {
+        width: 512px;
+        height: 320px;
+        position: relative;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            position: absolute;
+            width: 512px;
+            height: 320px;
+        }
+
+        .card-hovereffect {
+            position: absolute;
+        }
+
+        .colleague {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            align-content: space-between;
+            position: relative;
+            height: 100%;
+            padding: 48px 40px;
+
+            .colleague-thoughts {
+                max-width: 432px;
+                width: 100%;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 21.6px;
+                letter-spacing: 0%;
+
+            }
+
+            .colleague-info {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                width: 432px;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 21.6px;
+                letter-spacing: 0%;
+
+                img {
+                    transform: rotate(4deg);
+                }
+            }
+
+            .colleague-name {
+                font-weight: 700;
+                font-size: 20px;
+                line-height: 24px;
+                letter-spacing: 0%;
+            }
+
+            .colleague-job {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19.2px;
+                letter-spacing: 0%;
+            }
+
+            img:hover {
+                cursor: pointer;
+                filter: invert(100%);
+            }
+        }
+    }
+}
+
+#card1 {
+    position: absolute;
+    left: 0;
+    transform: rotate(-4deg);
+    padding-bottom: 24px;
+
+    &:hover {
+        z-index: 2;
+
+        .colleague-info {
+            color: white;
+        }
+    }
+}
+
+#card2 {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 24px;
+
+    &:hover {
+        z-index: 2;
+
+        .colleague-info {
+            color: white;
+        }
+    }
+}
+
+#card3 {
+    position: absolute;
+    right: 0;
+    transform: rotate(4deg);
+    padding-bottom: 24px;
+
+    &:hover {
+        z-index: 2;
+
+        .img {
+            color: white;
+        }
+
+        .colleague-info {
+            color: white;
+        }
+    }
+}
