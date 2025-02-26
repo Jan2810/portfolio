@@ -7,11 +7,13 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-family: 'Bricolage Grotesque';
     color: #F8F9FA;
 }
 
 .content {
+    margin-top: 144px;
     height: 560px;
     width: 1200px;
     display: flex;

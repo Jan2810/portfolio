@@ -1,0 +1,29 @@
+.content {
+    width: 1200px;
+    height: 132px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #F8F9FA;
+    font-family: 'Bricolage Grotesque';
+    margin-bottom: 56px;
+
+    a {
+        text-decoration: none;
+        color: #F8F9FA;
+    }
+
+    .content-left {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        img {
+            width: 37px;
+            height: 40px;
+        }
+    }
+}
