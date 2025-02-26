@@ -1,12 +1,13 @@
 main {
     background-image: url('./../../assets/img/landing_page/bg_black_paper_rip.png');
-    background-size: cover;
+    background-size: 100% 900px;
     background-repeat: no-repeat;
     height: 900px;
     width: 100%;
     display: flex;
     justify-content: center;
-}
+  }
+  
 
 .content {
     width: 865px;

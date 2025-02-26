@@ -1,0 +1,57 @@
+<main>
+
+    <div class="content">
+
+        <div class="left-content">
+
+            <div class="contact-me-header">
+                <h3>CONTACT ME</h3>
+                <h2>Ready to work together?</h2>
+            </div>
+            <div class="contact-me-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sed doloremque repellendus corporis
+                voluptatem laborum optio dolorum nostrum alias ab dicta ipsam atque velit aut, amet dolores at! Aliquam,
+                atque.
+            </div>
+            <img src="./assets/img/contact-form/arrow_yellow.svg" alt="">
+
+        </div>
+
+        <div class="right-content">
+
+            <img src="./../../assets/img/contact-form/orange_sticker.png" alt="">
+
+            <form (ngSubmit)="onSubmit()">
+
+                <div class="seperator"></div>
+                <label class="question" for="name">What's your name?</label><br>
+                <input [(ngModel)]="contactData.name" class="answer" type="text" id="name" name="name"
+                    placeholder="Your name goes here">
+                <div class="seperator"></div>
+
+                <label class="question" for="email">What's your email?</label><br>
+                <input [(ngModel)]="contactData.email" class="answer" type="text" id="email" name="email"
+                    placeholder="youremail@email.com">
+                <div class="seperator"></div>
+
+                <label class="question" for="message">How can i help you?</label><br>
+                <input [(ngModel)]="contactData.message" class="answer" type="text" id="message" name="message"
+                    placeholder="Hello Jan, I am interested in...">
+                <div class="seperator"></div>
+
+                <div class="checkbox">
+                    <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked">
+                    <label for="checkbox">I've read the <a href="#">privacy policy</a> and agree to the processing of my
+                        data as
+                        outlined.</label>
+                </div>
+
+                <button [disabled]="!isChecked" type="submit">Send</button>
+
+            </form>
+
+        </div>
+
+    </div>
+    
+</main>
