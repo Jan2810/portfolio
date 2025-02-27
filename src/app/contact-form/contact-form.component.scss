@@ -152,6 +152,7 @@ main {
                 width: 154px;
                 height: 40;
                 cursor: pointer;
+
                 &:hover {
                     background-color: #F87A55;
                     box-shadow: none;
@@ -161,9 +162,12 @@ main {
             }
 
             button:disabled {
-                background-color: transparent; /* Grauer Hintergrund für deaktivierten Button */
-                color: #666666; /* Graue Schrift */
-                cursor: not-allowed; /* Mauszeiger zeigt "nicht erlaubt" */
+                background-color: transparent;
+                /* Grauer Hintergrund für deaktivierten Button */
+                color: #666666;
+                /* Graue Schrift */
+                cursor: not-allowed;
+                /* Mauszeiger zeigt "nicht erlaubt" */
                 opacity: 0.7;
                 box-shadow: 2px 4px 0px 0px #666666;
                 border: 1px solid #666666;
@@ -180,5 +184,38 @@ main {
                 margin-top: 16px;
             }
         }
+    }
+}
+
+.arrow-yellow {
+    animation: slideLeftRight 3.5s infinite;
+    position: absolute;
+    right: 0;
+}
+
+@keyframes slideLeftRight {
+    0% {
+        /* Start: Alles ist auf der linken Seite (keine Breite) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    15% {
+        /* Mitte: Das gesamte Element ist sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    70% {
+        /* Mitte: Das gesamte Element ist sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    85% {
+        /* Ende: Wieder nur der linke Rand (unsichtbar) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    100% {
+        /* Ende: Wieder nur der linke Rand (unsichtbar) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }
