@@ -13,17 +13,119 @@ header {
         margin-top: 19px;
         margin-bottom: 19px;
 
-        a {
-            text-decoration: none;
-            color: white;
+        .wrapper-div {
+            height: 42px;
+            width: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            &:hover {
-                cursor: pointer;
+            a {
+                position: absolute;
+                text-decoration: none;
+                color: white;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }
+
+            img {
+                position: absolute;
+            }
+
         }
 
         img:hover {
             cursor: pointer;
         }
+    }
+}
+
+.animation-img {
+    height: auto;
+
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#animate-top-bottom {
+    &:hover {
+        .animation-img {
+            display: block;
+            animation: topToBottom 0.3s forwards;
+
+            opacity: 1;
+        }
+    }
+
+    &:not(:hover) {
+        .animation-img {
+            animation: bottomToTop 0.3s forwards;
+            
+            opacity: 0;
+            transition-delay: 1s;
+        }
+    }
+}
+
+@keyframes topToBottom {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes bottomToTop {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+}
+
+
+#animate-left-right {
+    &:hover {
+        .animation-img {
+            display: block;
+            animation: leftToRight 0.3s forwards;
+
+            opacity: 1;
+        }
+    }
+
+    &:not(:hover) {
+        .animation-img {
+            animation: rightToLeft 0.3s forwards;
+            
+            opacity: 0;
+            transition-delay: 1s;
+        }
+    }
+}
+
+@keyframes leftToRight {
+    from {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    to {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }
