@@ -6,8 +6,9 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
-  }
-  
+    transition: 125ms ease-in-out;
+}
+
 
 .content {
     width: 865px;
@@ -26,20 +27,54 @@ main {
     flex-direction: row;
     justify-content: space-between;
 
-    button {
-        font-family: 'Bricolage Grotesque';
-        font-size: 18;
-        font-weight: 500;
-        border: 1px solid #F8F9FA;
-        border-radius: 100px;
-        background-color: transparent;
-        color: #F8F9FA;
-        height: 40px;
-        width: 145px;
+    .wrapper-div {
+        height: 90px;
+        width: fit-content;
+        position: relative;
+        display: flex;
+        flex-direction: column;
         margin-bottom: 30px;
+
+        &:hover {
+            button {
+                background-color: #3355ff;
+            }
+
+            .waving-hand-img {
+                animation: rotate180 0.3s forwards;
+            }
+        }
+
+        button {
+            min-width: 145px;
+            margin-top: 40px;
+            width: fit-content;
+            font-family: 'Bricolage Grotesque';
+            font-size: 18px;
+            font-weight: 500;
+            border: 1px solid #F8F9FA;
+            border-radius: 100px;
+            background-color: transparent;
+            color: #F8F9FA;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .waving-hand-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 40px;
+            width: 40px;
+        }
+
+
     }
 
     h1 {
+        transition: 125ms ease-in-out;
         display: flex;
         flex-direction: row;
         font-family: 'Bricolage Grotesque';
@@ -61,7 +96,7 @@ main {
         }
     }
 
-    img {
+    .profile-img {
         position: absolute;
         top: 20px;
         right: 5px;
@@ -71,7 +106,19 @@ main {
     }
 }
 
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
 .lower-content {
+    transition: 125ms ease-in-out;
+
     h1 {
         display: flex;
         flex-direction: row;
@@ -91,22 +138,25 @@ main {
     button {
         font-family: 'Bricolage Grotesque';
         position: absolute;
+        font-size: 18px;
+        font-weight: 500;
         right: 0;
         bottom: 0;
         box-shadow: 2px 4px 0px 0px #F8F9FA;
         background-color: transparent;
         color: #F8F9FA;
-        height: 40px;
         border: 1px solid #F8F9FA;
         border-radius: 100px;
-        width: 154px;
-        height: 40;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 24px;
+        padding-right: 24px;
         cursor: pointer;
+
         &:hover {
             background-color: #F87A55;
             box-shadow: none;
             transform: translateY(+4px) translateX(+6px);
-            transition: ease-in-out 125ms;
         }
     }
 }
@@ -120,6 +170,21 @@ main {
     gap: 8px;
     padding-left: 72px;
     top: 654px;
+
+    .social-link-hover-div {
+        height: 40px;
+        width: 40px;
+        border-radius: 100px;
+        background-image: linear-gradient(#3355ff, #3355ff);
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: 100% 0;
+        transition: background-size 0.2s ease-in-out;
+
+        &:hover {
+            background-size: 100% 100%;
+        }
+    }
 
     img {
         width: 40px;
