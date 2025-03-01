@@ -31,31 +31,75 @@ main {
         margin-bottom: 20px;
     }
 
-    h2 {
-        font-family: 'Bricolage Grotesque';
-        color: #F8F9FA;
-        font-size: 64px;
-        font-weight: 700;
-        line-height: 64px;
-    }
+    .wrapper-div {
+        height: 80px;
+        width: 261px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
-    img {
-        height: 144px;
-        width: 656px;
-    }
 
-    p {
-        font-family: 'Bricolage Grotesque';
-        position: absolute;
-        height: 66px;
-        width: 592px;
-        margin-left: 312px;
-        margin-top: 40px;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 21.6px;
+        h2 {
+            font-family: 'Bricolage Grotesque';
+            color: #F8F9FA;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 64px;
+        }
+
+        .animation-red-circle {
+            position: absolute;
+            height: 80px;
+            width: 261px;
+            left: 0;
+            top: 0;
+            opacity: 1;
+            animation: bottomRightToFull 5s infinite;
+        }
     }
 }
+
+@keyframes bottomRightToFull {
+    0% {
+        clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    }
+
+    3% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    70% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    80% {
+        clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    }
+
+    100% {
+        clip-path: polygon(100% 100%, 100% 100%, 100% 100%, 100% 100%);
+    }
+}
+
+img {
+    height: 144px;
+    width: 656px;
+}
+
+p {
+    font-family: 'Bricolage Grotesque';
+    position: absolute;
+    height: 66px;
+    width: 592px;
+    margin-left: 312px;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+}
+
 
 .lower-content {
     display: flex;
@@ -91,6 +135,7 @@ main {
         width: 640px;
         display: flex;
         justify-content: space-between;
+
         :first-child {
             margin-bottom: 32px;
         }
@@ -100,8 +145,6 @@ main {
 #sticker {
     height: 200px;
     width: 200px;
-
-    &:hover {
-        cursor: pointer;
-    }
+    transform: rotate(8deg);
+    cursor: pointer;
 }

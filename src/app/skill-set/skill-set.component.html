@@ -3,7 +3,10 @@
         <div class="upper-content">
             <div>
                 <h3>MY STACK</h3>
-                <h2>Skill set</h2>
+                <div class="wrapper-div">
+                    <img class="animation-red-circle" src="./assets/img/skill_set/animation_red_circle.png" alt="">
+                    <h2>Skill set</h2>
+                </div>
             </div>
 
             <img src="./assets/img/skill_set/label_white_rip.png" alt="">
@@ -30,7 +33,7 @@
                 </div>
             </div>
 
-            <img id="sticker" src="./assets/img/skill_set/sticker_closed.png" alt="">
+            <img id="sticker" (click)="ripImg()" (mouseover)="changeImg()" (mouseout)="resetImg()" [src]="imageSrc" alt="">
         </div>
     </div>
 </main>

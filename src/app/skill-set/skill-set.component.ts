@@ -9,4 +9,24 @@ import { Component } from '@angular/core';
 })
 export class SkillSetComponent {
 
+  stickerIsRipped: Boolean = false;
+  imageSrc = "./assets/img/skill_set/sticker_closed.png"
+
+  changeImg() {
+    if (!this.stickerIsRipped) {
+      this.imageSrc = "./assets/img/skill_set/sticker_hovered.png"
+    }
+  }
+
+  resetImg() {
+    if (!this.stickerIsRipped) {
+      this.imageSrc = "./assets/img/skill_set/sticker_closed.png"
+    }
+  }
+
+  ripImg() {
+    this.imageSrc = "./assets/img/skill_set/sticker_ripped.png";
+    this.stickerIsRipped = true;
+  }
+
 }
