@@ -42,7 +42,12 @@ main {
             font-size: 64px;
             font-weight: 700;
             line-height: 64px;
+        }
+
+        .animation-blue-line {
             margin-bottom: 48px;
+            width: 303px;
+            animation: slideLeftRight 4.5s infinite;
         }
 
         p {
@@ -54,6 +59,7 @@ main {
         button {
             font-family: 'Bricolage Grotesque';
             position: absolute;
+            font-size: 18px;
             right: 0;
             bottom: 0;
             margin-top: 48px;
@@ -63,6 +69,41 @@ main {
             border: 1px solid #0E1013;
             box-shadow: 2px 4px 0px 0px #000000;
             background-color: transparent;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #F87A55;
+                box-shadow: none;
+                transform: translateY(+4px) translateX(+6px);
+            }
         }
     }
 }
+
+@keyframes slideLeftRight {
+    0% {
+        /* Start: Alles ist auf der linken Seite (keine Breite) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    20% {
+        /* Mitte: Das gesamte Element ist sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    70% {
+        /* Mitte: Das gesamte Element ist sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    80% {
+        /* Ende: Wieder nur der linke Rand (unsichtbar) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    100% {
+        /* Ende: Wieder nur der linke Rand (unsichtbar) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+}
+
