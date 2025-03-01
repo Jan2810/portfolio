@@ -43,6 +43,10 @@ main {
             margin-bottom: 20px;
         }
 
+        .animation-yellow-line {
+            animation: slideLeftRight 3.5s infinite;
+        }
+
         p {
             color: #0E1013;
             font-family: 'Bricolage Grotesque';
@@ -59,6 +63,33 @@ main {
         width: 560px;
         position: relative;
         margin-top: 143px;
+    }
+}
+
+@keyframes slideLeftRight {
+    0% {
+        /* Start: Alles ist auf der linken Seite (keine Breite) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    15% {
+        /* Mitte: Das gesamte Element ist sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    70% {
+        /* Mitte: Das gesamte Element ist sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    85% {
+        /* Ende: Wieder nur der linke Rand (unsichtbar) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    100% {
+        /* Ende: Wieder nur der linke Rand (unsichtbar) */
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }
 
