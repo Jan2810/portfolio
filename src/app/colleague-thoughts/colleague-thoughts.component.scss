@@ -17,6 +17,16 @@ main {
     gap: 16px;
     margin-bottom: 48px;
 
+    .animation-div {
+        display: flex;
+        flex-direction: row;
+
+        .animation-blue-arrow {
+            margin-right: 16px;
+            animation: slideRightLeft 3.5s infinite;
+        }
+    }
+
     h3 {
         font-weight: 500;
         font-size: 20px;
@@ -32,6 +42,34 @@ main {
         margin-bottom: 48px;
     }
 }
+
+@keyframes slideRightLeft {
+    0% {
+        /* Start: Alles ist auf der rechten Seite (keine Breite sichtbar) */
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+
+    5% {
+        /* Mitte: Das gesamte Element ist sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    70% {
+        /* Mitte: Das gesamte Element ist weiterhin sichtbar */
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    85% {
+        /* Ende: Wieder nur der rechte Rand (unsichtbar) */
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+
+    100% {
+        /* Ende: Immer noch unsichtbar am rechten Rand */
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+}
+
 
 
 
@@ -50,6 +88,12 @@ main {
         align-items: center;
         justify-content: center;
 
+        &:hover {
+            .card-hovereffect {
+                opacity: 1;
+            }
+        }
+
         .card {
             position: absolute;
             width: 512px;
@@ -58,6 +102,8 @@ main {
 
         .card-hovereffect {
             position: absolute;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out; 
         }
 
         .colleague {
