@@ -13,6 +13,11 @@
     a {
         text-decoration: none;
         color: #F8F9FA;
+        cursor: pointer;
+    }
+
+    .footer-links {
+        z-index: 2;
     }
 
     .content-left {
@@ -21,9 +26,59 @@
         flex-direction: column;
         justify-content: space-between;
         
-        img {
+        .initials-logo {
             width: 37px;
             height: 40px;
         }
+
+        .wrapper-div {
+            display: flex;
+            flex-direction: column;
+
+            .animation-underline {
+                position: absolute;
+                bottom: -12px;
+            }
+        }
+    }
+}
+
+#animate-left-right {
+    &:hover {
+        .animation-underline {
+            display: block;
+            animation: leftToRight 0.3s forwards;
+
+            opacity: 1;
+        }
+    }
+
+    &:not(:hover) {
+        .animation-underline {
+            animation: rightToLeft 0.3s forwards;
+            
+            opacity: 0;
+            transition-delay: 1s;
+        }
+    }
+}
+
+@keyframes leftToRight {
+    from {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    to {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }

@@ -102,7 +102,7 @@ header {
 
     &:not(:hover) {
         .animation-img {
-            animation: rightToLeft 0.3s forwards infinite;
+            animation: rightToLeft 0.3s forwards;
             
             opacity: 0;
             transition-delay: 1s;
