@@ -18,9 +18,53 @@ main {
     margin-bottom: 144px;
 
     .content-left {
-        img {
-            height: 400px;
-            width: 560px;
+        height: 400px;
+        width: 560px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .stripe-div {
+            height: 152px;
+            max-width: 560px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .stripe-img {
+                height: 180px;
+                width: 560px;
+                position: absolute;
+            }
+
+            .stripe-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                position: absolute;
+                gap: 16px;
+                width: 100%;
+
+                .content-text {
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 28.8px;
+                    letter-spacing: 0%;
+                    color: #F8F9FA;
+                }
+            }
+        }
+
+        #content-yellow {
+            transform: rotate(-1deg);
+            margin-bottom: 28px;
+        }
+
+        #content-red {
+            transform: rotate(5deg);
+            margin-bottom: 20px;
         }
     }
 
@@ -106,4 +150,3 @@ main {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }
-
