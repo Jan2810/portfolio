@@ -35,20 +35,11 @@ main {
         flex-direction: column;
         margin-bottom: 30px;
 
-        &:hover {
-            button {
-                background-color: #3355ff;
-            }
-
-            .waving-hand-img {
-                animation: rotate180 0.3s forwards;
-            }
-        }
-
         button {
             min-width: 145px;
+            max-width: 200px;
+            width: 100%;
             margin-top: 40px;
-            width: fit-content;
             font-family: 'Bricolage Grotesque';
             font-size: 18px;
             font-weight: 500;
@@ -56,10 +47,13 @@ main {
             border-radius: 100px;
             background-color: transparent;
             color: #F8F9FA;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            padding-left: 24px;
-            padding-right: 24px;
+            padding: 12px 24px;
+            transition: background-color 0.2s ease-in-out, transform 0.5s ease-in-out;
+            background-image: linear-gradient(#3355ff, #3355ff);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 0% 100%;
+            transition: background-size 0.15s ease-in-out;
         }
 
         .waving-hand-img {
@@ -68,53 +62,53 @@ main {
             right: 0;
             height: 40px;
             width: 40px;
+            opacity: 0;
+            transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
         }
 
+        button:hover {
+            background-size: 100% 100%;
 
-    }
-
-    h1 {
-        transition: 125ms ease-in-out;
-        display: flex;
-        flex-direction: row;
-        font-family: 'Bricolage Grotesque';
-        font-size: 128px;
-        color: #F8F9FA;
-
-        .capital-letter {
-            &:hover {
-                text-transform: lowercase;
-                color: #f7c518;
-            }
-        }
-
-        .lowercase-letter {
-            &:hover {
-                text-transform: uppercase;
-                color: #f7c518;
+            +.waving-hand-img {
+                transform: rotate(180deg);
+                opacity: 1;
             }
         }
     }
+}
 
-    .profile-img {
-        position: absolute;
-        top: 20px;
-        right: 5px;
-        transform: rotate(8deg);
-        width: 204px;
-        height: 244px;
+h1 {
+    transition: 125ms ease-in-out;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Bricolage Grotesque';
+    font-size: 128px;
+    color: #F8F9FA;
+
+    .capital-letter {
+        &:hover {
+            text-transform: lowercase;
+            color: #f7c518;
+        }
+    }
+
+    .lowercase-letter {
+        &:hover {
+            text-transform: uppercase;
+            color: #f7c518;
+        }
     }
 }
 
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(180deg);
-    }
+.profile-img {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    transform: rotate(8deg);
+    width: 204px;
+    height: 244px;
 }
+
 
 .lower-content {
     transition: 125ms ease-in-out;
