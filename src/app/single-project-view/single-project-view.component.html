@@ -1,0 +1,59 @@
+<main>
+
+    <div class="content">
+        <app-header class="single-project-header"></app-header>
+        <div class="link-go-back-div">
+            <img src="./assets/img/single_project_view/arrow_back.png" alt="">
+            <a>Go Back</a>
+        </div>
+
+
+        <div class="project-content">
+
+            <div class="project-content-left">
+                <div class="animation-wrapper-div">
+                    <h1> {{ project.title }} </h1>
+                    <img class="arrow-img" src="./assets/img/single_project_view/animation_underline.png" alt="">
+                </div>
+
+                <div class="description">
+                    <h2>Description</h2>
+                    <p> {{ project.description }} </p>
+                </div>
+
+                <div class="implementation-details">
+                    <h2>Implementation Details</h2>
+                    <p> {{ project.implementation }} </p>
+                </div>
+
+                <div class="duration">
+                    <h3>Duration:</h3>
+                    <span>{{ project.duration }}</span>
+                </div>
+
+                <div class="tools">
+                    <div class="tool" *ngFor="let tool of project.usedTools">
+                        <img src="{{ tool.img }}" alt="">
+                        <span>{{ tool.name }}</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="project-content-right">
+                <img src=" {{ project.imgPath }} " alt="">
+                <div class="button-div">
+                    <button>GitHub</button>
+                    <button>Live Test</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="link-next-project-div">
+            <a>Next Project</a>
+            <img src="./assets/img/single_project_view/arrow_next.png" alt="">
+        </div>
+    </div>
+</main>

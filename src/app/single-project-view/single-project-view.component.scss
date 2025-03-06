@@ -1,0 +1,241 @@
+main {
+    background-image: url('./../../assets/img/single_project_view/bg_ripped_paper.png');
+    background-size: 102% 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 125ms ease-in-out;
+    background-color: #1D1D1D;
+    position: relative;
+    font-family: 'Bricolage Grotesque';
+    color: #0E1013;
+}
+
+.content {
+    height: 784px;
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+
+    .link-go-back-div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 128px;
+        margin-left: 72px;
+        gap: 10px;
+
+        a {
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21.6px;
+            letter-spacing: 0%;
+            text-align: justify;
+            white-space: nowrap;
+
+            &:hover {
+                color: #F87A55;
+            }
+        }
+    }
+
+    .project-content {
+        max-width: 1440px;
+        width: 100%;
+        margin-top: 48px;
+        padding-left: 120px;
+        padding-right: 120px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .project-content-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 488px;
+            height: 534px;
+
+            .animation-wrapper-div {
+                display: inline-block;
+                position: relative;
+                height: 88px;
+                width: fit-content;
+
+                h1 {
+                    display: inline-block;
+                    font-weight: 700;
+                    font-size: 64px;
+                    line-height: 64px;
+                    letter-spacing: 0%;
+                }
+
+                .arrow-img {
+                    position: absolute;
+                    min-height: 12px;
+                    left: 0;
+                    bottom: 8px;
+                    width: 100%;
+                }
+            }
+
+
+            .description {
+
+                h2 {
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 24px;
+                    letter-spacing: 0%;
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    letter-spacing: 0%;
+                    text-align: justify;
+                }
+            }
+
+            .implementation-details {
+
+                h2 {
+                    font-weight: 700;
+                    font-size: 24px;
+                    line-height: 24px;
+                    letter-spacing: 0%;
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    letter-spacing: 0%;
+                    text-align: justify;
+                }
+            }
+
+            .duration {
+                display: flex;
+                flex-direction: row;
+
+                h3 {
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    letter-spacing: 0%;
+                    text-align: justify;
+                    margin-right: 8px;
+                }
+
+                span {
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    letter-spacing: 0%;
+                    text-align: justify;
+                }
+            }
+
+            .tools {
+                display: flex;
+                flex-direction: row;
+
+                .tool {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 12px;
+
+                    img {
+                        margin-right: 4px;
+                    }
+
+                    span {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 19.2px;
+                        letter-spacing: 0%;
+                    }
+                }
+            }
+        }
+
+        .project-content-right {
+            width: 560px;
+            height: 490px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .button-div {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                height: 44px;
+
+                button {
+                    font-family: 'Bricolage Grotesque';
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    letter-spacing: 0%;
+                    text-align: justify;
+                    height: 40;
+                    padding-top: 12px;
+                    padding-right: 24px;
+                    padding-bottom: 12px;
+                    padding-left: 24px;
+                    border-radius: 100px;
+                    background-color: transparent;
+                    border: 1px solid #F8F9FA;
+                    box-shadow: 2px 4px 0px 0px #F8F9FA;
+                    margin-left: 32px;
+                    margin-right: 4px;
+                    color: #F8F9FA;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #F87A55;
+                        box-shadow: none;
+                        transform: translateY(+4px) translateX(+6px);
+                        transition: ease-in-out 125ms;
+                    }
+                }
+            }
+        }
+    }
+
+    .link-next-project-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-right: 72px;
+        margin-top: 24px;
+
+        a {
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21.6px;
+            letter-spacing: 0%;
+            text-align: justify;
+            white-space: nowrap;
+            color: #F8F9FA;
+
+            &:hover {
+                color: #F87A55;
+            }
+        }
+    }
+}

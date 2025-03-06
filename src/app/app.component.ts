@@ -8,11 +8,12 @@ import { SkillSetComponent } from "./skill-set/skill-set.component";
 import { ProjectsComponent } from "./projects/projects.component";
 import { ColleagueThoughtsComponent } from "./colleague-thoughts/colleague-thoughts.component";
 import { ContactFormComponent } from "./contact-form/contact-form.component";
+import { SingleProjectViewComponent } from "./single-project-view/single-project-view.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, LandingPageComponent, AboutMeComponent, SkillSetComponent, ProjectsComponent, ColleagueThoughtsComponent, ContactFormComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, LandingPageComponent, AboutMeComponent, SkillSetComponent, ProjectsComponent, ColleagueThoughtsComponent, ContactFormComponent, SingleProjectViewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
