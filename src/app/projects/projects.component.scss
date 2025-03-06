@@ -121,9 +121,12 @@ main {
             transition: transform 0.3s ease-in-out;
         }
 
+        #wobble-img {
+            animation: wobble 2.5s infinite;
+        }
+
         .img1 {
             padding-top: 20px;
-            animation: wobble 2.5s infinite;
         }
 
         .img2 {

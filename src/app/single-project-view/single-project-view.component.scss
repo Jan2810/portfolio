@@ -29,7 +29,7 @@ main {
         margin-left: 72px;
         gap: 10px;
 
-        a {
+        .go-back-link {
             cursor: pointer;
             font-weight: 700;
             font-size: 18px;
@@ -37,10 +37,16 @@ main {
             letter-spacing: 0%;
             text-align: justify;
             white-space: nowrap;
+            text-decoration: none;
+            color: #0E1013;
 
             &:hover {
                 color: #F87A55;
             }
+        }
+
+        .arrow-back:hover {
+            transform: scale(1.2);
         }
     }
 
@@ -223,7 +229,7 @@ main {
         margin-right: 72px;
         margin-top: 24px;
 
-        a {
+        .next-project-link {
             cursor: pointer;
             font-weight: 700;
             font-size: 18px;
@@ -232,10 +238,15 @@ main {
             text-align: justify;
             white-space: nowrap;
             color: #F8F9FA;
+            text-decoration: none;
 
             &:hover {
                 color: #F87A55;
             }
+        }
+
+        .arrow-next:hover {
+            transform: scale(1.2);
         }
     }
 }

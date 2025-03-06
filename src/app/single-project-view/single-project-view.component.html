@@ -6,8 +6,8 @@
         
         
         <div class="link-go-back-div">
-            <img src="./assets/img/single_project_view/arrow_back.png" alt="">
-            <a>Go Back</a>
+            <a href="#"><img class="arrow-back" src="./assets/img/single_project_view/arrow_back.png" alt=""></a>
+            <a class="go-back-link" href="#">Go Back</a>
         </div>
 
 
@@ -55,8 +55,8 @@
         </div>
 
         <div class="link-next-project-div">
-            <a>Next Project</a>
-            <img src="./assets/img/single_project_view/arrow_next.png" alt="">
+            <a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
+            <a (click)="nextProject()" [routerLink]="['/project']"><img class="arrow-next" src="./assets/img/single_project_view/arrow_next.png" alt=""></a>
         </div>
     </div>
 </main>
