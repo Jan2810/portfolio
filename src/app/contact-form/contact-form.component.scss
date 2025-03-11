@@ -58,12 +58,26 @@ main {
         width: 480px;
         position: relative;
 
-        img {
+        .wrapper-div {
             height: 168px;
             width: 168px;
             position: absolute;
             right: 0;
             z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .sticker {
+                height: 100%;
+                position: absolute;
+            }
+
+            .logo {
+                position: absolute;
+                height: 40%;
+                transform: rotate(15deg);
+            }
         }
 
         form {
