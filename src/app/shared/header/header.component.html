@@ -15,12 +15,22 @@
             <img class="animation-img" src="./assets/img/header/animation_projects.png" alt="">
             <a href="#projects">Projects</a>
         </div>
-        
+
         <div class="wrapper-div" id="animate-left-right">
             <img class="animation-img" src="./assets/img/header/animation_contact.png" alt="">
             <a href="#contact">Contact</a>
         </div>
-        
-        <img src="./assets/img/header/toggle_eng.png" alt="">
+
+        <div class="toggle-language">
+            <div (click)="toggleToEnglish()" class="wrapper-div-eng">
+                <img src="./assets/img/header/hover_square_eng.png" alt="">
+                <P [ngStyle]="{color: engIsActive ? activeColor : inactiveColor}">EN</P>
+            </div>
+            <img class="toggle-img" [src]="imgSrc" alt="">
+            <div (click)="toggleToGerman()" class="wrapper-div-de">
+                <img src="./assets/img/header/hover_square_de.png" alt="">
+                <p [ngStyle]="{color: deIsActive ? activeColor : inactiveColor}">DE</p>
+            </div>
+        </div>
     </div>
 </header>
