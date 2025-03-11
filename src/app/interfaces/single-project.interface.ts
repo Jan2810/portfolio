@@ -6,6 +6,7 @@ export interface SingleProject {
     implementation: string;
     duration: string;
     imgPath: string;
+    sticker: string;
     usedTools: Tool[];
 }
 
@@ -16,6 +17,7 @@ export const projects: SingleProject[] = [
         implementation: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
         duration: '4 weeks',
         imgPath: './assets/img/single_project_view/project_img_join.png',
+        sticker: './assets/img/single_project_view/sticker_featured_project.png',
         usedTools: [
             { img: './assets/img/single_project_view/logo_javascript.png', name: 'JavaScript' },
             { img: './assets/img/single_project_view/logo_firebase.png', name: 'Firebase' },
@@ -29,6 +31,7 @@ export const projects: SingleProject[] = [
         implementation: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
         duration: '5 weeks',
         imgPath: './assets/img/single_project_view/project_img_el_pollo_loco.png',
+        sticker: './assets/img/single_project_view/sticker_yellow1.png',
         usedTools: [
             { img: './assets/img/single_project_view/logo_javascript.png', name: 'JavaScript' },
             { img: './assets/img/single_project_view/logo_html.png', name: 'HTML' },
@@ -41,6 +44,7 @@ export const projects: SingleProject[] = [
         implementation: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
         duration: '4 weeks',
         imgPath: './assets/img/single_project_view/project_img_da_bubble.png',
+        sticker: './assets/img/single_project_view/sticker_yellow1.png',
         usedTools: [
             { img: './assets/img/single_project_view/logo_angular.png', name: 'Angular' },
             { img: './assets/img/single_project_view/logo_typescript.png', name: 'TypeScript' },
