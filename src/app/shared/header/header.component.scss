@@ -4,6 +4,7 @@ header {
     max-width: 1440px;
     width: 100%;
     color: #FFFFFF;
+    transition: all 125ms ease-in-out;
 
     .header-content {
         display: flex;
@@ -13,6 +14,10 @@ header {
         margin-right: 72px;
         margin-top: 19px;
         margin-bottom: 19px;
+
+        .my-logo {
+         width: 64px;
+        }
 
         .wrapper-div {
             height: 42px;
