@@ -91,7 +91,7 @@ main {
         .animation-blue-line {
             margin-bottom: 48px;
             width: 303px;
-            animation: slideLeftRight 4.5s infinite;
+            animation: slideLeftRight 4s infinite;
         }
 
         p {
@@ -124,29 +124,25 @@ main {
     }
 }
 
+
 @keyframes slideLeftRight {
     0% {
-        /* Start: Alles ist auf der linken Seite (keine Breite) */
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 
     20% {
-        /* Mitte: Das gesamte Element ist sichtbar */
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     70% {
-        /* Mitte: Das gesamte Element ist sichtbar */
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     80% {
-        /* Ende: Wieder nur der linke Rand (unsichtbar) */
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 
     100% {
-        /* Ende: Wieder nur der linke Rand (unsichtbar) */
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }

@@ -87,8 +87,11 @@ main {
                     left: 0;
                     bottom: 8px;
                     width: 100%;
+                    animation: slideLeftRight 4s infinite;
                 }
             }
+
+            
 
 
             .description {
@@ -248,5 +251,27 @@ main {
         .arrow-next:hover {
             transform: scale(1.2);
         }
+    }
+}
+
+@keyframes slideLeftRight {
+    0% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    20% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    70% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    80% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    100% {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }
