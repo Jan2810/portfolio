@@ -9,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  imgSrc: String = "./assets/img/footer/logo_blue.png"
+
+  changeImg() {
+    this.imgSrc = './assets/img/footer/logo_yellow.png'
+  }
+
+  resetImg() {
+    this.imgSrc = './assets/img/footer/logo_blue.png'
+  }
 }
