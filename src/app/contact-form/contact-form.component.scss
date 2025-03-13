@@ -161,17 +161,79 @@ main {
 
             button:disabled {
                 background-color: transparent;
-                /* Grauer Hintergrund für deaktivierten Button */
                 color: #666666;
-                /* Graue Schrift */
                 cursor: not-allowed;
-                /* Mauszeiger zeigt "nicht erlaubt" */
                 opacity: 0.7;
                 box-shadow: 2px 4px 0px 0px #666666;
                 border: 1px solid #666666;
 
                 &:hover {
                     transform: none;
+                }
+            }
+
+            .name-div {
+                .seperator-hover {
+                    height: 1px;
+                    background-color: #3355FF;
+                    margin-bottom: 16px;
+                    margin-top: 16px;
+                    opacity: 0;
+                }
+                &:hover {
+                    .seperator {
+                        background-color: #3355FF;
+                    }
+                    .seperator-hover {
+                        opacity: 1;
+                    }
+                    label {
+                        color: #F87A55;
+                    }
+                }
+            }
+
+            .email-div {
+                .seperator-blue-first {
+                    height: 1px;
+                    width: 100%;
+                    background-color: #3355FF;
+                    position: absolute;
+                    bottom: 321px;
+                    opacity: 0;
+                }
+                &:hover {
+                    .seperator {
+                        background-color: #3355FF;
+                    }
+                    .seperator-blue-first {
+                        opacity: 1;
+                    }
+                    label {
+                        color: #F87A55;
+                    }
+                }
+            }
+
+            .message-div {
+                .seperator-blue-second {
+                    height: 1px;
+                    width: 100%;
+                    background-color: #3355FF;
+                    position: absolute;
+                    bottom: 228px;
+                    opacity: 0;
+                }
+                &:hover {
+                    .seperator {
+                        background-color: #3355FF;
+                    }
+                    .seperator-blue-second {
+                        opacity: 1;
+                    }
+                    label {
+                        color: #F87A55;
+                    }
                 }
             }
 
@@ -193,27 +255,22 @@ main {
 
 @keyframes slideLeftRight {
     0% {
-        /* Start: Alles ist auf der linken Seite (keine Breite) */
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 
     15% {
-        /* Mitte: Das gesamte Element ist sichtbar */
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     70% {
-        /* Mitte: Das gesamte Element ist sichtbar */
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
     85% {
-        /* Ende: Wieder nur der linke Rand (unsichtbar) */
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 
     100% {
-        /* Ende: Wieder nur der linke Rand (unsichtbar) */
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
 }

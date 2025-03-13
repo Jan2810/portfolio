@@ -25,21 +25,29 @@
 
             <form (ngSubmit)="onSubmit()">
 
-                <div class="seperator"></div>
-                <label class="question" for="name">What's your name?</label><br>
-                <input [(ngModel)]="contactData.name" class="answer" type="text" id="name" name="name"
-                    placeholder="Your name goes here">
-                <div class="seperator"></div>
+                <div class="name-div">
+                    <div class="seperator-hover"></div>
+                    <label class="question" for="name">What's your name?</label><br>
+                    <input [(ngModel)]="contactData.name" class="answer" type="text" id="name" name="name"
+                        placeholder="Your name goes here">
+                    <div class="seperator"></div>
+                </div>
 
-                <label class="question" for="email">What's your email?</label><br>
-                <input [(ngModel)]="contactData.email" class="answer" type="text" id="email" name="email"
-                    placeholder="youremail@email.com">
-                <div class="seperator"></div>
+                <div class="email-div">
+                    <div class="seperator-blue-first"></div>
+                    <label class="question" for="email">What's your email?</label><br>
+                    <input [(ngModel)]="contactData.email" class="answer" type="text" id="email" name="email"
+                        placeholder="youremail@email.com">
+                    <div class="seperator"></div>
+                </div>
 
-                <label class="question" for="message">How can i help you?</label><br>
-                <input [(ngModel)]="contactData.message" class="answer" type="text" id="message" name="message"
-                    placeholder="Hello Jan, I am interested in...">
-                <div class="seperator"></div>
+                <div class="message-div">
+                    <div class="seperator-blue-second"></div>
+                    <label class="question" for="message">How can i help you?</label><br>
+                    <input [(ngModel)]="contactData.message" class="answer" type="text" id="message" name="message"
+                        placeholder="Hello Jan, I am interested in...">
+                    <div class="seperator"></div>
+                </div>
 
                 <div class="checkbox">
                     <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked">
