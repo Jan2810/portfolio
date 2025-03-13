@@ -8,7 +8,7 @@ import { ColleagueThoughtsComponent } from '../colleague-thoughts/colleague-thou
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 
 @Component({
-  selector: 'app-homepage-component',
+  selector: 'app-homepage',
   standalone: true,
   imports: [
     HeaderComponent,
@@ -19,9 +19,9 @@ import { ContactFormComponent } from '../contact-form/contact-form.component';
     ColleagueThoughtsComponent,
     ContactFormComponent
   ],
-  templateUrl: './homepage-component.component.html',
-  styleUrl: './homepage-component.component.scss'
+  templateUrl: './homepage.component.html',
+  styleUrl: './homepage.component.scss'
 })
-export class HomepageComponentComponent {
+export class HomepageComponent {
 
 }

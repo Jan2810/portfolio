@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SingleProjectViewComponent } from "./single-project-view/single-project-view.component";
-import { HomepageComponentComponent } from './homepage-component/homepage-component.component';
+import { HomepageComponent } from './homepage-component/homepage.component';
 
 @Component({
   selector: 'app-root',
