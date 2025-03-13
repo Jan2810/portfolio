@@ -4,5 +4,5 @@ import { SingleProjectViewComponent } from './single-project-view/single-project
 
 export const routes: Routes = [
     { path: '', component: HomepageComponent },
-    { path: 'project', component: SingleProjectViewComponent },
+    { path: 'project/:id', component: SingleProjectViewComponent },
 ];
