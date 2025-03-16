@@ -19,19 +19,41 @@ export class SingleProjectViewComponent {
 
   projectIndex: number = 0;
   project!: SingleProject;
+  linkText: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    const idParam = this.route.snapshot.params['id'];
-    this.projectIndex = +idParam;
+    this.linkText = this.route.snapshot.params['title'];
+    this.setProject();
     this.project = projects[this.projectIndex];
-    console.log('Geladenes Projekt:', this.project);
+  }
+
+  setProject() {
+    if (this.linkText === 'join') {
+      this.projectIndex = 0
+    } else if (this.linkText === 'elpollolocco') {
+      this.projectIndex = 1
+    } else if (this.linkText === 'dabubble') {
+      this.projectIndex = 2
+    }
   }
 
   nextProject() {
     this.projectIndex = (this.projectIndex + 1) % projects.length;
+    this.setLinkText();
     this.project = projects[this.projectIndex];
-    this.router.navigate(['/project', this.projectIndex])
+    this.router.navigate(['/project', this.linkText]);
   }
+
+  setLinkText() {
+    if (this.projectIndex === 0) {
+      this.linkText = 'join'
+    } else if (this.projectIndex === 1) {
+      this.linkText = 'elpollolocco'
+    } else if (this.projectIndex === 2) {
+     this.linkText = 'dabubble'
+    }
+  }
+
 }
