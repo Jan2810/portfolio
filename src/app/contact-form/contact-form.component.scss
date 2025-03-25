@@ -180,16 +180,35 @@ main {
                     margin-top: 16px;
                     opacity: 0;
                 }
+
                 &:hover {
                     .seperator {
                         background-color: #3355FF;
                     }
+
                     .seperator-hover {
                         opacity: 1;
                     }
+
                     label {
                         color: #F87A55;
                     }
+                }
+
+                .error::placeholder {
+                    color: red;
+                }
+
+                .error::-webkit-input-placeholder {
+                    color: red;
+                }
+
+                .error:-moz-placeholder {
+                    color: red;
+                }
+
+                .error:-ms-input-placeholder {
+                    color: red;
                 }
             }
 
@@ -202,13 +221,16 @@ main {
                     bottom: 321px;
                     opacity: 0;
                 }
+
                 &:hover {
                     .seperator {
                         background-color: #3355FF;
                     }
+
                     .seperator-blue-first {
                         opacity: 1;
                     }
+
                     label {
                         color: #F87A55;
                     }
@@ -224,16 +246,35 @@ main {
                     bottom: 228px;
                     opacity: 0;
                 }
+
                 &:hover {
                     .seperator {
                         background-color: #3355FF;
                     }
+
                     .seperator-blue-second {
                         opacity: 1;
                     }
+
                     label {
                         color: #F87A55;
                     }
+                }
+
+                .error::placeholder {
+                    color: red;
+                }
+
+                .error::-webkit-input-placeholder {
+                    color: red;
+                }
+
+                .error:-moz-placeholder {
+                    color: red;
+                }
+
+                .error:-ms-input-placeholder {
+                    color: red;
                 }
             }
 
@@ -246,6 +287,7 @@ main {
         }
     }
 }
+
 
 .arrow-yellow {
     animation: slideLeftRight 3.5s infinite;

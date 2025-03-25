@@ -23,29 +23,36 @@
         <div class="right-content">
             <img class="sticker" src="./assets/img/contact-form/sticker_orange.png" alt="">
 
-            <form (ngSubmit)="onSubmit()">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
                 <div class="name-div">
                     <div class="seperator-hover"></div>
                     <label class="question" for="name">What's your name?</label><br>
-                    <input [(ngModel)]="contactData.name" class="answer" type="text" id="name" name="name"
-                        placeholder="Your name goes here">
+                    <input #nameField="ngModel" [(ngModel)]="contactData.name" class="answer" type="text" id="name" name="name"
+                    [class.error]="nameField.value?.length < 1 && contactForm.submitted "
+                    [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
+                    ? 'Oops! It seems your name is missing' 
+                    : 'Your name goes here'" required> 
                     <div class="seperator"></div>
                 </div>
 
                 <div class="email-div">
                     <div class="seperator-blue-first"></div>
                     <label class="question" for="email">What's your email?</label><br>
-                    <input [(ngModel)]="contactData.email" class="answer" type="text" id="email" name="email"
-                        placeholder="youremail@email.com">
+                    <input #emailField="ngModel" [(ngModel)]="contactData.email" class="answer" type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        placeholder="youremail@email.com" required>
                     <div class="seperator"></div>
                 </div>
 
                 <div class="message-div">
                     <div class="seperator-blue-second"></div>
                     <label class="question" for="message">How can i help you?</label><br>
-                    <input [(ngModel)]="contactData.message" class="answer" type="text" id="message" name="message"
-                        placeholder="Hello Jan, I am interested in...">
+                    <input #messageField="ngModel" [(ngModel)]="contactData.message" class="answer" type="text" id="message"
+                        name="message" [class.error]="!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted"
+                        [placeholder]="(!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted)
+                        ? 'What do you need to develop?' 
+                        : 'Hello Jan, I am interested in...'" required>
+
                     <div class="seperator"></div>
                 </div>
 
