@@ -11,8 +11,10 @@ main {
 
 
 .content {
-    width: 865px;
-    height: 490px;
+    max-width: 865px;
+    max-height: 490px;
+    width: 100%;
+    height: 100%;
     margin-top: 184px;
     display: flex;
     align-content: space-between;
@@ -74,6 +76,15 @@ main {
             }
         }
     }
+
+    .desktop-profile-img {
+        position: absolute;
+        top: 20px;
+        right: 5px;
+        transform: rotate(8deg);
+        width: 204px;
+        height: 244px;
+    }
 }
 
 h1 {
@@ -97,15 +108,6 @@ h1 {
             color: #f7c518;
         }
     }
-}
-
-.profile-img {
-    position: absolute;
-    top: 20px;
-    right: 5px;
-    transform: rotate(8deg);
-    width: 204px;
-    height: 244px;
 }
 
 
@@ -154,7 +156,15 @@ h1 {
     }
 }
 
-.social-link-icons {
+.mobile-profile-img {
+    display: none;
+    // position: absolute;
+    transform: rotate(8deg);
+    width: 204px;
+    height: 244px;
+}
+
+.desktop-social-link-icons {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -183,4 +193,60 @@ h1 {
         width: 40px;
         height: 40px;
     }
+}
+
+
+@media screen and (max-width: 960px) {
+
+    main {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .desktop-profile-img {
+        display: none;
+    }
+
+    .desktop-social-link-icons {
+        display: none;
+    }
+
+    .mobile-profile-img {
+        display: block;
+        position: absolute;
+        top: 520px;
+    }
+
+    .content {
+        height: 821px;
+        width: 100%;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 80px;
+
+        h1 {
+            font-size: 64px;
+            justify-content: center;
+        }
+    }
+
+    .upper-content {
+        div {
+            width: 100%;
+        }
+        h1 {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .lower-content {
+        button {
+            position: absolute;
+            margin-bottom: 124px;
+            cursor: pointer;
+        }
+    }
+
 }
