@@ -45,6 +45,10 @@ header {
         img:hover {
             cursor: pointer;
         }
+
+        .mobile {
+            display: none;
+        }
     }
 
     .toggle-language {
@@ -180,5 +184,29 @@ header {
 
     to {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+}
+
+@media (max-width:1040px) {
+    .desktop {
+        display: none !important;
+    }
+
+    .mobile {
+        display: block !important;
+    }
+}
+
+@media (max-width:960px) {
+
+    .my-logo {
+        width: 32px !important;
+    }
+
+    .header-content {
+        margin-left: 16px !important;
+        margin-right: 16px !important;
+        margin-top: 16px !important;
+        margin-bottom: 16px !important;
     }
 }
