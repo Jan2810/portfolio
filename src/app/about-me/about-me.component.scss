@@ -19,7 +19,8 @@ main {
 
     .content-left {
         height: 400px;
-        width: 560px;
+        max-width: 560px;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -46,6 +47,11 @@ main {
                 position: absolute;
                 gap: 16px;
                 width: 100%;
+
+                .content-img {
+                    height: 40px;
+                    width: 40px;
+                }
 
                 .content-text {
                     font-weight: 400;
@@ -144,5 +150,137 @@ main {
 
     100% {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+}
+
+
+@media (max-width:1400px) {
+    .content {
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+}
+
+@media (max-width:1300px) {
+    .content-left {
+        max-width: 343px !important;
+
+        .stripe-div {
+            max-width: 343px !important;
+            width: 100%;
+
+            .stripe-img {
+                width: 444px !important;
+            }
+
+            .stripe-content {
+                .content-text {
+                    font-size: 20px !important;
+                }
+            }
+        }
+    }
+
+    @media (max-width:1140px) {
+        main {
+            height: 976px;
+        }
+
+        .content {
+            flex-direction: column-reverse;
+            align-items: center;
+            padding-top: 88px;
+
+            .content-left {
+                height: 304px;
+
+                .stripe-div {
+                    height: 128px;
+
+                    .stripe-img {
+                        height: 128px;
+                        position: absolute;
+                    }
+
+                    .stripe-content {
+                        width: 100%;
+
+                        .content-img {
+                            height: 40px;
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+
+            .content-right {
+                max-width: 444px;
+                width: 100%;
+
+                h3 {
+                    font-size: 18px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                }
+
+                h2 {
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 100%;
+                }
+
+                .animation-blue-line {
+                    margin-bottom: 32px;
+                    width: 227px;
+                    animation: none;
+                }
+
+                p {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 100%;
+                }
+
+                a {
+                    display: flex;
+                    justify-content: flex-end;
+                    text-decoration: none;
+
+                    button {
+                        position: unset;
+                        border: 1px solid #0E1013;
+                        box-shadow:none;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width:560px) {
+        .content {
+            margin-left: 16px;
+            margin-right: 16px;
+
+            .content-left {
+                padding-top: 40px!important;
+                height: 304px;
+
+                .stripe-div {
+                    height: 128px;
+                    width: 343px;
+
+                    .stripe-img {
+                        height: 128px;
+                        width: 343px !important;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .content-right {
+                width: 343px;
+            }
+        }
     }
 }
