@@ -1,70 +1,51 @@
 <main>
-    <div class="content">
 
-        <div class="upper-content">
-
-            <div class="upper-left-content">
-                <h3>MY CRAFT</h3>
-                <h2>Projects</h2>
-                <img class="animation-yellow-line" src="./assets/img/projects/animation_yellow_line.png" alt="">
-                <p>Hey there, check out my projects! I build responsive, user-friendly web experiences with efficient,
-                    clean code that works seamlessly on any device. Dive in, explore, and interact—I'm always excited to
-                    get feedback and collaborate on cool ideas!</p>
-            </div>
-
-            <div class="upper-right-content">
-                <div class="project">
-                    <div class="hover-div">
-                        <div class="img1-wrapper">
-                            <img class="img1" id="wobble-img" src="./assets/img/projects/thumbnail_join.png"
-                                alt="Laptop">
-                        </div>
-                        <img src="./assets/img/projects/sticker_featured_project.png" alt="Bild 2" class="img2">
-                        <button class="action-btn" [routerLink]="['/project', 'join']">Project details</button>
-                    </div>
-
-                    <div class="project-description">
-                        <p class="project-header">Join</p>
-                        <p>Task manager inspired by the Kanban System. Create and organize tasks using drag and drop
-                            functions, assign users and categories.</p>
-                    </div>
-                </div>
-            </div>
-
+    <div class="upper-content">
+        <div class="headline-div">
+            <h3>MY CRAFT</h3>
+            <h2>Projects</h2>
+            <img class="yellow-underline" src="./assets/img/projects/animation_yellow_line.png" alt="">
+            <p class="introduction">
+                Hey there, check out my projects! I build responsive, user-friendly web experiences with efficient,
+                clean code that works seamlessly on any device. Dive in, explore, and interact—I'm always excited to
+                get feedback and collaborate on cool ideas!
+            </p>
         </div>
-
-
-        <div class="lower-content">
-
-            <div class="project">
-                <div class="hover-div">
-                    <div class="img1-wrapper">
-                        <img src="./assets/img/projects/thumbnail_el_pollo_loco.png" alt="" class="img1">
-                    </div>
-                    <button class="action-btn" [routerLink]="['/project', 'elpollolocco']">Project details</button>
-                </div>
-
-                <div class="project-description">
-                    <p class="project-header">El Pollo Loco</p>
-                    <p>Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco
-                        salsa to fight against the crazy hen.</p>
-                </div>
+        <div class="project-div">
+            <div class="project-img-div">
+                <img class="project-img" id="join-img" src="./assets/img/projects/thumbnail_join.png" alt="">
+                <img id="blue-sticker" src="./assets/img/projects/sticker_featured_project.png" alt="">
             </div>
-
-            <div class="project">
-                <div class="hover-div">
-                    <div class="img1-wrapper">
-                        <img src="./assets/img/projects/thumbnail_da_bubble.png" alt="" class="img1">
-                    </div>
-                    <button class="action-btn" [routerLink]="['/project', 'dabubble']">Project details</button>
-                </div>
-                <div class="project-description">
-                    <p class="project-header">DABubble</p>
-                    <p>This App is a Slack Clone App. It revolutionizes team communication and collaboration with its
-                        intuitive interface, real-time messaging, and robust channel organization.</p>
-                </div>
+            <div class="project-text-div">
+                <p class="project-title">Join</p>
+                <p class="project-description">Task manager inspired by the Kanban System. Create and organize tasks
+                    using
+                    drag and drop functions, assign users and categories. </p>
             </div>
+        </div>
+    </div>
 
+    <div class="lower-content">
+        <div class="project-div">
+            <div class="project-img-div">
+                <img class="project-img" id="join-img" src="./assets/img/projects/thumbnail_el_pollo_loco.png" alt="">
+            </div>
+            <div class="project-text-div">
+                <p class="project-title">El Pollo Loco</p>
+                <p class="project-description">Jump, run and throw game based on object-oriented approach. Help Pepe to
+                    find coins and tabasco salsa to fight against the crazy hen.</p>
+            </div>
+        </div>
+        <div class="project-div">
+            <div class="project-img-div">
+                <img class="project-img" id="join-img" src="./assets/img/projects/thumbnail_da_bubble.png" alt="">
+            </div>
+            <div class="project-text-div">
+                <p class="project-title">Da Bubble</p>
+                <p class="project-description">This App is a Slack Clone App. It revolutionizes team communication and
+                    collaboration with its intuitive interface, real-time messaging, and robust channel organization.
+                </p>
+            </div>
         </div>
     </div>
 </main>
