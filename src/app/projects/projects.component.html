@@ -17,9 +17,8 @@
                     <img class="project-img" id="join-img" src="./assets/img/projects/thumbnail_join.png" alt="">
                 </div>
                 <div class="overlay">
-                    <button class="overlay-button">Project details</button>
+                    <button class="overlay-button" [routerLink]="['/project', 'join']">Project details</button>
                 </div>
-
                 <img id="blue-sticker" src="./assets/img/projects/sticker_featured_project.png" alt="">
             </div>
             <div class="project-text-div">
@@ -28,6 +27,7 @@
                     using
                     drag and drop functions, assign users and categories. </p>
             </div>
+            <button class="mobile-btn" [routerLink]="['/project', 'join']">Project details</button>
         </div>
     </div>
 
@@ -38,7 +38,7 @@
                     <img class="project-img" src="./assets/img/projects/thumbnail_el_pollo_loco.png" alt="">
                 </div>
                 <div class="overlay">
-                    <button class="overlay-button">Mehr erfahren</button>
+                    <button class="overlay-button" [routerLink]="['/project', 'elpolloloco']">Project details</button>
                 </div>
             </div>
             <div class="project-text-div">
@@ -46,6 +46,7 @@
                 <p class="project-description">Jump, run and throw game based on object-oriented approach. Help Pepe to
                     find coins and tabasco salsa to fight against the crazy hen.</p>
             </div>
+            <button class="mobile-btn" [routerLink]="['/project', 'elpolloloco']">Project details</button>
         </div>
         <div class="project-div">
             <div class="project-img-div">
@@ -53,7 +54,7 @@
                     <img class="project-img" src="./assets/img/projects/thumbnail_da_bubble.png" alt="">
                 </div>
                 <div class="overlay">
-                    <button class="overlay-button">Mehr erfahren</button>
+                    <button class="overlay-button" [routerLink]="['/project', 'dabubble']">Project details</button>
                 </div>
             </div>
             <div class="project-text-div">
@@ -62,6 +63,7 @@
                     collaboration with its intuitive interface, real-time messaging, and robust channel organization.
                 </p>
             </div>
+            <button class="mobile-btn" [routerLink]="['/project', 'dabubble']">Project details</button>
         </div>
     </div>
 </main>

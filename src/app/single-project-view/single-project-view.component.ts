@@ -32,7 +32,7 @@ export class SingleProjectViewComponent {
   setProject() {
     if (this.linkText === 'join') {
       this.projectIndex = 0
-    } else if (this.linkText === 'elpollolocco') {
+    } else if (this.linkText === 'elpolloloco') {
       this.projectIndex = 1
     } else if (this.linkText === 'dabubble') {
       this.projectIndex = 2
