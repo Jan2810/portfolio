@@ -119,6 +119,7 @@ main {
                 }
             }
             .mobile-btn {
+                display: none;
                 font-family: 'Bricolage Grotesque';
                 cursor: pointer;
                 color: #0E1013;
@@ -222,6 +223,7 @@ main {
                 }
             }
             .mobile-btn {
+                display: none;
                 font-family: 'Bricolage Grotesque';
                 cursor: pointer;
                 color: #0E1013;
@@ -356,6 +358,9 @@ main {
                         margin-bottom: 32px;
                     }
                 }
+                .mobile-btn {
+                    display: block!important;
+                }
             }
         }
         .lower-content {
@@ -387,6 +392,9 @@ main {
                     .project-description {
                         margin-bottom: 32px;
                     }
+                }
+                .mobile-btn {
+                    display: block!important;
                 }
             }
         }
