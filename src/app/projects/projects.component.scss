@@ -44,16 +44,74 @@ main {
         .project-div {
             .project-img-div {
                 position: relative;
+                overflow: hidden;
                 margin-bottom: 48px;
-                
+                border-radius: 20px;
+
+                .img-wrapper {
+                    transition: transform 0.3s ease; // Smooth scaling on hover
+                    border-radius: 100px;
+                }
+
+                &:hover .img-wrapper {
+                    transform: scale(1.1); // Vergrößert den gesamten Wrapper inkl. Bild
+                }
+
                 .project-img {
                     animation: wobble 2s infinite;
                 }
 
+                &:hover .project-img {
+                    transform: scale(1.5); // Bild vergrößert sich beim Hover
+                }
+
+                .overlay {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 50%; // Deckt die untere Hälfte ab
+                    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                    display: flex;
+                    justify-content: flex-end; // Button rechtsbündig
+                    align-items: flex-end; // Button unten
+                    padding: 32px; // Etwas Abstand zu den Rändern
+                    z-index: 2; // Damit das Overlay über dem Bild liegt
+                }
+
+                &:hover .overlay {
+                    opacity: 1; // Overlay wird sichtbar beim Hover
+                }
+
+                .overlay-button {
+                    font-family: 'Bricolage Grotesque';
+                    color: #F8F9FA;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 120%;
+                    background-color: transparent;
+                    width: 172px;
+                    height: 40px;
+                    gap: 10px;
+                    border-radius: 100px;
+                    border: 1px solid #F8F9FA;
+                    box-shadow: 2px 4px 0px 0px #F8F9FA;
+                }
+
+                .overlay-button:hover {
+                    cursor: pointer;
+                    background-color: #F87A55;
+                    box-shadow: none;
+                    transform: translateY(+4px) translateX(+6px);
+                }
+
                 #blue-sticker {
                     position: absolute;
+                    z-index: 3;
                     left: 0;
-                    bottom: 0;
+                    bottom: 32px;
                 }
             }
 
