@@ -35,7 +35,6 @@ main {
                 animation: slideLeftRight 3s infinite;
             }
         }
-
         .project-div {
             width: 560px;
             .project-img-div {
@@ -103,7 +102,6 @@ main {
                     bottom: 32px;
                 }
             }
-
             .project-text-div {
                 .project-title {
                     font-weight: 700;
@@ -257,7 +255,6 @@ main {
             }
         }
     }
-
     .lower-content {
         gap: 60px;
         .project-div {
@@ -295,7 +292,6 @@ main {
             }
         }
     }
-
     .lower-content {
         gap: 20px;
         .project-div {
@@ -326,7 +322,6 @@ main {
                     animation: none;
                 }
             }
-
             .project-div{
                 max-width: 343px;
                 position: relative;
@@ -398,34 +393,13 @@ main {
     }
 }
 
-
 @keyframes slideLeftRight {
-    0% {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    }
-    15% {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    70% {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-    85% {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    }
-    100% {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    }
-}
-
-
-@keyframes wobble {
-    0% {
-        transform: translateY(0);
-    }
-    30% {
-        transform: translateY(-15px);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
+    0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+    15%, 70% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+    85%, 100% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  }
+  @keyframes wobble {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+  }
