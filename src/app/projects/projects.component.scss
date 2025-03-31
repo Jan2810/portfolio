@@ -45,7 +45,10 @@ main {
             .project-img-div {
                 position: relative;
                 margin-bottom: 48px;
-                animation: wobble 2s infinite;
+                
+                .project-img {
+                    animation: wobble 2s infinite;
+                }
 
                 #blue-sticker {
                     position: absolute;
