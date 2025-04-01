@@ -43,36 +43,6 @@ main {
     }
 }
 
-@keyframes slideRightLeft {
-    0% {
-        /* Start: Alles ist auf der rechten Seite (keine Breite sichtbar) */
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    }
-
-    5% {
-        /* Mitte: Das gesamte Element ist sichtbar */
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    70% {
-        /* Mitte: Das gesamte Element ist weiterhin sichtbar */
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    85% {
-        /* Ende: Wieder nur der rechte Rand (unsichtbar) */
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    }
-
-    100% {
-        /* Ende: Immer noch unsichtbar am rechten Rand */
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    }
-}
-
-
-
-
 .lower-content {
     display: flex;
     flex-direction: row;
@@ -103,7 +73,7 @@ main {
         .card-hovereffect {
             position: absolute;
             opacity: 0;
-            transition: opacity 0.3s ease-in-out; 
+            transition: opacity 0.3s ease-in-out;
         }
 
         .colleague {
@@ -117,7 +87,6 @@ main {
             padding: 48px 40px;
 
             .colleague-thoughts {
-                max-width: 432px;
                 width: 100%;
                 font-weight: 400;
                 font-size: 18px;
@@ -210,5 +179,127 @@ main {
         .colleague-info {
             color: white;
         }
+    }
+}
+
+@media (max-width: 1240px) {
+    .lower-content {
+        .card-div {
+            width: 327px;
+            height: 343px;
+
+            .card {
+                width: 327px;
+                height: 343px;
+            }
+
+            .colleague {
+                padding: 16px;
+
+                .colleague-info {
+                    max-width: 279px;
+                }
+            }
+
+            .card-hovereffect {
+                width: 327px;
+                height: 343px;
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 343px;
+    }
+
+    .upper-content {
+        width: 343px;
+        margin-bottom: 32px;
+        justify-content: flex-end;
+        text-align: end;
+    
+        .animation-div {
+            display: flex;
+            flex-direction: row;
+    
+            .animation-blue-arrow {
+                margin-right: 8px;
+                animation: none;
+            }
+        }
+    
+        h3 {
+            font-size: 18px;
+        }
+    
+        h2 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 64px;
+            letter-spacing: 0%;
+            margin-bottom: 32px;
+        }
+    }
+
+    .lower-content {
+      flex-direction: column-reverse;
+      align-items: center;
+      height: auto;
+      width: 100%;
+    }
+  
+    #card1 {
+      position: relative;
+      transform: rotate(-4deg);
+      left: 0;
+      top: 0;
+      right: 0;
+      padding-bottom: 0px;
+      padding-top: 0;
+    }
+
+    #card2 {
+        position: relative;
+        transform: none;
+        left: 0;
+        top: 0;
+        right: 0;
+        padding-bottom: 0px;
+        padding-top: 0;
+    }
+
+    #card3 {
+        position: relative;
+        transform: rotate(4deg);
+        left: 0;
+        top: 0;
+        right: 0;
+        padding-bottom: 0px;
+        padding-top: 0;
+    }
+  }
+  
+
+@keyframes slideRightLeft {
+    0%,
+    85%,
+    100% {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    }
+    5%,
+    70% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 }
