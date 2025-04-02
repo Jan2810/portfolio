@@ -4,6 +4,8 @@
 
         <div class="left-content">
 
+            <img class="mobile-sticker" src="./assets/img/contact-form/sticker_orange.png" alt="">
+
             <div class="contact-me-header">
                 <h3>CONTACT ME</h3>
                 <h2>Ready to work together?</h2>
@@ -16,30 +18,30 @@
                 remarkable together!
             </div>
 
-            <img class="arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
+            <img class="desktop-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
 
         </div>
 
         <div class="right-content">
-            <img class="sticker" src="./assets/img/contact-form/sticker_orange.png" alt="">
+            <img class="desktop-sticker" src="./assets/img/contact-form/sticker_orange.png" alt="">
 
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
 
                 <div class="name-div">
                     <div class="seperator-hover"></div>
                     <label class="question" for="name">What's your name?</label><br>
-                    <input #nameField="ngModel" [(ngModel)]="contactData.name" class="answer" type="text" id="name" name="name"
-                    [class.error]="nameField.value?.length < 1 && contactForm.submitted "
-                    [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
+                    <input #nameField="ngModel" [(ngModel)]="contactData.name" class="answer" type="text" id="name"
+                        name="name" [class.error]="nameField.value?.length < 1 && contactForm.submitted " [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
                     ? 'Oops! It seems your name is missing' 
-                    : 'Your name goes here'" required> 
+                    : 'Your name goes here'" required>
                     <div class="seperator"></div>
                 </div>
 
                 <div class="email-div">
                     <div class="seperator-blue-first"></div>
                     <label class="question" for="email">What's your email?</label><br>
-                    <input #emailField="ngModel" [(ngModel)]="contactData.email" class="answer" type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                    <input #emailField="ngModel" [(ngModel)]="contactData.email" class="answer" type="text" id="email"
+                        name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                         placeholder="youremail@email.com" required>
                     <div class="seperator"></div>
                 </div>
@@ -47,8 +49,9 @@
                 <div class="message-div">
                     <div class="seperator-blue-second"></div>
                     <label class="question" for="message">How can i help you?</label><br>
-                    <input #messageField="ngModel" [(ngModel)]="contactData.message" class="answer" type="text" id="message"
-                        name="message" [class.error]="!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted"
+                    <input #messageField="ngModel" [(ngModel)]="contactData.message" class="answer" type="text"
+                        id="message" name="message"
+                        [class.error]="!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted"
                         [placeholder]="(!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted)
                         ? 'What do you need to develop?' 
                         : 'Hello Jan, I am interested in...'" required>
@@ -62,16 +65,12 @@
                         data as
                         outlined.</label>
                 </div>
-
+                <img class="mobile-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
                 <button [disabled]="!isChecked" type="submit">Send</button>
 
             </form>
         </div>
-
     </div>
-
-    <app-footer>
-
-    </app-footer>
+    <app-footer></app-footer>
 
 </main>

@@ -14,8 +14,11 @@ main {
 
 .content {
     margin-top: 144px;
+    margin-right: 120px;
+    margin-left: 120px;
     height: 560px;
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -23,6 +26,10 @@ main {
     .left-content {
         width: 560px;
         position: relative;
+
+        .mobile-sticker {
+            display: none;
+        }
 
         .contact-me-header {
             h3 {
@@ -53,12 +60,11 @@ main {
         }
     }
 
-
     .right-content {
         width: 480px;
         position: relative;
 
-        .sticker {
+        .desktop-sticker {
             position: absolute;
             right: 0;
             z-index: 2;
@@ -288,31 +294,165 @@ main {
     }
 }
 
-
-.arrow-yellow {
+.desktop-arrow-yellow {
     animation: slideLeftRight 3.5s infinite;
     position: absolute;
     right: 0;
 }
 
+.mobile-arrow-yellow {
+    display: none;
+}
+
+@media (max-width: 1340px) {
+    .content {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1240px) {
+    .content {
+        max-width: 1000px;
+
+        .left-content {
+            width: 480px;
+        }
+    }
+}
+
+@media (max-width: 1080px) {
+    .content {
+        max-width: 900px;
+
+        .left-content {
+            width: 440px;
+        }
+
+        .right-content {
+            width: 400px;
+
+            form {
+                width: 400px;
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    main {
+        height: 1480px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .content {
+        height: 1160px;
+        margin-top: 88px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 343px;
+
+        .left-content {
+            margin-top: 144px;
+            width: 343px;
+
+            .contact-me-header {
+                h3 {
+                    font-size: 18px;
+                }
+
+                h2 {
+                    font-size: 48px;
+                }
+            }
+
+            .mobile-sticker {
+                display: flex;
+                position: absolute;
+                width: 120px;
+                right: 0;
+                top: -120px;
+            }
+        }
+
+        .right-content {
+            display: flex;
+            justify-content: center;
+            width: 343px;
+
+            form {
+                position: static;
+                padding-top: 0px;
+                width: 343px;
+                height: 448px;
+
+                .answer {
+                    max-width: 296px;
+                }
+
+                .email-div {
+                    &:hover { 
+                        .seperator-blue-first {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .message-div {
+                    &:hover { 
+                        .seperator-blue-second {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+                .checkbox {
+                    max-width: 343px;
+                    display: flex;
+                    align-items: center;
+
+                    #checkbox {
+                        min-width: 20px;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+
+        .seperator-hover {
+            display: none;
+        }
+    }
+
+    .desktop-sticker {
+        display: none;
+    }
+
+    .desktop-arrow-yellow {
+        display: none;
+    }
+
+    .mobile-arrow-yellow {
+        display: block;
+        width: 156px;
+        position: absolute;
+        bottom: 0;
+        left: 16;
+        animation: slideLeftRight 3.5s infinite;
+    }
+}
+
 @keyframes slideLeftRight {
-    0% {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    }
 
-    15% {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    70% {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    85% {
-        clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    }
-
+    0%,
+    85%,
     100% {
         clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    15%,
+    70% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 }

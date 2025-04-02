@@ -13,15 +13,30 @@
             <a href="https://github.com/Jan2810" target="_blank">GitHub</a>
             <img src="./assets/img/footer/logo_github.png" alt="">
         </div>
-    
+
         <div class="wrapper-div-right">
             <a href="https://www.linkedin.com/in/jan-steiner-4195a6320/" target="_blank">LinkedIn</a>
             <img src="./assets/img/footer/logo_linkedin.png" alt="">
         </div>
-    
+
         <div class="wrapper-div-right">
             <a href="mailto:jansteiner.dev@proton.com">Email</a>
             <img class="img-mail" src="./assets/img/footer/logo_mail.png" alt="">
+        </div>
+    </div>
+
+    <div class="mobile-content">
+        <div class="upper-content">
+            <img class="initials-logo" (mouseover)="changeImg()" (mouseleave)="resetImg()" [src]="imgSrc" alt="">
+            <div>
+                <p>© Jan Steiner 2025</p>
+                <a class="footer-links" href="#">Legal Notice</a>
+            </div>
+        </div>
+        <div class="lower-content">
+            <a href="https://github.com/Jan2810" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/jan-steiner-4195a6320/" target="_blank">LinkedIn</a>
+            <a href="mailto:jansteiner.dev@proton.com">Email</a>
         </div>
     </div>
 </main>
