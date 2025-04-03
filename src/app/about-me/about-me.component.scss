@@ -162,28 +162,92 @@ main {
 }
 
 @media (max-width:1300px) {
-    .content-left {
-        max-width: 343px !important;
 
-        .stripe-div {
-            max-width: 343px !important;
-            width: 100%;
+    .content {
+        .content-left {
+            max-width: 520px;
 
-            .stripe-img {
-                width: 444px !important;
+            .stripe-div {
+                max-width: 520px;
+                width: 100%;
+
+                .stripe-img {
+                    width: 520px;
+                }
+
+                .stripe-content {
+                    .content-text {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .content-right {
+            max-width: 520px;
+        }
+    }
+
+
+    @media (max-width:1200px) {
+        .content {
+            .content-left {
+                max-width: 460px;
+    
+                .stripe-div {
+                    max-width: 460px;
+                    width: 100%;
+    
+                    .stripe-img {
+                        width: 460px;
+                    }
+    
+                    .stripe-content {
+                        .content-text {
+                            font-size: 20px;
+                        }
+                    }
+                }
             }
 
-            .stripe-content {
-                .content-text {
-                    font-size: 20px !important;
+            .content-right {
+                max-width: 460px;
+
+                .animation-blue-line {
+                    margin-bottom: 28px;
                 }
             }
         }
     }
 
-    @media (max-width:1140px) {
+ 
+    @media (max-width: 1090px) {
+        .content {
+            .content-left {
+                max-width: 380px;
+    
+                .stripe-div {
+                    max-width: 380px;
+                    width: 100%;
+    
+                    .stripe-img {
+                        width: 380px;
+                    }
+    
+                    .stripe-content {
+                        .content-text {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    @media (max-width:990px) {
         main {
-            height: 976px;
+            height: 1040px;
         }
 
         .content {
@@ -193,7 +257,7 @@ main {
 
             .content-left {
                 height: 304px;
-
+                max-width: 343px;
                 .stripe-div {
                     height: 128px;
 
@@ -214,7 +278,7 @@ main {
             }
 
             .content-right {
-                max-width: 444px;
+                max-width: 343px;
                 width: 100%;
 
                 h3 {
@@ -248,7 +312,7 @@ main {
                     button {
                         position: unset;
                         border: 1px solid #0E1013;
-                        box-shadow:none;
+                        box-shadow: none;
                     }
                 }
 
@@ -262,7 +326,7 @@ main {
             margin-right: 16px;
 
             .content-left {
-                padding-top: 40px!important;
+                padding-top: 40px !important;
                 height: 304px;
 
                 .stripe-div {
