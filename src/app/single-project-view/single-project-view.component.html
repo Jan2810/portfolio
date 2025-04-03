@@ -3,8 +3,8 @@
     <div class="content">
 
         <app-header class="single-project-header"></app-header>
-        
-        
+
+
         <div class="link-go-back-div">
             <a href="#"><img class="arrow-back" src="./assets/img/single_project_view/arrow_back.png" alt=""></a>
             <a class="go-back-link" href="#">Go Back</a>
@@ -45,7 +45,7 @@
 
 
             <div class="project-content-right">
-                <img src=" {{ project.imgPath }} " alt="">
+                <img class="project-img" src=" {{ project.imgPath }} " alt="">
                 <img class="sticker" src=" {{ project.sticker }} " alt="">
                 <div class="button-div">
                     <button>GitHub</button>
@@ -57,7 +57,8 @@
 
         <div class="link-next-project-div">
             <a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
-            <a (click)="nextProject()" [routerLink]="['/project']"><img class="arrow-next" src="./assets/img/single_project_view/arrow_next.png" alt=""></a>
+            <a (click)="nextProject()" [routerLink]="['/project']"><img class="arrow-next"
+                    src="./assets/img/single_project_view/arrow_next.png" alt=""></a>
         </div>
     </div>
 </main>
