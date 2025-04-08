@@ -16,7 +16,6 @@ main {
 }
 
 .content {
-    max-width: 375px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -41,6 +40,7 @@ main {
 }
 
 .links {
+    max-width: 375px;
     display: flex;
     flex-direction: column;
     margin-top: 64px;
@@ -111,6 +111,7 @@ main {
 }
 
 .footer {
+    max-width: 375px;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -124,5 +125,13 @@ main {
 }
 
 .open {
+    transition: transform 0.9 ease-in-out;
     transform: translateY(0px);
+}
+
+
+@media (min-width: 1040px) {
+    main {
+        display: none;
+    }
 }

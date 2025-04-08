@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "../shared/header/header.component";
 import { SingleProject, projects } from '../interfaces/single-project.interface';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
+import { BurgerMenuComponent } from "../burger-menu/burger-menu.component";
 
 @Component({
   selector: 'app-single-project-view',
@@ -11,7 +12,8 @@ import { RouterModule, ActivatedRoute, Router } from '@angular/router';
     HeaderComponent,
     CommonModule,
     RouterModule,
-  ],
+    BurgerMenuComponent
+],
   templateUrl: './single-project-view.component.html',
   styleUrl: './single-project-view.component.scss'
 })
