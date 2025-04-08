@@ -89,7 +89,7 @@
 }
 
 .mobile-content {
-    display: none;
+    display: none !important;
     display: flex;
     flex-direction: column;
     width: 343px;
@@ -171,7 +171,7 @@
     }
 
     .mobile-content {
-        display: flex;
+        display: flex!important;
     }
 }
 

@@ -1,16 +1,16 @@
-<main>
+<main [ngClass]="{'open': isOpen}">
     <div class="content">
         <div class="header">
             <img class="initials-logo" src="./assets/img/header/logo_blue.png" alt="">
-            <img src="./assets/img/burger_menu/close.png" alt="">
+            <img class="burger-btn" (click)="toggleMenu()" src="./assets/img/burger_menu/close.png" alt="">
         </div>
 
         <div class="links">
 
-            <a href="">About me</a>
-            <a href="">Skills</a>
-            <a href="">Projects</a>
-            <a href="">Contact</a>
+            <a (click)="toggleMenu()" href="#aboutMe">About me</a>
+            <a (click)="toggleMenu()" href="#skillSet">Skills</a>
+            <a (click)="toggleMenu()" href="#projects">Projects</a>
+            <a (click)="toggleMenu()" href="#contact">Contact</a>
 
             <div class="mobile toggle-language">
                 <div (click)="toggleToEnglish()" class="wrapper-div-eng">

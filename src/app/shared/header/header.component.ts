@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MenuService } from '../../services/menu.service';
 
 
 @Component({
@@ -10,6 +11,8 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+
+  constructor(private menuService: MenuService) { }
 
   engIsActive: boolean = true;
   deIsActive: boolean = false;
@@ -30,7 +33,6 @@ export class HeaderComponent {
     this.engIsActive = false;
   }
 
-
   logoImgSrc: String = "./assets/img/header/logo_blue.png"
 
   changeLogo() {
@@ -39,5 +41,9 @@ export class HeaderComponent {
 
   resetLogo() {
     this.logoImgSrc = "./assets/img/header/logo_blue.png";
+  }
+
+  toggleMenu() {
+    this.menuService.toggleMenu();
   }
 }
