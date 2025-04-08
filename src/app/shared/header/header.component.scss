@@ -16,7 +16,7 @@ header {
         margin-bottom: 19px;
 
         .my-logo {
-         width: 64px;
+            width: 64px;
         }
 
         .wrapper-div {
@@ -69,6 +69,7 @@ header {
         .wrapper-div-eng {
             position: relative;
             color: #F87A55;
+
             img {
                 opacity: 0;
                 height: 32px;
@@ -76,6 +77,7 @@ header {
                 position: absolute;
                 bottom: -8px;
                 left: -6px;
+
                 &:hover {
                     opacity: 1;
                 }
@@ -84,6 +86,7 @@ header {
 
         .wrapper-div-de {
             position: relative;
+
             img {
                 opacity: 0;
                 height: 32px;
@@ -91,6 +94,7 @@ header {
                 position: absolute;
                 bottom: -8px;
                 left: -6px;
+
                 &:hover {
                     opacity: 1;
                 }
@@ -198,6 +202,20 @@ header {
 }
 
 @media (max-width:960px) {
+
+    header {
+        width: 100%;
+        background: linear-gradient(to bottom, #222222, transparent 100%);
+        display: flex;
+        justify-content: center;
+
+        .header-content {
+            max-width: 800px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
 
     .my-logo {
         width: 32px !important;
