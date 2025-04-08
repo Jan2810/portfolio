@@ -6,6 +6,7 @@ import { SkillSetComponent } from '../skill-set/skill-set.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ColleagueThoughtsComponent } from '../colleague-thoughts/colleague-thoughts.component';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { BurgerMenuComponent } from "../burger-menu/burger-menu.component";
 
 @Component({
   selector: 'app-homepage',
@@ -17,8 +18,9 @@ import { ContactFormComponent } from '../contact-form/contact-form.component';
     SkillSetComponent,
     ProjectsComponent,
     ColleagueThoughtsComponent,
-    ContactFormComponent
-  ],
+    ContactFormComponent,
+    BurgerMenuComponent
+],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })

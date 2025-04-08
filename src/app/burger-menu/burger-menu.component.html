@@ -1,0 +1,37 @@
+<main>
+    <div class="content">
+        <div class="header">
+            <img class="initials-logo" src="./assets/img/header/logo_blue.png" alt="">
+            <img src="./assets/img/burger_menu/close.png" alt="">
+        </div>
+
+        <div class="links">
+
+            <a href="">About me</a>
+            <a href="">Skills</a>
+            <a href="">Projects</a>
+            <a href="">Contact</a>
+
+            <div class="mobile toggle-language">
+                <div (click)="toggleToEnglish()" class="wrapper-div-eng">
+                    <img src="./assets/img/header/hover_square_eng.png" alt="">
+                    <P [ngStyle]="{color: engIsActive ? activeColor : inactiveColor}">EN</P>
+                </div>
+                <img class="toggle-img" [src]="toggleImgSrc" alt="">
+                <div (click)="toggleToGerman()" class="wrapper-div-de">
+                    <img src="./assets/img/header/hover_square_de.png" alt="">
+                    <p [ngStyle]="{color: deIsActive ? activeColor : inactiveColor}">DE</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="social-links">
+                <img src="./assets/img/landing_page/logo_linked_in.png" alt="">
+                <img src="./assets/img/landing_page/logo_github.png" alt="">
+                <img src="./assets/img/landing_page/logo_mail.png" alt="">
+            </div>
+        </div>
+    </div>
+</main>
