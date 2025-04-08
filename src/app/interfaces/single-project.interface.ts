@@ -8,6 +8,8 @@ export interface SingleProject {
     imgPath: string;
     sticker: string;
     usedTools: Tool[];
+    github: string;
+    liveTest: string;
 }
 
 export const projects: SingleProject[] = [
@@ -24,6 +26,8 @@ export const projects: SingleProject[] = [
             { img: './assets/img/single_project_view/logo_html.png', name: 'HTML' },
             { img: './assets/img/single_project_view/logo_css.png', name: 'CSS' },
         ],
+        github: 'https://github.com/Jan2810/join',
+        liveTest: ''
     },
     {
         title: 'El Pollo Loco',
@@ -37,6 +41,8 @@ export const projects: SingleProject[] = [
             { img: './assets/img/single_project_view/logo_html.png', name: 'HTML' },
             { img: './assets/img/single_project_view/logo_css.png', name: 'CSS' },
         ],
+        github: 'https://github.com/Jan2810/el-pollo-loco',
+        liveTest: ''
     },
     {
         title: 'DABubble',
@@ -52,5 +58,7 @@ export const projects: SingleProject[] = [
             { img: './assets/img/single_project_view/logo_html.png', name: 'HTML' },
             { img: './assets/img/single_project_view/logo_css.png', name: 'CSS' },
         ],
+        github: '',
+        liveTest: ''
     }
 ]
