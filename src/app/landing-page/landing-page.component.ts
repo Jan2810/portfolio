@@ -21,7 +21,7 @@ export class LandingPageComponent {
       this.isEnglish = lang;
     });
   }
-
+  
   changeText() {
     if (this.isEnglish) {
     this.buttonText = "I'M JAN STEINER";

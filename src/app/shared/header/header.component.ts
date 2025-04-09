@@ -25,7 +25,7 @@ export class HeaderComponent {
     this.languageService.language$.subscribe(lang => {
       this.isEnglish = lang;
     });
-   }
+  }
 
   toggleLanguage(): void {
     this.languageService.setLanguage(!this.isEnglish);

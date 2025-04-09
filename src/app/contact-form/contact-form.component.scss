@@ -120,9 +120,11 @@ main {
             }
 
             #checkbox {
+                width: max-content;
                 appearance: none;
                 width: 20px;
                 height: 20px;
+                padding-right: 8px;
                 margin-right: 8px;
                 margin-top: 2px;
                 border: 2px solid #3355FF;

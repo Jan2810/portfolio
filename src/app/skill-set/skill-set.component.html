@@ -2,7 +2,10 @@
     <div class="content">
         <div class="upper-content">
             <div class="responsive-div">
-                <h3>MY STACK</h3>
+                <h3 *ngIf="isEnglish; else germanText">MY STACK</h3>
+                <ng-template #germanText>
+                    <h3>MEIN STACK</h3>
+                </ng-template>
                 <div class="wrapper-div">
                     <img class="animation-red-circle" src="./assets/img/skill_set/animation_red_circle.png" alt="">
                     <h2>Skill set</h2>
@@ -10,9 +13,12 @@
             </div>
 
             <img src="./assets/img/skill_set/label_white_rip.png" alt="">
-            <p>
-                I have extensive experience in front-end development and work agilely on innovative web solutions. I'm always open to new ideas and constantly learning.
-            </p>
+            <p *ngIf="isEnglish; else germanText2">I have extensive experience in front-end development and work agilely
+                on innovative web solutions. I'm always open to new ideas and constantly learning.</p>
+            <ng-template #germanText2>
+                <p>Ich verfüge über umfangreiche Erfahrung in der Frontend-Entwicklung und arbeite agil an innovativen
+                    Weblösungen. Ich bin stets offen für neue Ideen und lerne ständig dazu.</p>
+            </ng-template>
         </div>
         <div class="lower-content">
 

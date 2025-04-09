@@ -2,14 +2,28 @@
 
     <div class="upper-content">
         <div class="headline-div">
-            <h3>MY CRAFT</h3>
-            <h2>Projects</h2>
+            <h3 *ngIf="isEnglish; else germanText">MY CRAFT</h3>
+            <ng-template #germanText>
+                <h3>MEINE ARBEIT</h3>
+            </ng-template>
+            <h2 *ngIf="isEnglish; else germanText2">Projects</h2>
+            <ng-template #germanText2>
+                <h2>Projekte</h2>
+            </ng-template>
             <img class="yellow-underline" src="./assets/img/projects/animation_yellow_line.png" alt="">
-            <p class="introduction">
+            <p *ngIf="isEnglish; else germanText3" class="introduction">
                 Hey there, check out my projects! I build responsive, user-friendly web experiences with efficient,
                 clean code that works seamlessly on any device. Dive in, explore, and interact—I'm always excited to
                 get feedback and collaborate on cool ideas!
             </p>
+            <ng-template #germanText3>
+                <p class="introduction">Hi, das ist eine Auswahl meiner Projekte! Ich entwickle responsive,
+                    benutzerfreundliche Web-Applikationen mit effizientem, sauberem Code, der auf jedem Gerät
+                    reibungslos
+                    funktioniert. Taucht ein, entdeckt und interagiert - ich freue mich immer über Feedback und die
+                    Zusammenarbeit an coolen Ideen!
+                </p>
+            </ng-template>
         </div>
         <div class="project-div">
             <div class="project-img-div">
@@ -23,9 +37,14 @@
             </div>
             <div class="project-text-div">
                 <p class="project-title">Join</p>
-                <p class="project-description">Task manager inspired by the Kanban System. Create and organize tasks
+                <p *ngIf="isEnglish; else germanText4" class="project-description">Task manager inspired by the Kanban
+                    System. Create and organize tasks
                     using
                     drag and drop functions, assign users and categories. </p>
+                <ng-template #germanText4>
+                    <p class="project-description">Aufgabenmanager, inspiriert vom Kanban-System. Erstellen und
+                        organisieren Sie Aufgaben per Drag & Drop und weisen Sie Benutzer und Kategorien zu.</p>
+                </ng-template>
             </div>
             <button class="mobile-btn" [routerLink]="['/project', 'join']">Project details</button>
         </div>
@@ -43,8 +62,13 @@
             </div>
             <div class="project-text-div">
                 <p class="project-title">El Pollo Loco</p>
-                <p class="project-description">Jump, run and throw game based on object-oriented approach. Help Pepe to
+                <p *ngIf="isEnglish; else germanText5" class="project-description">Jump, run and throw game based on
+                    object-oriented approach. Help Pepe to
                     find coins and tabasco salsa to fight against the crazy hen.</p>
+                <ng-template #germanText5>
+                    <p class="project-description">Objektorientiertes Jump & Run-Game. Hilf Pepe, Münzen
+                        und Tabasco-Salsa zu finden, um gegen die verrückte Henne zu kämpfen.</p>
+                </ng-template>
             </div>
             <button class="mobile-btn" [routerLink]="['/project', 'elpolloloco']">Project details</button>
         </div>
@@ -59,9 +83,16 @@
             </div>
             <div class="project-text-div">
                 <p class="project-title">Da Bubble</p>
-                <p class="project-description">This App is a Slack Clone App. It revolutionizes team communication and
+                <p *ngIf="isEnglish; else germanText6" class="project-description">This App is a Slack Clone App. It
+                    revolutionizes team communication and
                     collaboration with its intuitive interface, real-time messaging, and robust channel organization.
                 </p>
+                <ng-template #germanText6>
+                    <p class="project-description">
+                        Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit
+                        ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robusten Kanalorganisation.
+                    </p>
+                </ng-template>
             </div>
             <button class="mobile-btn" [routerLink]="['/project', 'dabubble']">Project details</button>
         </div>

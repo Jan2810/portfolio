@@ -7,16 +7,34 @@
             <img class="mobile-sticker" src="./assets/img/contact-form/sticker_orange.png" alt="">
 
             <div class="contact-me-header">
-                <h3>CONTACT ME</h3>
-                <h2>Ready to work together?</h2>
+                <h3 *ngIf="isEnglish; else germanText">CONTACT ME</h3>
+                <ng-template #germanText>
+                    <h3>Kontaktieren Sie mich</h3>
+                </ng-template>
+
+                <h2 *ngIf="isEnglish; else germanText2">Ready to work together?</h2>
+                <ng-template #germanText2>
+                    <h2>Bereit zusammen zu arbeiten?</h2>
+                </ng-template>
             </div>
-            <div class="contact-me-description">
+
+            <div *ngIf="isEnglish; else germanText3" class="contact-me-description">
                 I'm on the lookout for opportunities as a front-end developer, ready to dive into new projects and make
                 a real impact. With a passion for creating responsive, user-friendly solutions and a knack for efficient
                 coding, I'm confident I can bring valuable expertise and a fresh perspective to any team. If you're
                 looking for someone enthusiastic, dedicated, and eager to learn, let's connect and build something
                 remarkable together!
             </div>
+            <ng-template #germanText3>
+                <div class="contact-me-description">
+                    Ich bin auf der Suche nach Möglichkeiten als Frontend-Entwickler und bereit, mich in neue Projekte
+                    zu stürzen und wirklich etwas zu bewirken. Mit meiner Leidenschaft für responsive,
+                    benutzerfreundliche Lösungen und meinem Gespür für effizientes Programmieren bin ich überzeugt, dass
+                    ich jedes Team mit wertvollem Fachwissen und einer frischen Perspektive bereichern kann. Wenn Sie
+                    jemanden suchen, der begeistert, engagiert und lernbegierig ist, lassen Sie uns in Kontakt treten
+                    und gemeinsam etwas Außergewöhnliches schaffen!
+                </div>
+            </ng-template>
 
             <img class="desktop-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
 
@@ -29,44 +47,96 @@
 
                 <div class="name-div">
                     <div class="seperator-hover"></div>
-                    <label class="question" for="name">What's your name?</label><br>
-                    <input #nameField="ngModel" [(ngModel)]="contactData.name" class="answer" type="text" id="name"
-                        name="name" [class.error]="nameField.value?.length < 1 && contactForm.submitted " [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
+
+                    <label *ngIf="isEnglish; else germanText4" class="question" for="name">What's your name?</label><br>
+                    <ng-template #germanText4>
+                        <label class="question" for="name">Wie ist dein Name?</label>
+                    </ng-template>
+
+                    <input *ngIf="isEnglish; else germanText5" #nameField="ngModel" [(ngModel)]="contactData.name"
+                        class="answer" type="text" id="name" name="name"
+                        [class.error]="nameField.value?.length < 1 && contactForm.submitted " [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
                     ? 'Oops! It seems your name is missing' 
                     : 'Your name goes here'" required>
+                    <ng-template #germanText5>
+                        <input #nameField="ngModel" [(ngModel)]="contactData.name" class="answer" type="text" id="name"
+                            name="name" [class.error]="nameField.value?.length < 1 && contactForm.submitted "
+                            [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
+                    ? 'Oops! Hier fehlt etwas' 
+                    : 'Hier deinen Namen eintragen'" required>
+                    </ng-template>
+
                     <div class="seperator"></div>
                 </div>
 
                 <div class="email-div">
                     <div class="seperator-blue-first"></div>
-                    <label class="question" for="email">What's your email?</label><br>
-                    <input #emailField="ngModel" [(ngModel)]="contactData.email" class="answer" type="text" id="email"
-                        name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                        placeholder="youremail@email.com" required>
+
+                    <label *ngIf="isEnglish; else germanText6" class="question" for="email">What's your
+                        email?</label><br>
+                    <ng-template #germanText6>
+                        <label class="question" for="email">Wie lautet deine E-Mail?</label>
+                    </ng-template>
+
+                    <input *ngIf="isEnglish; else germanText7" #emailField="ngModel" [(ngModel)]="contactData.email"
+                        class="answer" type="text" id="email" name="email"
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="youremail@email.com"
+                        required>
+                    <ng-template #germanText7>
+                        <input #emailField="ngModel" [(ngModel)]="contactData.email" class="answer" type="text"
+                            id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                            placeholder="deineemail@email.com" required>
+                    </ng-template>
+
                     <div class="seperator"></div>
                 </div>
 
                 <div class="message-div">
                     <div class="seperator-blue-second"></div>
-                    <label class="question" for="message">How can i help you?</label><br>
-                    <input #messageField="ngModel" [(ngModel)]="contactData.message" class="answer" type="text"
-                        id="message" name="message"
+
+                    <label *ngIf="isEnglish; else germanText8" class="question" for="message">How can i help
+                        you?</label><br>
+                    <ng-template #germanText8>
+                        <label class="question" for="message">Wie kann ich dir helfen?</label>
+                    </ng-template>
+
+                    <input *ngIf="isEnglish; else germanText9" #messageField="ngModel" [(ngModel)]="contactData.message"
+                        class="answer" type="text" id="message" name="message"
                         [class.error]="!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted"
                         [placeholder]="(!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted)
                         ? 'What do you need to develop?' 
                         : 'Hello Jan, I am interested in...'" required>
+
+                    <ng-template #germanText9>
+                        <input #messageField="ngModel" [(ngModel)]="contactData.message" class="answer" type="text"
+                            id="message" name="message"
+                            [class.error]="!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted"
+                            [placeholder]="(!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted)
+                        ? 'Was soll ich dir entwickeln?' 
+                        : 'Hallo Jan, ich habe interesse an...'" required>
+                    </ng-template>
 
                     <div class="seperator"></div>
                 </div>
 
                 <div class="checkbox">
                     <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked">
-                    <label for="checkbox">I've read the <a href="#">privacy policy</a> and agree to the processing of my
+                    <label *ngIf="isEnglish; else germanText10" for="checkbox">I've read the <a href="#">privacy
+                            policy</a> and agree to the processing of my
                         data as
                         outlined.</label>
+
+                    <ng-template #germanText10>
+                        <label for="checkbox">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und bin mit der
+                            darin beschriebenen Verarbeitung meiner Daten einverstanden.
+                        </label>
+                    </ng-template>
                 </div>
                 <img class="mobile-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
-                <button [disabled]="!isChecked" type="submit">Send</button>
+                <button *ngIf="isEnglish; else germanText11" [disabled]="!isChecked" type="submit">Send</button>
+                <ng-template #germanText11>
+                    <button [disabled]="!isChecked" type="submit">Senden</button>
+                </ng-template>
 
             </form>
         </div>

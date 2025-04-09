@@ -5,9 +5,15 @@
             <div class="animation-div">
                 <img class="animation-blue-arrow" src="./assets/img/colleagues_thoughts/animation_blue_arrow.png"
                     alt="">
-                <h3>IN THEIR WORDS:</h3>
+                <h3 *ngIf="isEnglish; else germanText">IN THEIR WORDS:</h3>
+                <ng-template #germanText>
+                    <h3>IN DEREN WORTEN:</h3>
+                </ng-template>
             </div>
-            <h2>Colleagues' Thoughts</h2>
+            <h2 *ngIf="isEnglish; else germanText2">Colleagues' Thoughts</h2>
+            <ng-template #germanText2>
+                <h2>Gedanken der Kollegen</h2>
+            </ng-template>
         </div>
 
         <div class="lower-content">
@@ -24,7 +30,7 @@
                     </p>
                     <div class="colleague-info">
                         <div>
-                            <p class="colleague-name">Mike Schauber</p>
+                            <p class="colleague-name">Max Mustermann</p>
                             <p class="colleague-job">Frontend Developer</p>
                         </div>
                         <div>
@@ -38,11 +44,16 @@
                 <img class="card" src="./assets/img/colleagues_thoughts/card_orange.png" alt="">
                 <img class="card-hovereffect" src="./assets/img/colleagues_thoughts/card_hovereffect.png" alt="">
                 <div class="colleague">
-                    <p class="colleague-thoughts">
+                    <p *ngIf="isEnglish; else germanText3" class="colleague-thoughts">
                         „Jan is a reliable and competent developer. He mastered the challenging task of creating the
                         dashboard for our task management app with ease and contributed significantly to the success of
                         the project with his precise and efficient approach.“
                     </p>
+                    <ng-template #germanText3>
+                        „Jan ist ein zuverlässiger und kompetenter Entwickler. Er meisterte die anspruchsvolle Aufgabe,
+                        das Dashboard für unsere Aufgabenmanagement-App zu erstellen, mit Leichtigkeit und trug mit
+                        seiner präzisen und effizienten Vorgehensweise maßgeblich zum Erfolg des Projekts bei.“
+                    </ng-template>
                     <div class="colleague-info">
                         <div>
                             <p class="colleague-name">Mike Schauber</p>
@@ -61,9 +72,14 @@
                 <img class="card" src="./assets/img/colleagues_thoughts/card_orange.png" alt="">
                 <img class="card-hovereffect" src="./assets/img/colleagues_thoughts/card_hovereffect.png" alt="">
                 <div class="colleague">
-                    <p class="colleague-thoughts">
-                        „Jan writes clean, well-thought-out code and always finds clever solutions. A reliable developer and a great colleague!!“
+                    <p *ngIf="isEnglish; else germanText4" class="colleague-thoughts">
+                        „Jan writes clean, well-thought-out code and always finds clever solutions. A reliable developer
+                        and a great colleague!!“
                     </p>
+                    <ng-template #germanText4>
+                        „Jan schreibt sauberen, durchdachten Code und findet immer clevere Lösungen. Ein zuverlässiger
+                        Entwickler und ein toller Kollege!“
+                    </ng-template>
                     <div class="colleague-info">
                         <div>
                             <p class="colleague-name">Felix Kirmse</p>

@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, NgForm } from '@angular/forms';
 import { FooterComponent } from './../shared/footer/footer.component';
 import { HttpClient } from '@angular/common/http';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-contact-form',
@@ -14,17 +15,14 @@ import { HttpClient } from '@angular/common/http';
 export class ContactFormComponent {
 
   http = inject(HttpClient);
-
+  isEnglish: boolean = true;
   isChecked = false;
-
   contactData = {
     name: "",
     email: "",
     message: "",
   }
-
   mailTest = true;
-
   post = {
     endPoint: 'https://deineDomain.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -35,6 +33,12 @@ export class ContactFormComponent {
       },
     },
   };
+
+  constructor(private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.isEnglish = lang;
+    });
+  }
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
