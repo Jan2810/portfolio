@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { MenuService } from '../../services/menu.service';
+import { LanguageService } from '../../services/language.service';
 
 
 @Component({
@@ -12,14 +13,23 @@ import { MenuService } from '../../services/menu.service';
 })
 export class HeaderComponent {
 
-  constructor(private menuService: MenuService) { }
-
+  isEnglish: boolean = true;
   engIsActive: boolean = true;
   deIsActive: boolean = false;
   activeColor: string = '#F87A55';
   inactiveColor: string = '#FFFFFF';
 
   toggleImgSrc: String = './assets/img/header/toggle_left.png';
+
+  constructor(private menuService: MenuService, private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.isEnglish = lang;
+    });
+   }
+
+  toggleLanguage(): void {
+    this.languageService.setLanguage(!this.isEnglish);
+  }
 
   toggleToEnglish() {
     this.toggleImgSrc = './assets/img/header/toggle_left.png';

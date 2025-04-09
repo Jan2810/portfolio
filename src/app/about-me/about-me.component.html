@@ -6,37 +6,62 @@
                 <img class="stripe-img" src="./assets/img/about_me/stripe_yellow.png" alt="">
                 <div class="stripe-content" id="content-yellow">
                     <img class="content-img" src="./assets/img/about_me/locate.png" alt="">
-                    <p class="content-text">Based in Ludwigsburg</p>
+                    <p *ngIf="isEnglish; else germanText" class="content-text">Based in Ludwigsburg</p>
+                    <ng-template #germanText>
+                        <p class="content-text">Lebe in Ludwigsburg</p>
+                    </ng-template>
                 </div>
             </div>
             <div class="stripe-div" id="stripe-div-blue">
                 <img class="stripe-img" src="./assets/img/about_me/stripe_blue.png" alt="">
                 <div class="stripe-content" id="content-blue">
                     <img class="content-img" src="./assets/img/about_me/relocation.png" alt="">
-                    <p class="content-text">Open to relocate</p>
+                    <p *ngIf="isEnglish; else germanText1" class="content-text">Open for businesstrips</p>
+                    <ng-template #germanText1>
+                        <p class="content-text">Bereit für Geschäftsreisen</p>
+                    </ng-template>
                 </div>
             </div>
             <div class="stripe-div">
                 <img class="stripe-img" src="./assets/img/about_me/stripe_red.png" alt="">
                 <div class="stripe-content" id="content-red">
                     <img class="content-img" src="./assets/img/about_me/remote.png" alt="">
-                    <p class="content-text">Open to work remote</p>
+                    <p *ngIf="isEnglish; else germanText2" class="content-text">Open to work remote</p>
+                    <ng-template #germanText2>
+                        <p class="content-text">offen für Remote-Arbeit</p>
+                    </ng-template>
                 </div>
             </div>
         </div>
 
         <div class="content-right">
-            <h3>WHO'S JAN?</h3>
-            <h2>About me</h2>
+            <h3 *ngIf="isEnglish; else germanText3">WHO'S JAN?</h3>
+            <ng-template #germanText3>
+                <h3>WER IST JAN?</h3>
+            </ng-template>
+            <h2 *ngIf="isEnglish; else germanText4">About me</h2>
+            <ng-template #germanText4>
+                <h2>Über mich</h2>
+            </ng-template>
             <img class="animation-blue-line" src="./assets/img/about_me/animation_blue_line.png" alt="">
-            <p>
+            <p *ngIf="isEnglish; else germanText5">
                 Hi, I'm Jan. For me, programming is a creative process in which every challenge offers the opportunity
                 to search for increasingly efficient and elegant solutions. My diverse experiences motivate me every day
                 to try new things and realize innovative projects.
                 <br>
                 Let's work on cool projects together and build something truly extraordinary!
             </p>
-            <a href="#contact"><button>Let's talk</button></a>
+            <ng-template #germanText5>
+                <p>
+                    Hallo, ich bin Jan. Programmieren ist für mich ein kreativer Prozess, bei dem jede Herausforderung
+                    die Möglichkeit bietet, nach immer effizienteren und eleganteren Lösungen zu suchen. Meine
+                    vielfältigen Erfahrungen motivieren mich täglich, Neues auszuprobieren und innovative Projekte zu
+                    realisieren.
+                    Lass uns gemeinsam an coolen Projekten arbeiten und etwas wirklich Außergewöhnliches schaffen!
+                </p>
+            </ng-template>
+            <a *ngIf="isEnglish; else germanText6" href="#contact"><button>Let's talk</button></a>
+            <ng-template #germanText6><a href="#contact"><button>kontaktiere mich</button></a></ng-template>
         </div>
     </div>
 

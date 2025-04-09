@@ -4,7 +4,8 @@
         
         <div class="desktop wrapper-div" id="animate-top-bottom">
             <img class="animation-img" src="./assets/img/header/animation_about_me.png" alt="">
-            <a href="#aboutMe">About me</a>
+            <a *ngIf="isEnglish; else germanText" href="#aboutMe">About me</a>
+            <ng-template #germanText><a href="#aboutMe">Über mich</a></ng-template>
         </div>
 
         <div class="desktop wrapper-div" id="animate-left-right">
@@ -14,21 +15,23 @@
 
         <div class="desktop wrapper-div" id="animate-left-right">
             <img class="animation-img" src="./assets/img/header/animation_projects.png" alt="">
-            <a href="#projects">Projects</a>
+            <a *ngIf="isEnglish; else germanText1" href="#projects">Projects</a>
+            <ng-template #germanText1><a href="#projects">Projekte</a></ng-template>
         </div>
 
         <div class="desktop wrapper-div" id="animate-left-right">
             <img class="animation-img" src="./assets/img/header/animation_contact.png" alt="">
-            <a href="#contact">Contact</a>
+            <a *ngIf="isEnglish; else germanText2" href="#contact">Contact</a>
+            <ng-template #germanText2><a href="#contact">Kontakt</a></ng-template>
         </div>
 
         <div class="desktop toggle-language">
-            <div (click)="toggleToEnglish()" class="wrapper-div-eng">
+            <div (click)="toggleToEnglish(); toggleLanguage()" class="wrapper-div-eng">
                 <img src="./assets/img/header/hover_square_eng.png" alt="">
                 <P [ngStyle]="{color: engIsActive ? activeColor : inactiveColor}">EN</P>
             </div>
             <img class="toggle-img" [src]="toggleImgSrc" alt="">
-            <div (click)="toggleToGerman()" class="wrapper-div-de">
+            <div (click)="toggleToGerman();  toggleLanguage()" class="wrapper-div-de">
                 <img src="./assets/img/header/hover_square_de.png" alt="">
                 <p [ngStyle]="{color: deIsActive ? activeColor : inactiveColor}">DE</p>
             </div>

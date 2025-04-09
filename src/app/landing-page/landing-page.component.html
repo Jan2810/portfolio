@@ -33,7 +33,10 @@
                 <p class="capital-letter">E</p>
                 <p class="capital-letter">R</p>
             </h1>
-            <a href="#contact"><button>Get in Touch</button></a>
+            <a *ngIf="isEnglish; else germanText2" href="#contact"><button>Get in Touch</button></a>
+            <ng-template #germanText2>
+                <a href="#contact"><button>Kontaktiere mich</button></a>
+            </ng-template>
         </div>
     </div>
 

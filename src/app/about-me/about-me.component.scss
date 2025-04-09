@@ -108,12 +108,15 @@ main {
 
         button {
             font-family: 'Bricolage Grotesque';
+            display: flex;
+            align-items: center;
             position: absolute;
             font-size: 18px;
+            padding: 12px 24px;
             right: 0;
             bottom: 0;
             margin-top: 48px;
-            width: 132px;
+            width: fit-content;
             height: 40px;
             border-radius: 100px;
             border: 1px solid #0E1013;
