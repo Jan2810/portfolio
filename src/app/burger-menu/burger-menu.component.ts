@@ -37,6 +37,10 @@ export class BurgerMenuComponent {
     });
   }
 
+  toggleLanguage(): void {
+    this.languageService.setLanguage(!this.isEnglish);
+  }
+
   toggleMenu() {
     this.isOpen = false;
   }

@@ -16,12 +16,12 @@
             <a *ngIf="isEnglish; else germanText4" (click)="toggleMenu()" href="#contact">Contact</a>
             <ng-template #germanText4><a (click)="toggleMenu()" href="#contact">Kontakt</a></ng-template>
             <div class="mobile toggle-language">
-                <div (click)="toggleToEnglish()" class="wrapper-div-eng">
+                <div (click)="toggleToEnglish(); toggleLanguage()" class="wrapper-div-eng">
                     <img src="./assets/img/header/hover_square_eng.png" alt="">
                     <P [ngStyle]="{color: engIsActive ? activeColor : inactiveColor}">EN</P>
                 </div>
                 <img class="toggle-img" [src]="toggleImgSrc" alt="">
-                <div (click)="toggleToGerman()" class="wrapper-div-de">
+                <div (click)="toggleToGerman(); toggleLanguage()" class="wrapper-div-de">
                     <img src="./assets/img/header/hover_square_de.png" alt="">
                     <p [ngStyle]="{color: deIsActive ? activeColor : inactiveColor}">DE</p>
                 </div>
