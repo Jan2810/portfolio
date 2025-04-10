@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MenuService } from '../../services/menu.service';
 import { LanguageService } from '../../services/language.service';
+
 
 
 @Component({
@@ -9,15 +10,15 @@ import { LanguageService } from '../../services/language.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
 
   isEnglish: boolean = true;
   activeColor: string = '#F87A55';
   inactiveColor: string = '#FFFFFF';
-
   toggleImgSrc: String = './assets/img/header/toggle_left.png';
+  @Input() variant: 'default' | 'special' = 'default';
 
   constructor(private menuService: MenuService, private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
