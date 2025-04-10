@@ -14,8 +14,6 @@ import { LanguageService } from '../../services/language.service';
 export class HeaderComponent {
 
   isEnglish: boolean = true;
-  engIsActive: boolean = true;
-  deIsActive: boolean = false;
   activeColor: string = '#F87A55';
   inactiveColor: string = '#FFFFFF';
 
@@ -24,23 +22,14 @@ export class HeaderComponent {
   constructor(private menuService: MenuService, private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
       this.isEnglish = lang;
+      this.toggleImgSrc = this.isEnglish
+      ? './assets/img/header/toggle_left.png' 
+      : './assets/img/header/toggle_right.png';
     });
   }
 
   toggleLanguage(): void {
     this.languageService.setLanguage(!this.isEnglish);
-  }
-
-  toggleToEnglish() {
-    this.toggleImgSrc = './assets/img/header/toggle_left.png';
-    this.engIsActive = true;
-    this.deIsActive = false;
-  }
-
-  toggleToGerman() {
-    this.toggleImgSrc = './assets/img/header/toggle_right.png';
-    this.deIsActive = true;
-    this.engIsActive = false;
   }
 
   logoImgSrc: String = "./assets/img/header/logo_blue.png"

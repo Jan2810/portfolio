@@ -28,6 +28,9 @@ export class BurgerMenuComponent {
     private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
       this.isEnglish = lang;
+      this.toggleImgSrc = this.isEnglish
+      ? './assets/img/header/toggle_left.png' 
+      : './assets/img/header/toggle_right.png';
     });
   }
 
@@ -47,17 +50,5 @@ export class BurgerMenuComponent {
 
   ngOnDestroy(): void {
     this.toggleSubscription.unsubscribe();
-  }
-
-  toggleToEnglish() {
-    this.toggleImgSrc = './assets/img/header/toggle_left.png';
-    this.engIsActive = true;
-    this.deIsActive = false;
-  }
-
-  toggleToGerman() {
-    this.toggleImgSrc = './assets/img/header/toggle_right.png';
-    this.deIsActive = true;
-    this.engIsActive = false;
   }
 }
