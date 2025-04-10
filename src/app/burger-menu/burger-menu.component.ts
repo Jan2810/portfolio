@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { MenuService } from '../services/menu.service';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-burger-menu',
@@ -12,6 +13,7 @@ import { MenuService } from '../services/menu.service';
 })
 export class BurgerMenuComponent {
 
+  isEnglish: boolean = true;
   isOpen: boolean = false;
   private toggleSubscription!: Subscription;
 
@@ -21,7 +23,13 @@ export class BurgerMenuComponent {
   inactiveColor: string = '#FFFFFF';
   toggleImgSrc: String = './assets/img/header/toggle_left.png';
 
-  constructor(private menuService: MenuService) { }
+  constructor(
+    private menuService: MenuService,
+    private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.isEnglish = lang;
+    });
+  }
 
   ngOnInit(): void {
     this.toggleSubscription = this.menuService.toggleMenu$.subscribe(() => {
