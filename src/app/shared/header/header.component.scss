@@ -200,6 +200,13 @@ header.special-header {
 }
 
 @media (max-width:1040px) {
+    header {
+        .header-content {
+            margin-left: 32px;
+            margin-right: 32px;
+        }
+    }
+
     .desktop {
         display: none !important;
     }
@@ -218,7 +225,8 @@ header.special-header {
         justify-content: center;
 
         .header-content {
-            max-width: 800px;
+            margin-left: 48px;
+            margin-right: 48px;
             width: 100%;
             display: flex;
             justify-content: space-between;
