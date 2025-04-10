@@ -5,7 +5,8 @@
 
         <div class="link-go-back-div">
             <a href="#"><img class="arrow-back" src="./assets/img/single_project_view/arrow_back.png" alt=""></a>
-            <a class="go-back-link" href="#">Go Back</a>
+            <a *ngIf="isEnglish; else germanText" class="go-back-link" href="#">Go Back</a>
+            <ng-template #germanText><a class="go-back-link" href="#">Zurück</a></ng-template>
         </div>
 
 
@@ -18,18 +19,38 @@
                 </div>
 
                 <div class="description">
-                    <h2>Description</h2>
-                    <p> {{ project.description }} </p>
+                    <h2 *ngIf="isEnglish; else germanText1">Description</h2>
+                    <ng-template #germanText1>
+                        <h2>Beschreibung</h2>
+                    </ng-template>
+                    <p *ngIf="isEnglish; else germanText2"> {{ project.description }} </p>
+                    <ng-template #germanText2>
+                        <p> {{ project.descriptionDE }} </p>
+                    </ng-template>
                 </div>
 
+
+
                 <div class="implementation-details">
-                    <h2>Implementation Details</h2>
-                    <p> {{ project.implementation }} </p>
+                    <h2 *ngIf="isEnglish; else germanText3">Implementation Details</h2>
+                    <ng-template #germanText3>
+                        <h2>Umsetzungsdetails</h2>
+                    </ng-template>
+                    <p *ngIf="isEnglish; else germanText4"> {{ project.implementation }} </p>
+                    <ng-template #germanText4>
+                        <p> {{ project.implementationDE }} </p>
+                    </ng-template>
                 </div>
 
                 <div class="duration">
-                    <h3>Duration:</h3>
-                    <span>{{ project.duration }}</span>
+                    <h3 *ngIf="isEnglish; else germanText5">Duration:</h3>
+                    <ng-template #germanText5>
+                        <h3>Dauer:</h3>
+                    </ng-template>
+                    <span *ngIf="isEnglish; else germanText6">{{ project.duration }}</span>
+                <ng-template #germanText6>
+                    <span>{{ project.durationDE }}</span>
+                </ng-template>
                 </div>
 
                 <div class="tools">
@@ -54,7 +75,8 @@
         </div>
 
         <div class="link-next-project-div">
-            <a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
+            <a *ngIf="isEnglish; else germanText7" class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
+            <ng-template #germanText7><a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Nächstes Projekt</a></ng-template>
             <a (click)="nextProject()" [routerLink]="['/project']"><img class="arrow-next"
                     src="./assets/img/single_project_view/arrow_next.png" alt=""></a>
         </div>
@@ -62,10 +84,12 @@
         <div class="mobile-buttons-div">
             <div class="go-back">
                 <a href="#"><img class="arrow-back" src="./assets/img/single_project_view/arrow_back.png" alt=""></a>
-                <a class="go-back-link" href="#">Go Back</a>
+                <a *ngIf="isEnglish; else germanText8" class="go-back-link" href="#">Go Back</a>
+                <ng-template #germanText8><a class="go-back-link" href="#">Zurück</a></ng-template>
             </div>
             <div class="next">
-                <a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
+                <a *ngIf="isEnglish; else germanText9" class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
+                <ng-template #germanText9><a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Nächstes Projekt</a></ng-template>
                 <a (click)="nextProject()" [routerLink]="['/project']"><img class="arrow-next"
                         src="./assets/img/single_project_view/arrow_next.png" alt=""></a>
             </div>

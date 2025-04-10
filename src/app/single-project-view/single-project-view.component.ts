@@ -4,6 +4,7 @@ import { HeaderComponent } from "../shared/header/header.component";
 import { SingleProject, projects } from '../interfaces/single-project.interface';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { BurgerMenuComponent } from "../burger-menu/burger-menu.component";
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-single-project-view',
@@ -13,17 +14,25 @@ import { BurgerMenuComponent } from "../burger-menu/burger-menu.component";
     CommonModule,
     RouterModule,
     BurgerMenuComponent
-],
+  ],
   templateUrl: './single-project-view.component.html',
   styleUrl: './single-project-view.component.scss'
 })
 export class SingleProjectViewComponent {
 
+  isEnglish: boolean = true;
   projectIndex: number = 0;
   project!: SingleProject;
   linkText: string = "";
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.isEnglish = lang;
+    });
+  }
 
   ngOnInit() {
     this.linkText = this.route.snapshot.params['title'];
@@ -54,7 +63,7 @@ export class SingleProjectViewComponent {
     } else if (this.projectIndex === 1) {
       this.linkText = 'elpollolocco'
     } else if (this.projectIndex === 2) {
-     this.linkText = 'dabubble'
+      this.linkText = 'dabubble'
     }
   }
 
