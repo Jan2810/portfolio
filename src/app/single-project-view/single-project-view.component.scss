@@ -1,3 +1,9 @@
+* {
+    display: flex;
+}
+
+
+
 main {
     background-image: url('./../../assets/img/single_project_view/bg_ripped_paper.png');
     background-size: 100% 100%;
@@ -6,6 +12,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     transition: 125ms ease-in-out;
     background-color: #1D1D1D;
     position: relative;
@@ -25,7 +32,7 @@ main {
     .link-go-back-div {
         display: flex;
         flex-direction: row;
-        align-items: center;
+        justify-content: flex-start;
         padding-top: 128px;
         margin-left: 72px;
         gap: 10px;
@@ -93,10 +100,11 @@ main {
                 }
             }
 
-
-
-
             .description {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
 
                 h2 {
                     font-weight: 700;
@@ -116,6 +124,9 @@ main {
             }
 
             .implementation-details {
+
+                display: flex;
+                flex-direction: column;
 
                 h2 {
                     font-weight: 700;
@@ -460,7 +471,7 @@ main {
         .mobile-buttons-div {
             margin-left: 16px;
             margin-right: 16px;
-        }    
+        }
     }
 
 
