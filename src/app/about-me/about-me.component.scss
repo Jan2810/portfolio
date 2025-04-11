@@ -196,15 +196,15 @@ main {
         .content {
             .content-left {
                 max-width: 460px;
-    
+
                 .stripe-div {
                     max-width: 460px;
                     width: 100%;
-    
+
                     .stripe-img {
                         width: 460px;
                     }
-    
+
                     .stripe-content {
                         .content-text {
                             font-size: 20px;
@@ -223,20 +223,20 @@ main {
         }
     }
 
- 
+
     @media (max-width: 1090px) {
         .content {
             .content-left {
                 max-width: 380px;
-    
+
                 .stripe-div {
                     max-width: 380px;
                     width: 100%;
-    
+
                     .stripe-img {
                         width: 380px;
                     }
-    
+
                     .stripe-content {
                         .content-text {
                             font-size: 20px;
@@ -250,22 +250,24 @@ main {
 
     @media (max-width:990px) {
         main {
-            height: 1040px;
+            height: fit-content;
         }
 
         .content {
             flex-direction: column-reverse;
             align-items: center;
             padding-top: 88px;
+            margin-bottom: 88px;
 
             .content-left {
-                height: 304px;
-                max-width: 343px;
+                height: fit-content;
+
                 .stripe-div {
                     height: 128px;
 
                     .stripe-img {
-                        height: 128px;
+                        height: 160px;
+                        width: 540px;
                         position: absolute;
                     }
 
@@ -281,8 +283,9 @@ main {
             }
 
             .content-right {
-                max-width: 343px;
+                max-width: 540px;
                 width: 100%;
+                margin-bottom: 40px;
 
                 h3 {
                     font-size: 18px;
@@ -316,6 +319,7 @@ main {
                         position: unset;
                         border: 1px solid #0E1013;
                         box-shadow: none;
+                        margin-top: 32px;
                     }
                 }
 
@@ -323,14 +327,31 @@ main {
         }
     }
 
+    @media (max-width:624px) {
+        .content {
+            .content-left {
+                .stripe-div {
+                    .stripe-img {
+                        width: 480px;
+                    }
+                }
+            }
+        }
+    }
+
     @media (max-width:560px) {
+        main {
+            height: auto;
+        }
+
         .content {
             margin-left: 16px;
             margin-right: 16px;
+            margin-bottom: 88px;
 
             .content-left {
-                padding-top: 40px !important;
                 height: 304px;
+                align-items: center;
 
                 .stripe-div {
                     height: 128px;
