@@ -353,11 +353,11 @@ main {
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        width: 343px;
+        width: 540px;
 
         .left-content {
             margin-top: 144px;
-            width: 343px;
+            width: 540px;
 
             .contact-me-header {
                 h3 {
@@ -381,20 +381,20 @@ main {
         .right-content {
             display: flex;
             justify-content: center;
-            width: 343px;
+            width: 540px;
 
             form {
                 position: static;
                 padding-top: 0px;
-                width: 343px;
+                width: 540px;
                 height: 448px;
 
                 .answer {
-                    max-width: 296px;
+                    max-width: 490px;
                 }
 
                 .email-div {
-                    &:hover { 
+                    &:hover {
                         .seperator-blue-first {
                             opacity: 0;
                         }
@@ -402,7 +402,7 @@ main {
                 }
 
                 .message-div {
-                    &:hover { 
+                    &:hover {
                         .seperator-blue-second {
                             opacity: 0;
                         }
@@ -442,6 +442,50 @@ main {
         bottom: 0;
         left: 16;
         animation: slideLeftRight 3.5s infinite;
+    }
+}
+
+@media (max-width: 626px) {
+    .content {
+        width: 452px;
+
+        .left-content {
+            width: 452px;
+        }
+
+        .right-content {
+            width: 452px;
+
+            form {
+                width: 452px;
+
+                .answer {
+                    width: 404px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .content {
+        width: 343px;
+
+        .left-content {
+            width: 343px;
+        }
+
+        .right-content {
+            width: 343px;
+
+            form {
+                width: 343px;
+
+                .answer {
+                    width: 292px;
+                }
+            }
+        }
     }
 }
 

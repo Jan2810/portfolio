@@ -183,6 +183,11 @@ main {
 }
 
 @media (max-width: 1240px) {
+    main {
+        margin-left: 88px;
+        margin-right: 88px;
+    }
+
     .lower-content {
         .card-div {
             width: 327px;
@@ -221,28 +226,28 @@ main {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        width: 343px;
+        width: 540px;
     }
 
     .upper-content {
-        width: 343px;
+        width: 540px;
         margin-bottom: 32px;
         justify-content: flex-end;
         text-align: end;
-    
+
         .animation-div {
             display: flex;
             flex-direction: row;
-    
+
             .animation-blue-arrow {
                 margin-right: 8px;
             }
         }
-    
+
         h3 {
             font-size: 18px;
         }
-    
+
         h2 {
             font-weight: 700;
             font-size: 48px;
@@ -253,20 +258,44 @@ main {
     }
 
     .lower-content {
-      flex-direction: column-reverse;
-      align-items: center;
-      height: auto;
-      width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+        height: auto;
+        width: 100%;
+
+        .card-div {
+            width: 540px;
+            height: 343px;
+
+            .card {
+                width: 540px;
+                height: 343px;
+            }
+
+            .colleague {
+                padding: 48px 40px;
+
+                .colleague-info {
+                    width: 100%;
+                    max-width: 540px;
+                }
+            }
+
+            .card-hovereffect {
+                width: 540px;
+                height: 343px;
+            }
+        }
     }
-  
+
     #card1 {
-      position: relative;
-      transform: rotate(-4deg);
-      left: 0;
-      top: 0;
-      right: 0;
-      padding-bottom: 0px;
-      padding-top: 0;
+        position: relative;
+        transform: rotate(-4deg);
+        left: 0;
+        top: 0;
+        right: 0;
+        padding-bottom: 0px;
+        padding-top: 0;
     }
 
     #card2 {
@@ -288,15 +317,92 @@ main {
         padding-bottom: 0px;
         padding-top: 0;
     }
-  }
-  
+}
+
+@media (max-width: 626px) {
+    .content {
+        width: 452px;
+    }
+
+    .upper-content {
+        width: 452px;
+    }
+
+    .lower-content {
+
+        .card-div {
+            width: 452px;
+
+            .card {
+                width: 452px;
+            }
+
+            .colleague {
+                padding: 48px 40px;
+
+                .colleague-info {
+                    width: 100%;
+                    max-width: 452px;
+                }
+            }
+
+            .card-hovereffect {
+                width: 452px;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    main {
+        height: 100vh;
+    }
+
+    .content {
+        width: 343px;
+        padding-top: 88px;
+    }
+
+    .upper-content {
+        width: 343px;
+        margin-bottom: 0;
+    }
+
+    .lower-content {
+        padding-bottom: 88px;
+
+        .card-div {
+            width: 343px;
+
+            .card {
+                width: 343px;
+            }
+
+            .colleague {
+                padding: 16px;
+
+                .colleague-info {
+                    width: 100%;
+                    max-width: 343px;
+                }
+            }
+
+            .card-hovereffect {
+                width: 343px;
+            }
+        }
+    }
+}
+
 
 @keyframes slideRightLeft {
+
     0%,
     85%,
     100% {
         clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     }
+
     5%,
     70% {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
