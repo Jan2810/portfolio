@@ -1,0 +1,56 @@
+@media screen and (max-width: 1040px) {
+    .desktop-social-link-icons {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 960px) {
+
+    main {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .desktop-profile-img {
+        display: none;
+    }
+
+    .mobile-profile-img {
+        display: block;
+        position: absolute;
+        top: 520px;
+    }
+
+    .content {
+        height: 821px;
+        width: 100%;
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 80px;
+        h1 {
+            font-size: 60px;
+            justify-content: center;
+            line-height: 100%;
+            letter-spacing:0;
+        }
+    }
+
+    .upper-content {
+        div {
+            width: 100%;
+        }
+        h1 {
+            justify-content: flex-start;
+        }
+    }
+
+    .lower-content {
+        button {
+            position: absolute;
+            margin-bottom: 124px;
+            cursor: pointer;
+        }
+    }
+
+}

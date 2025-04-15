@@ -7,16 +7,16 @@ import { LanguageService } from '../services/language.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './colleague-thoughts.component.html',
-  styleUrl: './colleague-thoughts.component.scss'
+  styleUrls: ['./colleague-thoughts.component.scss', './colleague-thoughts.component.media.scss'],
 })
 export class ColleagueThoughtsComponent {
 
   isEnglish: boolean = true;
 
-constructor(private languageService: LanguageService) { 
-  this.languageService.language$.subscribe(lang => {
-    this.isEnglish = lang;
-  });
-}
+  constructor(private languageService: LanguageService) {
+    this.languageService.language$.subscribe(lang => {
+      this.isEnglish = lang;
+    });
+  }
 
 }

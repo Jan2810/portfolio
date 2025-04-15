@@ -9,7 +9,7 @@ import { LanguageService } from '../services/language.service';
     CommonModule,
   ],
   templateUrl: './skill-set.component.html',
-  styleUrl: './skill-set.component.scss'
+  styleUrls: ['./skill-set.component.scss', './skill-set.component.media.scss']
 })
 export class SkillSetComponent {
 

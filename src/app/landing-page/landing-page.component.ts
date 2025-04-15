@@ -9,7 +9,7 @@ import { LanguageService } from '../services/language.service';
     CommonModule,
   ],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.scss'
+  styleUrls: ['./landing-page.component.scss', './landing-page.component.media.scss']
 })
 export class LandingPageComponent {
 

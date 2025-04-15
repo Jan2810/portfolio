@@ -1,0 +1,214 @@
+@media (max-width:1400px) {
+    .content {
+        margin-left: 64px;
+        margin-right: 64px;
+    }
+}
+
+@media (max-width:1300px) {
+
+    .content {
+        .content-left {
+            max-width: 520px;
+
+            .stripe-div {
+                max-width: 520px;
+                width: 100%;
+
+                .stripe-img {
+                    width: 520px;
+                }
+
+                .stripe-content {
+                    .content-text {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .content-right {
+            max-width: 520px;
+        }
+    }
+
+
+    @media (max-width:1200px) {
+        .content {
+            .content-left {
+                max-width: 460px;
+
+                .stripe-div {
+                    max-width: 460px;
+                    width: 100%;
+
+                    .stripe-img {
+                        width: 460px;
+                    }
+
+                    .stripe-content {
+                        .content-text {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+
+            .content-right {
+                max-width: 460px;
+
+                .animation-blue-line {
+                    margin-bottom: 28px;
+                }
+            }
+        }
+    }
+
+
+    @media (max-width: 1090px) {
+        .content {
+            .content-left {
+                max-width: 380px;
+
+                .stripe-div {
+                    max-width: 380px;
+                    width: 100%;
+
+                    .stripe-img {
+                        width: 380px;
+                    }
+
+                    .stripe-content {
+                        .content-text {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    @media (max-width:990px) {
+        main {
+            height: fit-content;
+        }
+
+        .content {
+            flex-direction: column-reverse;
+            align-items: center;
+            padding-top: 88px;
+            margin-bottom: 88px;
+
+            .content-left {
+                height: fit-content;
+
+                .stripe-div {
+                    height: 128px;
+
+                    .stripe-img {
+                        height: 160px;
+                        width: 540px;
+                        position: absolute;
+                    }
+
+                    .stripe-content {
+                        width: 80%;
+
+                        .content-img {
+                            height: 40px;
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+
+            .content-right {
+                max-width: 540px;
+                width: 100%;
+                margin-bottom: 40px;
+
+                h3 {
+                    font-size: 18px;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                }
+
+                h2 {
+                    font-size: 48px;
+                    font-weight: 700;
+                    line-height: 100%;
+                }
+
+                .animation-blue-line {
+                    margin-bottom: 32px;
+                    width: 227px;
+                }
+
+                p {
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 100%;
+                }
+
+                a {
+                    display: flex;
+                    justify-content: flex-end;
+                    text-decoration: none;
+
+                    button {
+                        position: unset;
+                        border: 1px solid #0E1013;
+                        box-shadow: none;
+                        margin-top: 32px;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width:624px) {
+        .content {
+            .content-left {
+                .stripe-div {
+                    .stripe-img {
+                        width: 480px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width:560px) {
+        main {
+            height: auto;
+        }
+
+        .content {
+            margin-left: 16px;
+            margin-right: 16px;
+            margin-bottom: 88px;
+
+            .content-left {
+                height: 304px;
+                align-items: center;
+
+                .stripe-div {
+                    height: 128px;
+                    width: 343px;
+
+                    .stripe-img {
+                        height: 128px;
+                        width: 343px !important;
+                        position: absolute;
+                    }
+                }
+            }
+
+            .content-right {
+                width: 343px;
+            }
+        }
+    }
+}

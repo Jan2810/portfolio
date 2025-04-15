@@ -10,7 +10,7 @@ import { LanguageService } from '../services/language.service';
   standalone: true,
   imports: [FormsModule, CommonModule, FooterComponent],
   templateUrl: './contact-form.component.html',
-  styleUrl: './contact-form.component.scss'
+  styleUrls: ['./contact-form.component.scss', './contact-form.component.media.scss'],
 })
 export class ContactFormComponent {
 

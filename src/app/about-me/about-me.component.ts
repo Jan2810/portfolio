@@ -9,7 +9,7 @@ import { LanguageService } from '../services/language.service';
     CommonModule,
   ],
   templateUrl: './about-me.component.html',
-  styleUrl: './about-me.component.scss'
+  styleUrls: ['./about-me.component.scss', './about-me.component.media.scss']
 })
 export class AboutMeComponent {
 

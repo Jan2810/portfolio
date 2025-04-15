@@ -16,7 +16,7 @@ import { LanguageService } from '../services/language.service';
     BurgerMenuComponent
   ],
   templateUrl: './single-project-view.component.html',
-  styleUrl: './single-project-view.component.scss'
+  styleUrls: ['./single-project-view.component.scss', './single-project-view.component.media.scss']
 })
 export class SingleProjectViewComponent {
 

@@ -11,7 +11,7 @@ import { LanguageService } from '../services/language.service';
     CommonModule,
   ],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrls: ['./projects.component.scss', './projects.component.media.scss']
 })
 export class ProjectsComponent {
 
