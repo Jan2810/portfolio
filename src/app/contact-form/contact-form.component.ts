@@ -22,9 +22,9 @@ export class ContactFormComponent {
     email: "",
     message: "",
   }
-  mailTest = true;
+  mailTest = false;
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://jan-steiner-dev.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -41,11 +41,16 @@ export class ContactFormComponent {
   }
 
   onSubmit(ngForm: NgForm) {
+    const emailControl = ngForm.controls['email'];
+    if (emailControl && !emailControl.valid) {
+      this.contactData.email = '';
+      console.log("Die E-Mail-Adresse ist ungültig – Feld wurde geleert.");
+      return;
+    }
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-
             ngForm.resetForm();
           },
           error: (error) => {
@@ -55,7 +60,6 @@ export class ContactFormComponent {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       console.log('worked');
-
       ngForm.resetForm();
     }
   }

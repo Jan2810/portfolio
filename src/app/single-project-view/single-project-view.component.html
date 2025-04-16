@@ -2,7 +2,7 @@
 
 
 <main>
-    
+
     <div class="content">
         <app-header variant="special"></app-header>
         <div class="link-go-back-div">
@@ -50,9 +50,9 @@
                         <h3>Dauer:</h3>
                     </ng-template>
                     <span *ngIf="isEnglish; else germanText6">{{ project.duration }}</span>
-                <ng-template #germanText6>
-                    <span>{{ project.durationDE }}</span>
-                </ng-template>
+                    <ng-template #germanText6>
+                        <span>{{ project.durationDE }}</span>
+                    </ng-template>
                 </div>
 
                 <div class="tools">
@@ -61,7 +61,6 @@
                         <span>{{ tool.name }}</span>
                     </div>
                 </div>
-
             </div>
 
 
@@ -70,15 +69,19 @@
                 <img class="sticker" src=" {{ project.sticker }} " alt="">
                 <div class="button-div">
                     <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer"><button>GitHub</button></a>
-                    <button>Live Test</button>
+                    <a href="{{ project.liveTest }}" target="_blank" rel="noopener noreferrer">
+                        <button>LiveTest</button>
+                    </a>
                 </div>
             </div>
 
         </div>
 
         <div class="link-next-project-div">
-            <a *ngIf="isEnglish; else germanText7" class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
-            <ng-template #germanText7><a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Nächstes Projekt</a></ng-template>
+            <a *ngIf="isEnglish; else germanText7" class="next-project-link" (click)="nextProject()"
+                [routerLink]="['/project']">Next Project</a>
+            <ng-template #germanText7><a class="next-project-link" (click)="nextProject()"
+                    [routerLink]="['/project']">Nächstes Projekt</a></ng-template>
             <a (click)="nextProject()" [routerLink]="['/project']"><img class="arrow-next"
                     src="./assets/img/single_project_view/arrow_next.png" alt=""></a>
         </div>
@@ -90,8 +93,10 @@
                 <ng-template #germanText8><a class="go-back-link" href="#">Zurück</a></ng-template>
             </div>
             <div class="next">
-                <a *ngIf="isEnglish; else germanText9" class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Next Project</a>
-                <ng-template #germanText9><a class="next-project-link" (click)="nextProject()" [routerLink]="['/project']">Nächstes Projekt</a></ng-template>
+                <a *ngIf="isEnglish; else germanText9" class="next-project-link" (click)="nextProject()"
+                    [routerLink]="['/project']">Next Project</a>
+                <ng-template #germanText9><a class="next-project-link" (click)="nextProject()"
+                        [routerLink]="['/project']">Nächstes Projekt</a></ng-template>
                 <a (click)="nextProject()" [routerLink]="['/project']"><img class="arrow-next"
                         src="./assets/img/single_project_view/arrow_next.png" alt=""></a>
             </div>

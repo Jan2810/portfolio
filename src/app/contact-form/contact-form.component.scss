@@ -243,6 +243,22 @@ main {
                         color: #F87A55;
                     }
                 }
+
+                .error::placeholder {
+                    color: red;
+                }
+
+                .error::-webkit-input-placeholder {
+                    color: red;
+                }
+
+                .error:-moz-placeholder {
+                    color: red;
+                }
+
+                .error:-ms-input-placeholder {
+                    color: red;
+                }
             }
 
             .message-div {

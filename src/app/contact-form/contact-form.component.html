@@ -55,13 +55,14 @@
 
                     <input *ngIf="isEnglish; else germanText5" #nameField="ngModel" [(ngModel)]="contactData.name"
                         class="answer" type="text" id="name" name="name"
-                        [class.error]="nameField.value?.length < 1 && contactForm.submitted " [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
+                        [class.error]="nameField.value?.length < 1 && (contactForm.submitted || nameField.touched)" 
+                        [placeholder]="(nameField.value?.length < 1 && contactForm.submitted || nameField.touched)
                     ? 'Oops! It seems your name is missing' 
                     : 'Your name goes here'" required>
                     <ng-template #germanText5>
                         <input #nameField="ngModel" [(ngModel)]="contactData.name" class="answer" type="text" id="name"
-                            name="name" [class.error]="nameField.value?.length < 1 && contactForm.submitted "
-                            [placeholder]="(nameField.value?.length < 1 && contactForm.submitted)
+                            name="name" [class.error]="nameField.value?.length < 1 && contactForm.submitted || nameField.touched"
+                            [placeholder]="(nameField.value?.length < 1 && contactForm.submitted || nameField.touched)
                     ? 'Oops! Hier fehlt etwas' 
                     : 'Hier deinen Namen eintragen'" required>
                     </ng-template>
@@ -80,12 +81,18 @@
 
                     <input *ngIf="isEnglish; else germanText7" #emailField="ngModel" [(ngModel)]="contactData.email"
                         class="answer" type="text" id="email" name="email"
-                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" placeholder="youremail@email.com"
-                        required>
+                        pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                        [class.error]="!emailField.valid && !emailField.disabled && contactForm.submitted || emailField.touched"
+                        [placeholder]="(!emailField.valid && !emailField.disabled && contactForm.submitted || emailField.touched)
+                        ? 'Please enter a valid email address' 
+                        : 'Enter your email adress'" required>
                     <ng-template #germanText7>
                         <input #emailField="ngModel" [(ngModel)]="contactData.email" class="answer" type="text"
                             id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-                            placeholder="deineemail@email.com" required>
+                            [class.error]="!emailField.valid && !emailField.disabled && contactForm.submitted || emailField.touched"
+                            [placeholder]="(!emailField.valid && !emailField.disabled && contactForm.submitted || emailField.touched)
+                        ? 'Bitte trage eine gültige E-Mail-Adresse ein' 
+                        : 'Hier deine E-Mail-Adresse eintragen'" required>
                     </ng-template>
 
                     <div class="seperator"></div>
@@ -102,16 +109,16 @@
 
                     <input *ngIf="isEnglish; else germanText9" #messageField="ngModel" [(ngModel)]="contactData.message"
                         class="answer" type="text" id="message" name="message"
-                        [class.error]="!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted"
-                        [placeholder]="(!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted)
+                        [class.error]="!messageField.valid && !messageField.disabled && contactForm.submitted || messageField.touched"
+                        [placeholder]="(!messageField.valid && !messageField.disabled && contactForm.submitted || messageField.touched)
                         ? 'What do you need to develop?' 
                         : 'Hello Jan, I am interested in...'" required>
 
                     <ng-template #germanText9>
                         <input #messageField="ngModel" [(ngModel)]="contactData.message" class="answer" type="text"
                             id="message" name="message"
-                            [class.error]="!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted"
-                            [placeholder]="(!messageField.valid && messageField.touched && !messageField.disabled && contactForm.submitted)
+                            [class.error]="!messageField.valid && !messageField.disabled && contactForm.submitted || messageField.touched"
+                            [placeholder]="(!messageField.valid && !messageField.disabled && contactForm.submitted || messageField.touched)
                         ? 'Was soll ich dir entwickeln?' 
                         : 'Hallo Jan, ich habe interesse an...'" required>
                     </ng-template>

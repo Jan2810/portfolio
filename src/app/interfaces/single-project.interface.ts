@@ -33,7 +33,7 @@ export const projects: SingleProject[] = [
             { img: './assets/img/single_project_view/logo_css.png', name: 'CSS' },
         ],
         github: 'https://github.com/Jan2810/join',
-        liveTest: '',
+        liveTest: 'https://join.jan-steiner-dev.de',
     },
     {
         title: 'El Pollo Loco',
@@ -51,7 +51,7 @@ export const projects: SingleProject[] = [
             { img: './assets/img/single_project_view/logo_css.png', name: 'CSS' },
         ],
         github: 'https://github.com/Jan2810/el-pollo-loco',
-        liveTest: '',
+        liveTest: 'https://elpolloloco.jan-steiner-dev.de',
     },
     {
         title: 'DABubble',
@@ -59,8 +59,8 @@ export const projects: SingleProject[] = [
         descriptionDE: 'Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robusten Kanalorganisation.',
         implementation: 'Short text that describes your role or the workflow for this specific project. Let a recruiter know more about your knowledge and ability to work independently or collaboratively in a structured way.',
         implementationDE: 'Kurzer Text, der Ihre Rolle oder den Arbeitsablauf für dieses spezielle Projekt beschreibt. Informieren Sie einen Recruiter über Ihr Wissen und Ihre Fähigkeit, selbstständig oder strukturiert zu arbeiten.',
-        duration: '4 weeks',
-        durationDE: '4 Wochen',
+        duration: 'in progress...',
+        durationDE: 'in Arbeit...',
         imgPath: './assets/img/single_project_view/project_img_da_bubble.png',
         sticker: './assets/img/single_project_view/sticker_yellow1.png',
         usedTools: [
