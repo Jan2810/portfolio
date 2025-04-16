@@ -171,12 +171,11 @@
 
 @media (max-width: 560px) {
     main {
-        height: 100vh;
+        height: 100%;
     }
 
     .content {
         width: 343px;
-        padding-top: 88px;
     }
 
     .upper-content {
@@ -185,7 +184,6 @@
     }
 
     .lower-content {
-        padding-bottom: 88px;
 
         .card-div {
             width: 343px;
