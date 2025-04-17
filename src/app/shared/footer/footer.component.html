@@ -5,7 +5,10 @@
             <img class="initials-logo" (mouseover)="changeImg()" (mouseleave)="resetImg()" [src]="imgSrc" alt="">
             <p>© Jan Steiner 2025</p>
             <div class="wrapper-div" id="animate-left-right">
-                <a class="footer-links" [routerLink]="['legalnotice']">Legal Notice</a>
+                <a *ngIf="isEnglish; else germanText" class="footer-links"  [routerLink]="['legalnotice']">Legal Notice</a>
+                <ng-template #germanText>
+                    <a class="footer-links"  [routerLink]="['legalnotice']">Impressum</a>
+                </ng-template>
                 <img class="animation-underline" src="./assets/img/footer/animation_yellow_underline.png" alt="">
             </div>
         </div>
