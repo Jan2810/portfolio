@@ -1,0 +1,61 @@
+* {
+    background-image: url('./../../assets/img/skill_set/bg_black_paper_rip_2png.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Bricolage Grotesque';
+}
+
+.legal-notice {
+    padding-top: 120px;
+    padding-bottom: 160px;
+    padding-left: 120px;
+    padding-right: 120px;
+    color: white;
+
+    h2 {
+        width: fit-content;
+        height: fit-content;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+
+    h3 {
+        width: fit-content;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 100%;
+        letter-spacing: 0%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 1040px) {
+    .legal-notice {
+        padding-top: 120px;
+        padding-bottom: 160px;
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media (max-width: 960px) {
+    .legal-notice {
+        padding-top: 120px;
+        padding-bottom: 160px;
+        padding-left: 16px;
+        padding-right: 16px;
+
+        h2 {
+            font-size: 48px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
