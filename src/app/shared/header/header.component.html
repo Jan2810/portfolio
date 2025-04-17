@@ -10,19 +10,20 @@
 
         <div class="desktop wrapper-div" id="animate-left-right">
             <img class="animation-img" src="./assets/img/header/animation_skills.png" alt="">
-            <a class="color-black" href="#skillSet">Skills</a>
+            <a *ngIf="isEnglish; else germanText1" class="color-black" href="#skillSet">Skills</a>
+            <ng-template #germanText1><a href="#skillSet">Fähigkeiten</a></ng-template>
         </div>
 
         <div class="desktop wrapper-div" id="animate-left-right">
             <img class="animation-img" src="./assets/img/header/animation_projects.png" alt="">
-            <a *ngIf="isEnglish; else germanText1" href="#projects">Projects</a>
-            <ng-template #germanText1><a href="#projects">Projekte</a></ng-template>
+            <a *ngIf="isEnglish; else germanText2" href="#projects">Projects</a>
+            <ng-template #germanText2><a href="#projects">Projekte</a></ng-template>
         </div>
 
         <div class="desktop wrapper-div" id="animate-left-right">
             <img class="animation-img" src="./assets/img/header/animation_contact.png" alt="">
-            <a *ngIf="isEnglish; else germanText2" href="#contact">Contact</a>
-            <ng-template #germanText2><a href="#contact">Kontakt</a></ng-template>
+            <a *ngIf="isEnglish; else germanText3" href="#contact">Contact</a>
+            <ng-template #germanText3><a href="#contact">Kontakt</a></ng-template>
         </div>
 
         <div class="desktop toggle-language">
