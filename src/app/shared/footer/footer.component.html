@@ -1,4 +1,4 @@
-<main>
+<main [ngClass]="{'special-footer': variant === 'special'}">
     <div class="content">
 
         <div class="content-left">
@@ -33,7 +33,7 @@
             <img class="initials-logo" (mouseover)="changeImg()" (mouseleave)="resetImg()" [src]="imgSrc" alt="">
             <div>
                 <p>© Jan Steiner 2025</p>
-                <a *ngIf="isEnglish; else germanText" class="footer-links"  [routerLink]="['legalnotice']">Legal Notice</a>
+                <a *ngIf="isEnglish; else germanText" class="footer-links" [routerLink]="['legalnotice']">Legal Notice</a>
                 <ng-template #germanText>
                     <a class="footer-links"  [routerLink]="['legalnotice']">Impressum</a>
                 </ng-template>

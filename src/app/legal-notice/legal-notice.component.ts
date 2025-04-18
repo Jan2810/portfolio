@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../shared/header/header.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 import { BurgerMenuComponent } from '../burger-menu/burger-menu.component';
 import { LanguageService } from '../services/language.service';
 
@@ -10,7 +11,8 @@ import { LanguageService } from '../services/language.service';
   imports: [
     CommonModule,
     HeaderComponent,
-    BurgerMenuComponent
+    FooterComponent,
+    BurgerMenuComponent,
   ],
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'

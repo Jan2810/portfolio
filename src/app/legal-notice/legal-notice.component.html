@@ -1,6 +1,6 @@
 <app-burger-menu></app-burger-menu>
+<app-header></app-header>
 <main>
-    <app-header></app-header>
     <div *ngIf="isEnglish; else germanText" class="legal-notice">
         <h2>Legal Notice</h2>
         <br>
@@ -79,6 +79,7 @@
 
     <ng-template #germanText>
         <div class="legal-notice">
+            <app-header></app-header>
             <h2>Impressum</h2>
             <br>
             <br>
@@ -176,5 +177,5 @@
         </div>
     </ng-template>
 
-
+    <app-footer></app-footer>
 </main>

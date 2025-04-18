@@ -1,8 +1,17 @@
 * {
+    font-family: 'Bricolage Grotesque';
+}
+
+main {
     background-image: url('./../../assets/img/skill_set/bg_black_paper_rip_2png.png');
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Bricolage Grotesque';
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 140px;
 }
 
 .legal-notice {
@@ -11,6 +20,8 @@
     padding-left: 120px;
     padding-right: 120px;
     color: white;
+    max-width: 1440px;
+    width: 100%;
 
     h2 {
         width: fit-content;
