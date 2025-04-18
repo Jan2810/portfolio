@@ -90,6 +90,7 @@
 
 .mobile-content {
     display: none !important;
+    color: #F8F9FA;
 
     .upper-content {
         display: flex;
@@ -186,9 +187,15 @@
     }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 500px) {
     .mobile-content {
-        width: 343px;
+        width: 380px;
+    }
+}
+
+@media (max-width: 400px) {
+    .mobile-content {
+        width: 280px;
     }
 }
 

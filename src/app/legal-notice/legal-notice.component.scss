@@ -1,5 +1,8 @@
 * {
     font-family: 'Bricolage Grotesque';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main {
@@ -22,6 +25,9 @@ main {
     color: white;
     max-width: 1440px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 
     h2 {
         width: fit-content;
@@ -46,8 +52,9 @@ main {
     }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1240px) {
     .legal-notice {
+        width: 1100px;
         padding-top: 120px;
         padding-bottom: 160px;
         padding-left: 64px;
@@ -55,10 +62,18 @@ main {
     }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
     .legal-notice {
+        width: 900px;
+    }
+}
+
+@media (max-width: 990px) {
+    .legal-notice {
+        max-width: 545px;
+        width: 100%;
         padding-top: 120px;
-        padding-bottom: 160px;
+        padding-bottom: 120px;
         padding-left: 16px;
         padding-right: 16px;
 
@@ -69,5 +84,23 @@ main {
         h3 {
             font-size: 20px;
         }
+    }
+}
+
+@media (max-width: 626px) {
+    .legal-notice {
+        max-width: 452px;
+    }
+}
+
+@media (max-width: 500px) {
+    .legal-notice {
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 400px) {
+    .legal-notice {
+        max-width: 310px;
     }
 }
