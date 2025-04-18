@@ -198,3 +198,31 @@
         margin-top: 360px;
     }
 }
+
+@media (max-width: 400px) {
+    .content {
+        width: 280px;
+    }
+    .upper-content { 
+        img {
+            width: 280px;
+            height: 220px;
+        }
+
+        p {
+            width: 278px;
+            margin-top: 188px;
+            padding-left: 58px;
+        }
+
+        .responsive-div {
+            padding: 8px;
+        }
+    }
+
+    #sticker {
+        overflow: hidden;
+        height: 160px;
+        width: 160px;
+    }
+}

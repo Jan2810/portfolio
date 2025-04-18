@@ -34,7 +34,7 @@
 
 @media (max-width: 990px) {
     main {
-        height: 1480px;
+        height: 1540px;
         width: 100%;
         justify-content: flex-start;
     }
@@ -140,6 +140,7 @@
 @media (max-width: 626px) {
     .content {
         width: 452px;
+        margin-bottom: 88px;
 
         .left-content {
             width: 452px;
@@ -178,5 +179,41 @@
                 }
             }
         }
+    }
+}
+
+@media (max-width: 400px) {
+
+    main {
+        height: 1584px;
+    }
+
+    .content {
+        width: 280px;
+        margin-bottom: 140px;
+
+        .left-content {
+            width: 280px;
+        }
+
+        .right-content {
+            width: 280px;
+
+            form {
+                width: 280px;
+
+                .answer {
+                    width: 260px;
+                }
+
+                button {
+                    width: 128px;
+                }
+            }
+        }
+    }
+
+    .mobile-arrow-yellow {
+        width: 128px;
     }
 }

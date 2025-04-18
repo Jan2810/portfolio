@@ -54,3 +54,11 @@
     }
 
 }
+
+@media screen and (max-width: 400px) {
+    .content {
+        h1 {
+            font-size: 48px;
+        }
+    }
+}

@@ -207,3 +207,43 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+
+    main {
+        width: 280px;
+    }
+
+    .content {
+        width: 280px;
+    }
+
+    .upper-content {
+        width: 280px;
+        margin-bottom: 0;
+    }
+
+    .lower-content {
+
+        .card-div {
+            width: 260px;
+
+            .card {
+                width: 260px;
+            }
+
+            .colleague {
+                padding: 16px;
+
+                .colleague-info {
+                    width: 100%;
+                    max-width: 260px;
+                }
+            }
+
+            .card-hovereffect {
+                width: 260px;
+            }
+        }
+    }
+}

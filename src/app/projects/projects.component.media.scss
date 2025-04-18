@@ -272,3 +272,41 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    main {
+        .upper-content {
+            .headline-div {
+                max-width: 280px;
+            }
+
+            .project-div {
+                max-width: 280px;
+
+                .project-img-div {
+                    img {
+                        width: 280px;
+                    }
+
+                    #blue-sticker {
+                        height: 100px;
+                        width: 100px;
+                        bottom: 8px;
+                    }
+                }
+            }
+        }
+
+        .lower-content {
+            .project-div {
+                max-width: 280px;
+
+                .project-img-div {
+                    img {
+                        width: 280px;
+                    }
+                }
+            }
+        }
+    }
+}
