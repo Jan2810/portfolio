@@ -97,6 +97,10 @@ h1 {
     font-weight: 700;
 
     .capital-letter {
+        display: inline-block;
+        width: 0.9ch;
+        text-align: center;
+        transition: color .2s;
         &:hover {
             text-transform: lowercase;
             color: #f7c518;
@@ -104,6 +108,10 @@ h1 {
     }
 
     .lowercase-letter {
+        display: inline-block;
+        width: 0.9ch;   
+        text-align: center;
+        transition: color .2s;
         &:hover {
             text-transform: uppercase;
             color: #f7c518;

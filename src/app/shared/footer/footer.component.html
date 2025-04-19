@@ -2,7 +2,7 @@
     <div class="content">
 
         <div class="content-left">
-            <img class="initials-logo" (mouseover)="changeImg()" (mouseleave)="resetImg()" [src]="imgSrc" alt="">
+            <a href="#landingPage"><img class="initials-logo" (mouseover)="changeImg()" (mouseleave)="resetImg()" [src]="imgSrc" alt=""></a>
             <p>© Jan Steiner 2025</p>
             <div class="wrapper-div" id="animate-left-right">
                 <a *ngIf="isEnglish; else germanText" class="footer-links"  [routerLink]="['legalnotice']">Legal Notice</a>
@@ -30,7 +30,7 @@
 
     <div class="mobile-content">
         <div class="upper-content">
-            <img class="initials-logo" (mouseover)="changeImg()" (mouseleave)="resetImg()" [src]="imgSrc" alt="">
+            <a href="#landingPage"><img class="initials-logo" (mouseover)="changeImg()" (mouseleave)="resetImg()" [src]="imgSrc" alt=""></a>
             <div>
                 <p>© Jan Steiner 2025</p>
                 <a *ngIf="isEnglish; else germanText" class="footer-links" [routerLink]="['legalnotice']">Legal Notice</a>

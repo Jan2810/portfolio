@@ -19,7 +19,9 @@
     .mobile-profile-img {
         display: block;
         position: absolute;
-        top: 520px;
+        top: 420px;
+        height: 300px;
+        width: 250px;
     }
 
     .content {
@@ -28,11 +30,12 @@
         margin-left: 16px;
         margin-right: 16px;
         margin-top: 80px;
+
         h1 {
             font-size: 60px;
             justify-content: center;
             line-height: 100%;
-            letter-spacing:0;
+            letter-spacing: 0;
         }
     }
 
@@ -40,6 +43,7 @@
         div {
             width: 100%;
         }
+
         h1 {
             justify-content: flex-start;
         }
@@ -52,7 +56,14 @@
             cursor: pointer;
         }
     }
+}
 
+@media screen and (max-width: 720px) {
+    .mobile-profile-img {
+        top: 520px;
+        width: 204px;
+        height: 244px;
+    }
 }
 
 @media screen and (max-width: 400px) {

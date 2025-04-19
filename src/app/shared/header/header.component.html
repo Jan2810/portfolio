@@ -1,6 +1,6 @@
 <header [ngClass]="{'special-header': variant === 'special'}">
     <div class="header-content">
-        <img class="my-logo" (mouseover)="changeLogo()" (mouseleave)="resetLogo()" [src]="logoImgSrc" alt="">
+        <a href="#contact"><img class="my-logo" (mouseover)="changeLogo()" (mouseleave)="resetLogo()" [src]="logoImgSrc" alt=""></a>
         
         <div class="desktop wrapper-div" id="animate-top-bottom">
             <img class="animation-img" src="./assets/img/header/animation_about_me.png" alt="">
