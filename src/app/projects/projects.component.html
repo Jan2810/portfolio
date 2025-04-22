@@ -75,26 +75,23 @@
         <div class="project-div">
             <div class="project-img-div">
                 <div class="img-wrapper">
-                    <img class="project-img" src="./assets/img/projects/thumbnail_da_bubble.png" alt="">
+                    <img class="project-img" src="./assets/img/projects/thumbnail_pokedex.png" alt="">
                 </div>
                 <div class="overlay">
-                    <button class="overlay-button" [routerLink]="['/project', 'dabubble']">Project details</button>
+                    <button class="overlay-button" [routerLink]="['/project', 'pokedex']">Project details</button>
                 </div>
             </div>
             <div class="project-text-div">
-                <p class="project-title">Da Bubble</p>
-                <p *ngIf="isEnglish; else germanText6" class="project-description">This App is a Slack Clone App. It
-                    revolutionizes team communication and
-                    collaboration with its intuitive interface, real-time messaging, and robust channel organization.
+                <p class="project-title">Pokedex</p>
+                <p *ngIf="isEnglish; else germanText6" class="project-description">An app with complete data on all Pokemon. It has a search function and many other features.
                 </p>
                 <ng-template #germanText6>
                     <p class="project-description">
-                        Diese App ist ein Slack-Klon. Sie revolutioniert die Teamkommunikation und -zusammenarbeit mit
-                        ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robusten Kanalorganisation.
+                        Eine App mit sämtlichen Daten über alle Pokemon. Es gibt eine Suchfunktion und viele weiter Features. 
                     </p>
                 </ng-template>
             </div>
-            <button class="mobile-btn" [routerLink]="['/project', 'dabubble']">Project details</button>
+            <button class="mobile-btn" [routerLink]="['/project', 'pokedex']">Project details</button>
         </div>
     </div>
 </main>

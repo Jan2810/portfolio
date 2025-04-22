@@ -45,7 +45,7 @@ export class SingleProjectViewComponent {
       this.projectIndex = 0
     } else if (this.linkText === 'elpolloloco') {
       this.projectIndex = 1
-    } else if (this.linkText === 'dabubble') {
+    } else if (this.linkText === 'pokedex') {
       this.projectIndex = 2
     }
   }

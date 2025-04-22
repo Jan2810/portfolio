@@ -194,6 +194,10 @@ main {
             flex-direction: column;
             justify-content: space-between;
 
+            .project-img {
+                border-radius: 20px;
+            }
+
             .sticker {
                 height: 120px;
                 width: 120px;
