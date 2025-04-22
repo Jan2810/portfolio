@@ -21,16 +21,22 @@
                 <img class="card" src="./assets/img/colleagues_thoughts/card_orange.png" alt="">
                 <img class="card-hovereffect" src="./assets/img/colleagues_thoughts/card_hovereffect.png" alt="">
                 <div class="colleague">
-                    <p class="colleague-thoughts">
-                        Lorem ipsum dolor sit
-                        amet, consectetur adipisicing elit. Incidunt
-                        ratione
-                        asperiores possimus
-                        voluptas quos ea fugiat
+                    <p *ngIf="isEnglish; else germanText5" class="colleague-thoughts">
+                        "Jan not only brought creative and thoughtful ideas to our project, but also impressed us with
+                        his willingness to help and his ability to work as a team. His structured approach and technical
+                        skills contributed significantly to the success of our project. I would work with him again at
+                        any time."
                     </p>
+                    <ng-template #germanText5>
+                        „Jan brachte in unserem Projekt nicht nur kreative und
+                        durchdachte Ideen ein, sondern überzeugte auch durch seine hohe Hilfsbereitschaft und
+                        Teamfähigkeit. Seine strukturierte Herangehensweise und seine technischen Fähigkeiten haben
+                        maßgeblich zum Erfolg unseres Projekts beigetragen. Ich würde jederzeit wieder mit ihm
+                        zusammenarbeiten.“
+                    </ng-template>
                     <div class="colleague-info">
                         <div>
-                            <p class="colleague-name">Max Mustermann</p>
+                            <p class="colleague-name">Jonas Valtin</p>
                             <p class="colleague-job">Frontend Developer</p>
                         </div>
                         <div>
@@ -43,6 +49,35 @@
             <div id="card2" class="card-div">
                 <img class="card" src="./assets/img/colleagues_thoughts/card_orange.png" alt="">
                 <img class="card-hovereffect" src="./assets/img/colleagues_thoughts/card_hovereffect.png" alt="">
+
+                <div class="colleague">
+                    <p *ngIf="isEnglish; else germanText4" class="colleague-thoughts">
+                        „Jan writes clean, well-thought-out code and always finds clever solutions. A reliable developer
+                        and a great colleague! Working with him was consistently excellent.“
+                    </p>
+                    <ng-template #germanText4>
+                        „Jan schreibt sauberen, durchdachten Code und findet immer clevere Lösungen. Ein zuverlässiger
+                        Entwickler und ein toller Kollege! Die Zusammenarbeit mit ihm war durchweg hervorragend. “
+                    </ng-template>
+                    <div class="colleague-info">
+                        <div>
+                            <p class="colleague-name">Felix Kirmse</p>
+                            <p class="colleague-job">Frontend Developer</p>
+                        </div>
+                        <div>
+                            <a href="https://www.linkedin.com/in/felix-kirmse-03a840147/" target="_blank"
+                                rel="noopener noreferrer"><img src="./assets/img/colleagues_thoughts/logo_linked_in.png"
+                                    alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="card1" class="card-div">
+                <img class="card" src="./assets/img/colleagues_thoughts/card_orange.png" alt="">
+                <img class="card-hovereffect" src="./assets/img/colleagues_thoughts/card_hovereffect.png" alt="">
+
                 <div class="colleague">
                     <p *ngIf="isEnglish; else germanText3" class="colleague-thoughts">
                         „Jan is a reliable and competent developer. He mastered the challenging task of creating the
@@ -66,32 +101,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="card1" class="card-div">
-                <img class="card" src="./assets/img/colleagues_thoughts/card_orange.png" alt="">
-                <img class="card-hovereffect" src="./assets/img/colleagues_thoughts/card_hovereffect.png" alt="">
-                <div class="colleague">
-                    <p *ngIf="isEnglish; else germanText4" class="colleague-thoughts">
-                        „Jan writes clean, well-thought-out code and always finds clever solutions. A reliable developer
-                        and a great colleague!!“
-                    </p>
-                    <ng-template #germanText4>
-                        „Jan schreibt sauberen, durchdachten Code und findet immer clevere Lösungen. Ein zuverlässiger
-                        Entwickler und ein toller Kollege!“
-                    </ng-template>
-                    <div class="colleague-info">
-                        <div>
-                            <p class="colleague-name">Felix Kirmse</p>
-                            <p class="colleague-job">Frontend Developer</p>
-                        </div>
-                        <div>
-                            <a href="https://www.linkedin.com/in/felix-kirmse-03a840147/" target="_blank"
-                                rel="noopener noreferrer"><img src="./assets/img/colleagues_thoughts/logo_linked_in.png"
-                                    alt=""></a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
