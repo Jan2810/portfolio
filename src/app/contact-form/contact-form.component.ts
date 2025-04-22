@@ -66,7 +66,7 @@ export class ContactFormComponent {
   get emailErrorText(): string {
     return this.isEnglish
       ? 'Enter a valid email address'
-      : 'Gültige E-Mail eintragen';
+      : 'Gültige E-Mail-Adresse eintragen';
   }
   private backupEmail = '';
   showEmailError = false;
