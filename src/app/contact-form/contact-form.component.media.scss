@@ -201,12 +201,15 @@
 
             form {
                 width: 280px;
-                text-align: center;
+                text-align:left;
+                .question {
+                    margin-left: 0;
+                }
                 .answer {
                     width: 260px;
                     margin-left: 0;
                     margin-right: 0;
-                    text-align: center;
+                    text-align: left;
                 }
 
                 button {

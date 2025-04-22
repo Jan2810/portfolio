@@ -180,6 +180,9 @@ main {
             }
 
             .name-div {
+                .answer.error {
+                    color: #e74c3c!important;
+                }
                 .seperator-hover {
                     height: 1px;
                     background-color: #3355FF;
@@ -220,6 +223,9 @@ main {
             }
 
             .email-div {
+                .answer.error {
+                    color: #e74c3c!important;
+                }
                 .seperator-blue-first {
                     height: 1px;
                     width: 100%;
@@ -261,6 +267,9 @@ main {
             }
 
             .message-div {
+                .answer.error {
+                    color: #e74c3c!important;
+                }
                 .seperator-blue-second {
                     height: 1px;
                     width: 100%;
