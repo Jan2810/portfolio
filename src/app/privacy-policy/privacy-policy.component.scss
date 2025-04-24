@@ -5,8 +5,12 @@
     align-items: center;
 }
 
+html {
+    height: 100%;
+    margin: 0;
+}
+
 main {
-    z-index: 10;
     background-image: url('./../../assets/img/skill_set/bg_black_paper_rip_2png.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,7 +19,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 140px;
+    justify-content: space-between;
 }
 
 .headline-mobile {
@@ -74,6 +78,9 @@ main {
 }
 
 @media (max-width: 990px) {
+    main {
+        padding-bottom: 32;
+    }
     .privacy-policy {
         max-width: 545px;
         width: 100%;
