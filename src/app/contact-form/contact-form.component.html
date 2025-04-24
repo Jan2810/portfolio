@@ -52,13 +52,19 @@
                     <ng-template #germanText4>
                         <label class="question" for="name">Wie ist dein Name?</label>
                     </ng-template>
+
                     <input *ngIf="isEnglish; else germanName" #nameField="ngModel" [(ngModel)]="contactData.name"
-                        name="name" id="name" class="answer" type="text" autocomplete="name" placeholder="Your name goes here"
-                        required />
+                        name="name" id="name" class="answer" [class.error]="nameField.invalid && (nameField.touched || nameField.dirty)" type="text" autocomplete="name" [placeholder]="currentPlaceholderName" minlength="2"
+                        required (blur)="onNameBlur(nameField)"
+                        (focus)="onNameFocus()"/>
+
                     <ng-template #germanName>
-                        <input #nameField="ngModel" [(ngModel)]="contactData.name" name="name" id="name" class="answer"
-                            type="text" autocomplete="name" placeholder="Hier deinen Namen eintragen" required />
+                        <input #nameField="ngModel" [(ngModel)]="contactData.name" name="name" id="name" class="answer" [class.error]="nameField.invalid && (nameField.touched || nameField.dirty)"
+                            type="text" autocomplete="name" [placeholder]="currentPlaceholderName" minlength="2" required (blur)="onNameBlur(nameField)"
+                            (focus)="onNameFocus()"/>
                     </ng-template>
+
+
                     <div class="seperator"></div>
                 </div>
 

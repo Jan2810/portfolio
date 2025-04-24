@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from "@angular/common";
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
 import { FooterComponent } from './../shared/footer/footer.component';
 import { HttpClient } from '@angular/common/http';
 import { LanguageService } from '../services/language.service';
@@ -35,11 +35,63 @@ export class ContactFormComponent {
     },
   };
 
+
+
+
+  namePlaceholderEn: string = "Your name goes here";
+  namePlaceholderEnError: string = "At least 3 characters...";
+  namePlaceholderDe: string = "Hier deinen Namen eintragen";
+  namePlaceholderDeError: string = "Mindestens 3 Zeichen";
+
+  currentPlaceholderName: string = '';
+
+  private backupName = '';
+
   constructor(private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
       this.isEnglish = lang;
     });
   }
+
+
+
+
+  ngOnInit() {
+    this.resetPlaceholder();
+  }
+
+  /*** Hilfsfunktion: Standard-Placeholder je nach Sprache zurücksetzen ***/
+  private resetPlaceholder() {
+    this.currentPlaceholderName = this.isEnglish
+      ? this.namePlaceholderEn
+      : this.namePlaceholderDe;
+  }
+
+  /*** 4a) Blur-Handler: bei invalid → Backup speichern + Error-Placeholder ***/
+  onNameBlur(nameField: NgModel) {
+    if (nameField.invalid && (nameField.touched || nameField.dirty)) {
+      this.backupName = this.contactData.name;   // ungültigen Text sichern
+      this.contactData.name = '';                // Feld leeren
+      this.currentPlaceholderName = this.isEnglish
+        ? this.namePlaceholderEnError
+        : this.namePlaceholderDeError;
+    }
+  }
+
+  /*** 4b) Focus-Handler: Backup zurückholen + Standard-Placeholder wiederherstellen ***/
+  onNameFocus() {
+    if (this.backupName) {
+      this.contactData.name = this.backupName;  // alten Text zurücksetzen
+      this.backupName = '';
+    }
+    this.resetPlaceholder();
+  }
+
+
+
+
+
+
 
   onSubmit(ngForm: NgForm) {
     const emailControl = ngForm.controls['email'];
