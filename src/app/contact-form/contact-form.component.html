@@ -53,13 +53,11 @@
                         <label class="question" for="name">Wie ist dein Name?</label>
                     </ng-template>
                     <input *ngIf="isEnglish; else germanName" #nameField="ngModel" [(ngModel)]="contactData.name"
-                        name="name" id="name" class="answer" type="text" autocomplete="name" (blur)="onNameBlur()"
-                        (focus)="onNameFocus()" [class.error]="showNameError" placeholder="Your name goes here"
+                        name="name" id="name" class="answer" type="text" autocomplete="name" placeholder="Your name goes here"
                         required />
                     <ng-template #germanName>
                         <input #nameField="ngModel" [(ngModel)]="contactData.name" name="name" id="name" class="answer"
-                            type="text" autocomplete="name" (blur)="onNameBlur()" (focus)="onNameFocus()"
-                            [class.error]="showNameError" placeholder="Hier deinen Namen eintragen" required />
+                            type="text" autocomplete="name" placeholder="Hier deinen Namen eintragen" required />
                     </ng-template>
                     <div class="seperator"></div>
                 </div>
@@ -73,13 +71,11 @@
                         <label class="question" for="email">Wie lautet deine E-Mail?</label>
                     </ng-template>
                     <input *ngIf="isEnglish; else germanEmail" #emailField="ngModel" [(ngModel)]="contactData.email"
-                        name="email" id="email" class="answer" type="email" autocomplete="email" (blur)="onEmailBlur()"
-                        (focus)="onEmailFocus()" [class.error]="showEmailError" placeholder="Enter your email adress"
+                        name="email" id="email" class="answer" type="email" autocomplete="email" placeholder="Enter your email adress"
                         required />
                     <ng-template #germanEmail>
                         <input #emailField="ngModel" [(ngModel)]="contactData.email" name="email" id="email"
-                            class="answer" type="email" autocomplete="email" (blur)="onEmailBlur()"
-                            (focus)="onEmailFocus()" [class.error]="showEmailError"
+                            class="answer" type="email" autocomplete="email"
                             placeholder="Hier deine E-Mail-Adresse eintragen" required />
                     </ng-template>
                     <div class="seperator"></div>
@@ -96,12 +92,10 @@
 
                     <input *ngIf="isEnglish; else germanMessage" #messageField="ngModel"
                         [(ngModel)]="contactData.message" name="message" id="message" class="answer" type="text"
-                        autocomplete="on" (blur)="onMessageBlur()" (focus)="onMessageFocus()"
-                        [class.error]="showMessageError" placeholder="Hello Jan, I am interested in..." required />
+                        autocomplete="on" placeholder="Hello Jan, I am interested in..." required />
                     <ng-template #germanMessage>
                         <input #messageField="ngModel" [(ngModel)]="contactData.message" name="message" id="message"
-                            class="answer" type="text" autocomplete="on" (blur)="onMessageBlur()"
-                            (focus)="onMessageFocus()" [class.error]="showMessageError"
+                            class="answer" type="text" autocomplete="on"
                             placeholder="Hallo Jan, ich habe Interesse an..." required />
                     </ng-template>
 
