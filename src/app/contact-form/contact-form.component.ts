@@ -63,7 +63,6 @@ export class ContactFormComponent {
   namePlaceholderDeError: string = "Mindestens 2 Zeichen";
   currentPlaceholderName: string = '';
   private backupName = '';
-  nameValid: boolean = false;
 
   onNameBlur(nameField: NgModel) {
     if (nameField.invalid && (nameField.touched || nameField.dirty)) {
@@ -72,7 +71,6 @@ export class ContactFormComponent {
       this.currentPlaceholderName = this.isEnglish
         ? this.namePlaceholderEnError
         : this.namePlaceholderDeError;
-        this.nameValid = nameField.valid ?? false;
     }
   }
 
@@ -91,8 +89,6 @@ export class ContactFormComponent {
   emailPlaceholderDeError: string = "Gültige E-Mail-Adresse eintragen";
   currentPlaceholderEmail: string = '';
   private backupEmail = '';
-  emailValid: boolean = false;
-
 
   onEmailBlur(emailField: NgModel) {
     if (emailField.invalid && (emailField.touched || emailField.dirty)) {
@@ -101,7 +97,6 @@ export class ContactFormComponent {
       this.currentPlaceholderEmail = this.isEnglish
         ? this.emailPlaceholderEnError
         : this.emailPlaceholderDeError;
-        this.emailValid = emailField.valid ?? false;
     }
   }
 
@@ -120,7 +115,6 @@ export class ContactFormComponent {
   messagePlaceholderDeError: string = "Mindestens 10 Zeichen";
   currentPlaceholderMessage: string = '';
   private backupMessage = '';
-  messageValid: boolean = false;
 
   onMessageBlur(messageField: NgModel) {
     if (messageField.invalid && (messageField.touched || messageField.dirty)) {
@@ -129,7 +123,6 @@ export class ContactFormComponent {
       this.currentPlaceholderMessage = this.isEnglish
         ? this.messagePlaceholderEnError
         : this.messagePlaceholderDeError;
-        this.messageValid = messageField.valid ?? false;
     }
   }
 

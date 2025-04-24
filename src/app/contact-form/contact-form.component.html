@@ -134,9 +134,9 @@
                 </div>
                 <div class="button-div">
                     <img class="mobile-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
-                    <button *ngIf="isEnglish; else germanText11" [disabled]="!isChecked || !nameValid || !emailValid || !messageValid" type="submit">Send</button>
+                    <button *ngIf="isEnglish; else germanText11" [disabled]="!isChecked || contactForm.form.invalid" type="submit">Send</button>
                     <ng-template #germanText11>
-                        <button [disabled]="!isChecked || !nameValid || !emailValid || !messageValid" type="submit">Senden</button>
+                        <button [disabled]="!isChecked || contactForm.form.invalid" type="submit">Senden</button>
                     </ng-template>
                 </div>
             </form>
