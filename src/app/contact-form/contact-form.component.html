@@ -54,14 +54,15 @@
                     </ng-template>
 
                     <input *ngIf="isEnglish; else germanName" #nameField="ngModel" [(ngModel)]="contactData.name"
-                        name="name" id="name" class="answer" [class.error]="nameField.invalid && (nameField.touched || nameField.dirty)" type="text" autocomplete="name" [placeholder]="currentPlaceholderName" minlength="2"
-                        required (blur)="onNameBlur(nameField)"
-                        (focus)="onNameFocus()"/>
-
+                        name="name" id="name" class="answer"
+                        [class.error]="nameField.invalid && (nameField.touched || nameField.dirty)" type="text"
+                        autocomplete="name" [placeholder]="currentPlaceholderName" minlength="2" required
+                        (blur)="onNameBlur(nameField)" (focus)="onNameFocus()" />
                     <ng-template #germanName>
-                        <input #nameField="ngModel" [(ngModel)]="contactData.name" name="name" id="name" class="answer" [class.error]="nameField.invalid && (nameField.touched || nameField.dirty)"
-                            type="text" autocomplete="name" [placeholder]="currentPlaceholderName" minlength="2" required (blur)="onNameBlur(nameField)"
-                            (focus)="onNameFocus()"/>
+                        <input #nameField="ngModel" [(ngModel)]="contactData.name" name="name" id="name" class="answer"
+                            [class.error]="nameField.invalid && (nameField.touched || nameField.dirty)" type="text"
+                            autocomplete="name" [placeholder]="currentPlaceholderName" minlength="2" required
+                            (blur)="onNameBlur(nameField)" (focus)="onNameFocus()" />
                     </ng-template>
 
 
@@ -76,13 +77,21 @@
                     <ng-template #germanText6>
                         <label class="question" for="email">Wie lautet deine E-Mail?</label>
                     </ng-template>
+
                     <input *ngIf="isEnglish; else germanEmail" #emailField="ngModel" [(ngModel)]="contactData.email"
-                        name="email" id="email" class="answer" type="email" autocomplete="email" placeholder="Enter your email adress"
-                        required />
+                        name="email" id="email" class="answer"
+                        [class.error]="emailField.invalid && (emailField.touched || emailField.dirty)" type="email"
+                        autocomplete="email" [pattern]="'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}'"
+                        [placeholder]="currentPlaceholderEmail" required (blur)="onEmailBlur(emailField)"
+                        (focus)="onEmailFocus()" />
+
                     <ng-template #germanEmail>
                         <input #emailField="ngModel" [(ngModel)]="contactData.email" name="email" id="email"
-                            class="answer" type="email" autocomplete="email"
-                            placeholder="Hier deine E-Mail-Adresse eintragen" required />
+                            class="answer"
+                            [class.error]="emailField.invalid && (emailField.touched || emailField.dirty)" type="email"
+                            autocomplete="email" [pattern]="'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}'"
+                            [placeholder]="currentPlaceholderEmail" required (blur)="onEmailBlur(emailField)"
+                            (focus)="onEmailFocus()" />
                     </ng-template>
                     <div class="seperator"></div>
                 </div>
@@ -110,13 +119,15 @@
 
                 <div class="checkbox">
                     <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked">
-                    <label *ngIf="isEnglish; else germanText10" for="checkbox">I've read the <a [routerLink]="['privacypolicy']">privacy
+                    <label *ngIf="isEnglish; else germanText10" for="checkbox">I've read the <a
+                            [routerLink]="['privacypolicy']">privacy
                             policy</a> and agree to the processing of my
                         data as
                         outlined.</label>
 
                     <ng-template #germanText10>
-                        <label for="checkbox">Ich habe die <a [routerLink]="['privacypolicy']">Datenschutzerklärung</a> gelesen und bin mit der
+                        <label for="checkbox">Ich habe die <a [routerLink]="['privacypolicy']">Datenschutzerklärung</a>
+                            gelesen und bin mit der
                             darin beschriebenen Verarbeitung meiner Daten einverstanden.
                         </label>
                     </ng-template>

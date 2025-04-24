@@ -39,13 +39,18 @@ export class ContactFormComponent {
 
 
   namePlaceholderEn: string = "Your name goes here";
-  namePlaceholderEnError: string = "At least 3 characters...";
+  namePlaceholderEnError: string = "At least 2 characters...";
   namePlaceholderDe: string = "Hier deinen Namen eintragen";
-  namePlaceholderDeError: string = "Mindestens 3 Zeichen";
-
+  namePlaceholderDeError: string = "Mindestens 2 Zeichen";
   currentPlaceholderName: string = '';
-
   private backupName = '';
+
+  emailPlaceholderEn: string = "yourmail@example.com";
+  emailPlaceholderEnError: string = "Enter a valid email address";
+  emailPlaceholderDe: string = "deineemail@beispiel.de";
+  emailPlaceholderDeError: string = "Gültige E-Mail-Adresse eintragen";
+  currentPlaceholderEmail: string = '';
+  private backupEmail = '';
 
   constructor(private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
@@ -65,6 +70,9 @@ export class ContactFormComponent {
     this.currentPlaceholderName = this.isEnglish
       ? this.namePlaceholderEn
       : this.namePlaceholderDe;
+      this.currentPlaceholderEmail = this.isEnglish
+      ? this.emailPlaceholderEn
+      : this.emailPlaceholderDe;
   }
 
   /*** 4a) Blur-Handler: bei invalid → Backup speichern + Error-Placeholder ***/
@@ -83,6 +91,26 @@ export class ContactFormComponent {
     if (this.backupName) {
       this.contactData.name = this.backupName;  // alten Text zurücksetzen
       this.backupName = '';
+    }
+    this.resetPlaceholder();
+  }
+
+
+  onEmailBlur(emailField: NgModel) {
+    if (emailField.invalid && (emailField.touched || emailField.dirty)) {
+      this.backupEmail = this.contactData.email;   // ungültigen Text sichern
+      this.contactData.email = '';                // Feld leeren
+      this.currentPlaceholderEmail = this.isEnglish
+        ? this.emailPlaceholderEnError
+        : this.emailPlaceholderDeError;
+    }
+  }
+
+  /*** 4b) Focus-Handler: Backup zurückholen + Standard-Placeholder wiederherstellen ***/
+  onEmailFocus() {
+    if (this.backupEmail) {
+      this.contactData.email = this.backupEmail;  // alten Text zurücksetzen
+      this.backupEmail = '';
     }
     this.resetPlaceholder();
   }
