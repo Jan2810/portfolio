@@ -91,7 +91,7 @@
 
 @media (max-width:990px) {
     main {
-        height: fit-content;
+        height: 850px;
     }
 
     .content {
@@ -169,6 +169,9 @@
 }
 
 @media (max-width:624px) {
+    main {
+        height: 918px;
+    }
     .content {
         .content-left {
             .stripe-div {
@@ -182,7 +185,7 @@
 
 @media (max-width:560px) {
     main {
-        height: auto;
+        height: 918px;
     }
 
     .content {

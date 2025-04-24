@@ -45,5 +45,5 @@ export class HeaderComponent {
 
   toggleMenu() {
     this.menuService.toggleMenu();
-  }
+  }  
 }

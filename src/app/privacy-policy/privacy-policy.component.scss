@@ -18,6 +18,10 @@ main {
     padding-bottom: 140px;
 }
 
+.headline-mobile {
+    display: none;
+}
+
 .privacy-policy {
     padding-top: 120px;
     padding-bottom: 160px;
@@ -89,6 +93,12 @@ main {
 }
 
 @media (max-width: 626px) {
+    .headline-desktop {
+        display: none;
+    }
+    .headline-mobile {
+        display: block;
+    }
     .privacy-policy {
         max-width: 452px;
     }
@@ -103,5 +113,8 @@ main {
 @media (max-width: 400px) {
     .privacy-policy {
         max-width: 310px;
+        h2 {
+            font-size: 40px;
+        }
     }
 }
