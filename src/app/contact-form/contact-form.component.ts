@@ -4,11 +4,12 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { FooterComponent } from './../shared/footer/footer.component';
 import { HttpClient } from '@angular/common/http';
 import { LanguageService } from '../services/language.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact-form',
   standalone: true,
-  imports: [FormsModule, CommonModule, FooterComponent],
+  imports: [FormsModule, CommonModule, FooterComponent, RouterModule],
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss', './contact-form.component.media.scss'],
 })

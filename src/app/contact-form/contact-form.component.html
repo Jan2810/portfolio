@@ -110,13 +110,13 @@
 
                 <div class="checkbox">
                     <input type="checkbox" name="checkbox" id="checkbox" [(ngModel)]="isChecked">
-                    <label *ngIf="isEnglish; else germanText10" for="checkbox">I've read the <a href="#">privacy
+                    <label *ngIf="isEnglish; else germanText10" for="checkbox">I've read the <a [routerLink]="['privacypolicy']">privacy
                             policy</a> and agree to the processing of my
                         data as
                         outlined.</label>
 
                     <ng-template #germanText10>
-                        <label for="checkbox">Ich habe die <a href="#">Datenschutzerklärung</a> gelesen und bin mit der
+                        <label for="checkbox">Ich habe die <a [routerLink]="['privacypolicy']">Datenschutzerklärung</a> gelesen und bin mit der
                             darin beschriebenen Verarbeitung meiner Daten einverstanden.
                         </label>
                     </ng-template>
