@@ -35,37 +35,16 @@ export class ContactFormComponent {
     },
   };
 
-
-
-
-  namePlaceholderEn: string = "Your name goes here";
-  namePlaceholderEnError: string = "At least 2 characters...";
-  namePlaceholderDe: string = "Hier deinen Namen eintragen";
-  namePlaceholderDeError: string = "Mindestens 2 Zeichen";
-  currentPlaceholderName: string = '';
-  private backupName = '';
-
-  emailPlaceholderEn: string = "yourmail@example.com";
-  emailPlaceholderEnError: string = "Enter a valid email address";
-  emailPlaceholderDe: string = "deineemail@beispiel.de";
-  emailPlaceholderDeError: string = "Gültige E-Mail-Adresse eintragen";
-  currentPlaceholderEmail: string = '';
-  private backupEmail = '';
-
   constructor(private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
       this.isEnglish = lang;
     });
   }
 
-
-
-
   ngOnInit() {
     this.resetPlaceholder();
   }
 
-  /*** Hilfsfunktion: Standard-Placeholder je nach Sprache zurücksetzen ***/
   private resetPlaceholder() {
     this.currentPlaceholderName = this.isEnglish
       ? this.namePlaceholderEn
@@ -73,52 +52,94 @@ export class ContactFormComponent {
       this.currentPlaceholderEmail = this.isEnglish
       ? this.emailPlaceholderEn
       : this.emailPlaceholderDe;
+      this.currentPlaceholderMessage = this.isEnglish
+      ? this.messagePlaceholderEn
+      : this.messagePlaceholderDe;
   }
 
-  /*** 4a) Blur-Handler: bei invalid → Backup speichern + Error-Placeholder ***/
+  namePlaceholderEn: string = "Your name goes here";
+  namePlaceholderEnError: string = "At least 2 characters...";
+  namePlaceholderDe: string = "Hier deinen Namen eintragen";
+  namePlaceholderDeError: string = "Mindestens 2 Zeichen";
+  currentPlaceholderName: string = '';
+  private backupName = '';
+  nameValid: boolean = false;
+
   onNameBlur(nameField: NgModel) {
     if (nameField.invalid && (nameField.touched || nameField.dirty)) {
-      this.backupName = this.contactData.name;   // ungültigen Text sichern
-      this.contactData.name = '';                // Feld leeren
+      this.backupName = this.contactData.name;
+      this.contactData.name = '';
       this.currentPlaceholderName = this.isEnglish
         ? this.namePlaceholderEnError
         : this.namePlaceholderDeError;
+        this.nameValid = nameField.valid ?? false;
     }
   }
 
-  /*** 4b) Focus-Handler: Backup zurückholen + Standard-Placeholder wiederherstellen ***/
   onNameFocus() {
     if (this.backupName) {
-      this.contactData.name = this.backupName;  // alten Text zurücksetzen
+      this.contactData.name = this.backupName;
       this.backupName = '';
     }
     this.resetPlaceholder();
   }
 
 
+  emailPlaceholderEn: string = "yourmail@example.com";
+  emailPlaceholderEnError: string = "Enter a valid email address";
+  emailPlaceholderDe: string = "deineemail@beispiel.de";
+  emailPlaceholderDeError: string = "Gültige E-Mail-Adresse eintragen";
+  currentPlaceholderEmail: string = '';
+  private backupEmail = '';
+  emailValid: boolean = false;
+
+
   onEmailBlur(emailField: NgModel) {
     if (emailField.invalid && (emailField.touched || emailField.dirty)) {
-      this.backupEmail = this.contactData.email;   // ungültigen Text sichern
-      this.contactData.email = '';                // Feld leeren
+      this.backupEmail = this.contactData.email;
+      this.contactData.email = '';
       this.currentPlaceholderEmail = this.isEnglish
         ? this.emailPlaceholderEnError
         : this.emailPlaceholderDeError;
+        this.emailValid = emailField.valid ?? false;
     }
   }
 
-  /*** 4b) Focus-Handler: Backup zurückholen + Standard-Placeholder wiederherstellen ***/
   onEmailFocus() {
     if (this.backupEmail) {
-      this.contactData.email = this.backupEmail;  // alten Text zurücksetzen
+      this.contactData.email = this.backupEmail;
       this.backupEmail = '';
     }
     this.resetPlaceholder();
   }
 
 
+  messagePlaceholderEn: string = "Hi Jan, i'm interested in...";
+  messagePlaceholderEnError: string = "At least 10 characters...";
+  messagePlaceholderDe: string = "Hi Jan, ich interessiere mich...";
+  messagePlaceholderDeError: string = "Mindestens 10 Zeichen";
+  currentPlaceholderMessage: string = '';
+  private backupMessage = '';
+  messageValid: boolean = false;
 
+  onMessageBlur(messageField: NgModel) {
+    if (messageField.invalid && (messageField.touched || messageField.dirty)) {
+      this.backupMessage = this.contactData.message;
+      this.contactData.message = '';
+      this.currentPlaceholderMessage = this.isEnglish
+        ? this.messagePlaceholderEnError
+        : this.messagePlaceholderDeError;
+        this.messageValid = messageField.valid ?? false;
+    }
+  }
 
-
+  onMessageFocus() {
+    if (this.backupMessage) {
+      this.contactData.message = this.backupMessage;
+      this.backupMessage = '';
+    }
+    this.resetPlaceholder();
+  }
 
 
   onSubmit(ngForm: NgForm) {

@@ -106,12 +106,12 @@
                     </ng-template>
 
                     <input *ngIf="isEnglish; else germanMessage" #messageField="ngModel"
-                        [(ngModel)]="contactData.message" name="message" id="message" class="answer" type="text"
-                        autocomplete="on" placeholder="Hello Jan, I am interested in..." required />
+                        [(ngModel)]="contactData.message" name="message" id="message" class="answer" [class.error]="messageField.invalid && (messageField.touched || messageField.dirty)" type="text"
+                        autocomplete="on" minlength="10" [placeholder]="currentPlaceholderMessage" required (blur)="onMessageBlur(messageField)" (focus)="onMessageFocus()"/>
                     <ng-template #germanMessage>
                         <input #messageField="ngModel" [(ngModel)]="contactData.message" name="message" id="message"
-                            class="answer" type="text" autocomplete="on"
-                            placeholder="Hallo Jan, ich habe Interesse an..." required />
+                            class="answer" [class.error]="messageField.invalid && (messageField.touched || messageField.dirty)" type="text" autocomplete="on" minlength="10"
+                            [placeholder]="currentPlaceholderMessage" required (blur)="onMessageBlur(messageField)" (focus)="onMessageFocus()"/>
                     </ng-template>
 
                     <div class="seperator"></div>
@@ -134,9 +134,9 @@
                 </div>
                 <div class="button-div">
                     <img class="mobile-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
-                    <button *ngIf="isEnglish; else germanText11" [disabled]="!isChecked" type="submit">Send</button>
+                    <button *ngIf="isEnglish; else germanText11" [disabled]="!isChecked || !nameValid || !emailValid || !messageValid" type="submit">Send</button>
                     <ng-template #germanText11>
-                        <button [disabled]="!isChecked" type="submit">Senden</button>
+                        <button [disabled]="!isChecked || !nameValid || !emailValid || !messageValid" type="submit">Senden</button>
                     </ng-template>
                 </div>
             </form>
