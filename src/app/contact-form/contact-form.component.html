@@ -81,7 +81,7 @@
                     <input *ngIf="isEnglish; else germanEmail" #emailField="ngModel" [(ngModel)]="contactData.email"
                         name="email" id="email" class="answer"
                         [class.error]="emailField.invalid && (emailField.touched || emailField.dirty)" type="email"
-                        autocomplete="email" [pattern]="'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}'"
+                        autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                         [placeholder]="currentPlaceholderEmail" required (blur)="onEmailBlur(emailField)"
                         (focus)="onEmailFocus()" />
 
@@ -89,7 +89,7 @@
                         <input #emailField="ngModel" [(ngModel)]="contactData.email" name="email" id="email"
                             class="answer"
                             [class.error]="emailField.invalid && (emailField.touched || emailField.dirty)" type="email"
-                            autocomplete="email" [pattern]="'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}'"
+                            autocomplete="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                             [placeholder]="currentPlaceholderEmail" required (blur)="onEmailBlur(emailField)"
                             (focus)="onEmailFocus()" />
                     </ng-template>
@@ -134,9 +134,17 @@
                 </div>
                 <div class="button-div">
                     <img class="mobile-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
-                    <button *ngIf="isEnglish; else germanText11" [disabled]="!isChecked || contactForm.form.invalid" type="submit">Send</button>
+                    <button *ngIf="isEnglish; else germanText11" [class.flash]="isFlashing" (click)="triggerFlash()" [disabled]="!isChecked || contactForm.form.invalid" type="submit">{{ 
+                        isFlashing
+                          ? (isEnglish ? buttonTextFeedbackEn : buttonTextFeedbackDe)
+                          : (isEnglish ? buttonTextEn          : buttonTextDe)
+                      }}</button>
                     <ng-template #germanText11>
-                        <button [disabled]="!isChecked || contactForm.form.invalid" type="submit">Senden</button>
+                        <button [class.flash]="isFlashing" (click)="triggerFlash()" [disabled]="!isChecked || contactForm.form.invalid" type="submit">{{ 
+                            isFlashing
+                              ? (isEnglish ? buttonTextFeedbackEn : buttonTextFeedbackDe)
+                              : (isEnglish ? buttonTextEn          : buttonTextDe)
+                          }} </button>
                     </ng-template>
                 </div>
             </form>

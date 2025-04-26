@@ -157,12 +157,16 @@ main {
                 width: 154px;
                 height: 40;
                 cursor: pointer;
+                transition: background-color 1s, transform 1s;
 
                 &:hover {
                     background-color: #F87A55;
                     box-shadow: none;
                     transform: translateY(+4px) translateX(+6px);
                     transition: ease-in-out 125ms;
+                }
+                &.flash {
+                    animation: explodeGreen 2s ease-in-out;
                 }
             }
 
@@ -181,8 +185,9 @@ main {
 
             .name-div {
                 .answer.error {
-                    color: #e74c3c!important;
+                    color: #e74c3c !important;
                 }
+
                 .seperator-hover {
                     height: 1px;
                     background-color: #3355FF;
@@ -224,8 +229,9 @@ main {
 
             .email-div {
                 .answer.error {
-                    color: #e74c3c!important;
+                    color: #e74c3c !important;
                 }
+
                 .seperator-blue-first {
                     height: 1px;
                     width: 100%;
@@ -268,8 +274,9 @@ main {
 
             .message-div {
                 .answer.error {
-                    color: #e74c3c!important;
+                    color: #e74c3c !important;
                 }
+
                 .seperator-blue-second {
                     height: 1px;
                     width: 100%;
@@ -329,6 +336,21 @@ main {
 .mobile-arrow-yellow {
     display: none;
 }
+
+@keyframes explodeGreen {
+    0% {
+      background-color: transparent;
+      transform: scale(1);
+    }
+    10% {
+      background-color: #24DD80;
+      transform: scale(1.05);
+    }
+    100% {
+      background-color: transparent;
+      transform: scale(1);
+    }
+  }
 
 @keyframes slideLeftRight {
 

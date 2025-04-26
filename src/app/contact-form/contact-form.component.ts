@@ -38,6 +38,7 @@ export class ContactFormComponent {
   constructor(private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
       this.isEnglish = lang;
+      this.resetPlaceholder();
     });
   }
 
@@ -49,13 +50,14 @@ export class ContactFormComponent {
     this.currentPlaceholderName = this.isEnglish
       ? this.namePlaceholderEn
       : this.namePlaceholderDe;
-      this.currentPlaceholderEmail = this.isEnglish
+    this.currentPlaceholderEmail = this.isEnglish
       ? this.emailPlaceholderEn
       : this.emailPlaceholderDe;
-      this.currentPlaceholderMessage = this.isEnglish
+    this.currentPlaceholderMessage = this.isEnglish
       ? this.messagePlaceholderEn
       : this.messagePlaceholderDe;
   }
+
 
   namePlaceholderEn: string = "Your name goes here";
   namePlaceholderEnError: string = "At least 2 characters...";
@@ -107,7 +109,7 @@ export class ContactFormComponent {
     }
     this.resetPlaceholder();
   }
-
+  
 
   messagePlaceholderEn: string = "Hi Jan, i'm interested in...";
   messagePlaceholderEnError: string = "At least 10 characters...";
@@ -135,11 +137,41 @@ export class ContactFormComponent {
   }
 
 
+  buttonTextEn: string = "Send";
+  buttonTextFeedbackEn: string = "Sent!";
+  buttonTextDe: string = "Senden";
+  buttonTextFeedbackDe: string = "Gesendet!";
+  isFlashing = false;
+  buttonText = this.getCurrentText();
+
+  private getCurrentText(): string {
+    return this.isEnglish
+      ? this.buttonTextEn
+      : this.buttonTextDe;
+  }
+
+  private getFeedbackText(): string {
+    return this.isEnglish
+      ? this.buttonTextFeedbackEn
+      : this.buttonTextFeedbackDe;
+  }
+
+  triggerFlash() {
+    this.isFlashing = false;
+    setTimeout(() => {
+      this.isFlashing = true;
+      this.buttonText = this.getFeedbackText();
+    }, 0);
+    setTimeout(() => {
+      this.isFlashing = false;
+      this.buttonText = this.getCurrentText();
+    }, 1000);
+  }
+
   onSubmit(ngForm: NgForm) {
     const emailControl = ngForm.controls['email'];
     if (emailControl && !emailControl.valid) {
       this.contactData.email = '';
-      console.log("Die E-Mail-Adresse ist ungültig – Feld wurde geleert.");
       return;
     }
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
