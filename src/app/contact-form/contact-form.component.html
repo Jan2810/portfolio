@@ -28,7 +28,7 @@
             <ng-template #germanText3>
                 <div class="contact-me-description">
                     Ich bin auf der Suche nach Möglichkeiten als Frontend-Entwickler und bereit, mich in neue Projekte
-                    zu stürzen und wirklich etwas zu bewirken. Mit meiner Leidenschaft für responsive,
+                    zu stürzen. Mit meiner Leidenschaft für responsive,
                     benutzerfreundliche Lösungen und meinem Gespür für effizientes Programmieren bin ich überzeugt, dass
                     ich jedes Team mit wertvollem Fachwissen und einer frischen Perspektive bereichern kann. Wenn Sie
                     jemanden suchen, der begeistert, engagiert und lernbegierig ist, lassen Sie uns in Kontakt treten
@@ -106,12 +106,16 @@
                     </ng-template>
 
                     <input *ngIf="isEnglish; else germanMessage" #messageField="ngModel"
-                        [(ngModel)]="contactData.message" name="message" id="message" class="answer" [class.error]="messageField.invalid && (messageField.touched || messageField.dirty)" type="text"
-                        autocomplete="on" minlength="10" [placeholder]="currentPlaceholderMessage" required (blur)="onMessageBlur(messageField)" (focus)="onMessageFocus()"/>
+                        [(ngModel)]="contactData.message" name="message" id="message" class="answer"
+                        [class.error]="messageField.invalid && (messageField.touched || messageField.dirty)" type="text"
+                        autocomplete="on" minlength="10" [placeholder]="currentPlaceholderMessage" required
+                        (blur)="onMessageBlur(messageField)" (focus)="onMessageFocus()" />
                     <ng-template #germanMessage>
                         <input #messageField="ngModel" [(ngModel)]="contactData.message" name="message" id="message"
-                            class="answer" [class.error]="messageField.invalid && (messageField.touched || messageField.dirty)" type="text" autocomplete="on" minlength="10"
-                            [placeholder]="currentPlaceholderMessage" required (blur)="onMessageBlur(messageField)" (focus)="onMessageFocus()"/>
+                            class="answer"
+                            [class.error]="messageField.invalid && (messageField.touched || messageField.dirty)"
+                            type="text" autocomplete="on" minlength="10" [placeholder]="currentPlaceholderMessage"
+                            required (blur)="onMessageBlur(messageField)" (focus)="onMessageFocus()" />
                     </ng-template>
 
                     <div class="seperator"></div>
@@ -134,17 +138,19 @@
                 </div>
                 <div class="button-div">
                     <img class="mobile-arrow-yellow" src="./assets/img/contact-form/arrow_yellow.svg" alt="">
-                    <button *ngIf="isEnglish; else germanText11" [class.flash]="isFlashing" (click)="triggerFlash()" [disabled]="!isChecked || contactForm.form.invalid" type="submit">{{ 
+                    <button *ngIf="isEnglish; else germanText11" [class.flash]="isFlashing" (click)="triggerFlash()"
+                        [disabled]="!isChecked || contactForm.form.invalid" type="submit">{{
                         isFlashing
-                          ? (isEnglish ? buttonTextFeedbackEn : buttonTextFeedbackDe)
-                          : (isEnglish ? buttonTextEn          : buttonTextDe)
-                      }}</button>
+                        ? (isEnglish ? buttonTextFeedbackEn : buttonTextFeedbackDe)
+                        : (isEnglish ? buttonTextEn : buttonTextDe)
+                        }}</button>
                     <ng-template #germanText11>
-                        <button [class.flash]="isFlashing" (click)="triggerFlash()" [disabled]="!isChecked || contactForm.form.invalid" type="submit">{{ 
+                        <button [class.flash]="isFlashing" (click)="triggerFlash()"
+                            [disabled]="!isChecked || contactForm.form.invalid" type="submit">{{
                             isFlashing
-                              ? (isEnglish ? buttonTextFeedbackEn : buttonTextFeedbackDe)
-                              : (isEnglish ? buttonTextEn          : buttonTextDe)
-                          }} </button>
+                            ? (isEnglish ? buttonTextFeedbackEn : buttonTextFeedbackDe)
+                            : (isEnglish ? buttonTextEn : buttonTextDe)
+                            }} </button>
                     </ng-template>
                 </div>
             </form>
