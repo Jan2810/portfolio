@@ -77,11 +77,42 @@ main {
         }
     }
 
-    .desktop-profile-img {
-        position: absolute;
+    .desktop-profile-img-wrapper {
+        position: relative;
+        width: 204px;
+        height: 244px;
         top: 20px;
         right: 5px;
         transform: rotate(8deg);
+        filter: grayscale(1);
+
+        &:hover {
+            filter: grayscale(0);
+
+            .hover-text::before {
+                content: "Jan :D";
+            }
+        }
+
+        .hover-text {
+            position: absolute;
+            bottom: 8px;
+            left: 64px;
+            font-family: 'kalam';
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 120%;
+            letter-spacing: 0%;
+            color: #000000;
+
+            &::before {
+                content: "Jan :)";
+            }
+        }
+    }
+
+    .desktop-profile-img {
+        position: absolute;
         width: 204px;
         height: 244px;
     }
@@ -101,6 +132,7 @@ h1 {
         width: 0.9ch;
         text-align: center;
         transition: color .2s;
+
         &:hover {
             text-transform: lowercase;
             color: #f7c518;
@@ -109,9 +141,10 @@ h1 {
 
     .lowercase-letter {
         display: inline-block;
-        width: 0.9ch;   
+        width: 0.9ch;
         text-align: center;
         transition: color .2s;
+
         &:hover {
             text-transform: uppercase;
             color: #f7c518;
