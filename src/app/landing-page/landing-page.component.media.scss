@@ -12,16 +12,34 @@
         background-repeat: no-repeat;
     }
 
-    .desktop-profile-img {
+    .desktop-profile-img-wrapper {
         display: none;
     }
 
-    .mobile-profile-img {
-        display: block;
-        position: absolute;
+    .mobile-profile-img-wrapper {
+        display: flex;
         top: 420px;
         height: 300px;
         width: 250px;
+
+        .mobile-profile-img {
+            img {
+                height: 300px;
+                width: 250px;
+            }
+        }
+
+        span {
+            position: absolute;
+            bottom: 16px;
+            left: 88px;
+            font-family: 'kalam';
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 120%;
+            letter-spacing: 0%;
+            color: #000000;
+        }
     }
 
     .content {
@@ -59,10 +77,20 @@
 }
 
 @media screen and (max-width: 720px) {
-    .mobile-profile-img {
+    .mobile-profile-img-wrapper {
         top: 520px;
-        width: 204px;
-        height: 244px;
+
+        .mobile-profile-img {
+            img {
+                width: 204px;
+                height: 244px;
+            }
+        }
+
+        span {
+            bottom: 64px;
+            left: 72px;
+        }
     }
 }
 
@@ -70,6 +98,17 @@
     .content {
         h1 {
             font-size: 48px;
+        }
+    }
+
+    .mobile-profile-img-wrapper {
+        width: auto;
+        top: 490px;
+    }
+
+    .lower-content {
+        button {
+            margin-bottom: 180px;
         }
     }
 }

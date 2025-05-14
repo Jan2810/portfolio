@@ -199,12 +199,18 @@ h1 {
     }
 }
 
-.mobile-profile-img {
+.mobile-profile-img-wrapper {
     display: none;
     transform: rotate(8deg);
     width: 204px;
     height: 244px;
+    position: absolute;
+    filter: grayscale(1);
+    .mobile-profile-img {
+        position: relative;
+    }
 }
+
 
 .desktop-social-link-icons {
     display: flex;
